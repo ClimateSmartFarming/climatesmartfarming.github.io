@@ -2,19 +2,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import HeroSection from '../../components/sections/HeroSection/HeroSection';
-import { decisionTools } from '../../data/decisionTools';
+import { featuredTools } from '../../data/tools';
 import styles from './DecisionToolsPage.module.css';
 import pageStyles from '../HomePage/HomePage.module.css';
 
 const DecisionToolsPage: React.FC = () => {
-  // Group tools by category
-  const categories = Array.from(new Set(decisionTools.map(tool => tool.category || 'Other')));
+  const categories = Array.from(new Set(featuredTools.map(tool => tool.category)));
 
   return (
     <div className={pageStyles.homePage}>
       <main className={pageStyles.mainContent}>
         <HeroSection
-          title="CSF Decision Tools"
+          title="CSF Tools"
           subtitle="Make informed decisions about production systems based on location-specific climate data, weather forecasts, and future outlooks"
         />
 
@@ -27,29 +26,22 @@ const DecisionToolsPage: React.FC = () => {
             </p>
 
             {categories.map((category) => {
-              const categoryTools = decisionTools.filter(
-                tool => (tool.category || 'Other') === category
-              );
-
+              const categoryTools = featuredTools.filter(t => t.category === category);
               return (
                 <div key={category} className={styles.categorySection}>
                   <h2 className={styles.categoryTitle}>{category}</h2>
                   <div className={styles.toolsGrid}>
                     {categoryTools.map((tool) => (
-                      <a
+                      <Link
                         key={tool.id}
-                        href={tool.externalLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        to={`/tools/${tool.id}`}
                         className={styles.toolCard}
                       >
                         <div className={styles.toolIcon}>{tool.icon}</div>
                         <h3 className={styles.toolTitle}>{tool.title}</h3>
                         <p className={styles.toolDescription}>{tool.description}</p>
-                        <span className={styles.externalLink}>
-                          Open Tool →
-                        </span>
-                      </a>
+                        <span className={styles.externalLink}>Open Tool →</span>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -57,9 +49,7 @@ const DecisionToolsPage: React.FC = () => {
             })}
 
             <div className={styles.backSection}>
-              <Link to="/" className={styles.backLink}>
-                ← Back to Home
-              </Link>
+              <Link to="/tools" className={styles.backLink}>← Back to Tools</Link>
             </div>
           </div>
         </section>

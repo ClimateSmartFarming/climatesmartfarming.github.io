@@ -11,8 +11,10 @@
     "start": "npm run preview"
   },
   "dependencies": {
+    "gray-matter": "^4.0.3",
     "html-to-text": "^9.0.5",
     "leaflet": "^1.9.4",
+    "marked": "^17.0.4",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-leaflet": "^5.0.0",

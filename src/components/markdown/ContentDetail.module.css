@@ -1,0 +1,517 @@
+/* ContentDetail.module.css — Editorial magazine style + CSF Field Report */
+
+.page {
+  min-height: 100vh;
+  background: #f4f4f2;
+  /* Pull page up to eliminate gap under sticky header */
+  margin-top: -112px;
+}
+
+/* ── Hero band ────────────────────────────────────────────── */
+.heroBand {
+  position: relative;
+  width: 100%;
+  min-height: 680px;
+  background: #1b3a1f;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  /* Pad top so content clears the header */
+  padding-top: 112px;
+}
+
+.heroImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.4;
+}
+
+.heroOverlay {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  background: linear-gradient(
+    to top,
+    rgba(10, 32, 12, 0.98) 0%,
+    rgba(10, 32, 12, 0.8) 50%,
+    transparent 100%
+  );
+  padding: 5rem 0 4.5rem;
+}
+
+.heroInner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 6rem;
+}
+
+.heroBackLink {
+  display: inline-block;
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin-bottom: 1.5rem;
+  font-family: sans-serif;
+  transition: color 0.15s;
+}
+.heroBackLink:hover { color: #fff; }
+
+.heroCategory {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #fff;
+  background: #2e7d32;
+  padding: 0.3rem 0.85rem;
+  border-radius: 3px;
+  margin-bottom: 1.25rem;
+  font-family: sans-serif;
+}
+
+.heroTitle {
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.15;
+  margin: 0 0 1.25rem;
+  font-family: Georgia, 'Times New Roman', serif;
+  letter-spacing: -0.015em;
+  max-width: 860px;
+}
+
+.heroDeck {
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.65;
+  margin: 0 0 1.5rem;
+  font-family: Georgia, serif;
+  font-style: italic;
+  max-width: 740px;
+}
+
+.heroMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: sans-serif;
+}
+
+.heroAuthor {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.9);
+}
+
+.heroDot { color: rgba(255,255,255,0.35); }
+
+.heroDate {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.55);
+}
+
+/* ── Body layout ──────────────────────────────────────────── */
+.bodyLayout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 2.5rem;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 3.5rem 6rem 6rem;
+  align-items: start;
+}
+
+/* ── Article column ───────────────────────────────────────── */
+.article {
+  background: #fff;
+  border-radius: 10px;
+  padding: 3rem 3.5rem;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.07);
+}
+
+/* Drop cap on first paragraph */
+.body > :global(p):first-child::first-letter {
+  float: left;
+  font-size: 4.5rem;
+  line-height: 0.72;
+  font-weight: 800;
+  color: #2e7d32;
+  margin: 0.08em 0.12em 0 0;
+  font-family: Georgia, serif;
+}
+
+.body :global(h2) {
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 2.5rem 0 0.85rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e8f5e9;
+  font-family: Georgia, serif;
+}
+
+.body :global(h3) {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2e7d32;
+  margin: 2rem 0 0.6rem;
+  font-family: Georgia, serif;
+}
+
+.body :global(p) {
+  font-size: 1.1rem;
+  line-height: 1.85;
+  color: #2a2a2a;
+  margin: 0 0 1.5em;
+  font-family: Georgia, serif;
+}
+
+.body :global(blockquote) {
+  border-left: 5px solid #2e7d32;
+  background: #f0faf0;
+  margin: 2.5rem -2rem;
+  padding: 1.5rem 2rem;
+  border-radius: 0 8px 8px 0;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #1b5e20;
+  line-height: 1.7;
+  font-family: Georgia, serif;
+}
+
+.body :global(ul),
+.body :global(ol) {
+  padding-left: 1.75rem;
+  margin-bottom: 1.5em;
+}
+
+.body :global(li) {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #2a2a2a;
+  margin-bottom: 0.55em;
+  font-family: Georgia, serif;
+}
+
+.body :global(a) {
+  color: #2e7d32;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.body :global(hr) {
+  border: none;
+  border-top: 2px solid #e8f5e9;
+  margin: 3rem 0;
+}
+
+.body :global(img) {
+  width: calc(100% + 7rem);
+  margin-left: -3.5rem;
+  max-width: none;
+  border-radius: 0;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* ── Author card ──────────────────────────────────────────── */
+.authorCard {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+}
+
+.authorAvatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #2e7d32;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: Georgia, serif;
+}
+
+.authorName {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 0.2rem;
+  font-family: sans-serif;
+}
+
+.authorRole {
+  font-size: 0.85rem;
+  color: #888;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+/* ── Prev / Next ──────────────────────────────────────────── */
+.prevNext {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+}
+
+.prevNextItem { flex: 1; }
+.nextItem { text-align: right; }
+
+.navLink {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.navDirection {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #2e7d32;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-family: sans-serif;
+}
+
+.navTitle {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.4;
+  font-family: sans-serif;
+}
+
+.navLink:hover .navTitle { text-decoration: underline; }
+
+/* ── Sidebar ──────────────────────────────────────────────── */
+.sidebar {
+  position: sticky;
+  top: 130px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.sidebarBox {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+  border: 1px solid #eeeeee;
+}
+
+.sidebarHeading {
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  margin: 0 0 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: sans-serif;
+  padding-bottom: 0.7rem;
+  border-bottom: 2px solid #e8f5e9;
+}
+
+.sidebarIcon { font-size: 1rem; }
+
+.sidebarSubtext {
+  font-size: 0.82rem;
+  color: #888;
+  margin: 0 0 1rem;
+  line-height: 1.55;
+  font-family: sans-serif;
+}
+
+.toolList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.toolLink {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  padding: 0.55rem 0.7rem;
+  border-radius: 7px;
+  transition: background 0.15s;
+}
+.toolLink:hover { background: #f0faf0; }
+
+.toolEmoji { font-size: 1.1rem; flex-shrink: 0; }
+
+.toolName {
+  font-size: 0.86rem;
+  color: #1a1a1a;
+  font-weight: 600;
+  line-height: 1.35;
+  font-family: sans-serif;
+}
+
+.allToolsLink {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #2e7d32;
+  text-decoration: none;
+  text-align: right;
+  font-family: sans-serif;
+}
+.allToolsLink:hover { text-decoration: underline; }
+
+/* Recent articles */
+.recentList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recentItem {
+  border-bottom: 1px solid #f2f2f2;
+}
+.recentItem:last-child { border-bottom: none; }
+
+.recentLink {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.8rem 0;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.15s;
+}
+.recentLink:hover { opacity: 0.65; }
+
+.recentCategory {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #2e7d32;
+  font-family: sans-serif;
+}
+
+.recentTitle {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  line-height: 1.4;
+  font-family: sans-serif;
+}
+
+.recentDate {
+  font-size: 0.74rem;
+  color: #bbb;
+  font-family: sans-serif;
+}
+
+/* Field notes box */
+.fieldNotesBox {
+  background: linear-gradient(145deg, #1b5e20, #2e7d32);
+  border: none;
+  box-shadow: 0 4px 18px rgba(46,125,50,0.25);
+}
+
+.fieldNotesLabel {
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  margin: 0 0 0.65rem;
+  font-family: sans-serif;
+}
+
+.fieldNotesText {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.92);
+  line-height: 1.65;
+  margin: 0 0 1.1rem;
+  font-family: sans-serif;
+}
+
+.fieldNotesLink {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  border: 1.5px solid rgba(255,255,255,0.5);
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+  transition: background 0.15s;
+  font-family: sans-serif;
+}
+.fieldNotesLink:hover { background: rgba(255,255,255,0.18); }
+
+/* ── Not found ────────────────────────────────────────────── */
+.notFound {
+  padding: 5rem 0;
+  text-align: center;
+  color: #666;
+  font-family: sans-serif;
+}
+
+.backLink {
+  display: inline-block;
+  color: #2e7d32;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .heroInner { padding: 0 3rem; }
+  .bodyLayout { padding: 3rem 3rem 5rem; }
+}
+
+@media (max-width: 1000px) {
+  .bodyLayout {
+    grid-template-columns: 1fr;
+    padding: 2.5rem 2rem 4rem;
+  }
+  .sidebar { position: static; top: auto; }
+  .body :global(img) {
+    width: 100%;
+    margin-left: 0;
+    border-radius: 6px;
+  }
+  .body :global(blockquote) { margin: 2rem 0; }
+  .page { margin-top: 0; }
+  .heroBand { padding-top: 0; }
+}
+
+@media (max-width: 600px) {
+  .heroBand { min-height: 460px; }
+  .heroInner { padding: 0 1.5rem; }
+  .heroTitle { font-size: 1.75rem; }
+  .heroDeck { font-size: 1rem; }
+  .article { padding: 1.75rem 1.5rem; }
+  .bodyLayout { padding: 1.5rem 1rem 3rem; }
+}

@@ -1,0 +1,91 @@
+/* src/components/markdown/ResourceDetail.module.css */
+
+.page {
+  min-height: 100vh;
+  padding: 2rem 0 4rem;
+}
+
+.backLink {
+  display: inline-block;
+  color: #2e7d32;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 1.75rem;
+  transition: opacity 0.15s;
+}
+
+.backLink:hover { opacity: 0.7; }
+
+.article {
+  max-width: 760px;
+}
+
+/* ── Header ──────────────────────────────────────────────── */
+.header {
+  margin-bottom: 1.5rem;
+}
+
+.category {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #2e7d32;
+  background: #e8f5e9;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+}
+
+.title {
+  font-size: 1.9rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+/* ── Visit button ────────────────────────────────────────── */
+.visitBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.75rem 1.75rem;
+  background: #2e7d32;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(46, 125, 50, 0.25);
+}
+
+.visitBtn:hover {
+  background: #1b5e20;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(46, 125, 50, 0.3);
+}
+
+/* ── Body ────────────────────────────────────────────────── */
+.body {
+  border-top: 1px solid #eee;
+  padding-top: 1.5rem;
+}
+
+/* ── Bottom CTA ──────────────────────────────────────────── */
+.bottomCta {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+}
+
+/* ── Not found ───────────────────────────────────────────── */
+.notFound {
+  padding: 4rem 0;
+  text-align: center;
+  color: #666;
+}

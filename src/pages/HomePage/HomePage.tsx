@@ -6,15 +6,13 @@ import ToolsSection from '../../components/sections/ToolsSection/ToolsSection';
 import MapSection from '../../components/sections/MapSection/MapSection';
 import ResourcesSection from '../../components/sections/ResourcesSection/ResourcesSection';
 import { CarouselSlides } from '../../data/Carousel';
-import { decisionTools } from '../../data/decisionTools';
-import { climateTools } from '../../data/climateTools';
 import styles from './HomePage.module.css';
 
 const HomePage: React.FC = () => {
   return (
     <div className={styles.homePage}>
-
       <main className={styles.mainContent}>
+
         {/* Carousel Banner */}
         <Carousel slides={CarouselSlides} autoPlayInterval={5000} />
 
@@ -24,18 +22,11 @@ const HomePage: React.FC = () => {
           subtitle="Why Climate Smart Farming?"
         />
 
-        {/* CSF Decision Tools Section */}
+        {/* CSF Tools Section */}
         <ToolsSection
-          title="CSF Decision Tools"
-          tools={decisionTools}
-          viewAllLink="/tools/decision"
-        />
-
-        {/* CSF Climate Tools Section */}
-        <ToolsSection
-          title="CSF Climate Tools"
-          tools={climateTools}
-          viewAllLink="/tools/climate"
+          title="CSF Tools"
+          maxTools={6}
+          viewAllLink="/tools"
         />
 
         {/* Network Map Section */}
@@ -47,8 +38,8 @@ const HomePage: React.FC = () => {
           maxResources={6}
           featuredOnly={true}
         />
-      </main>
 
+      </main>
     </div>
   );
 };

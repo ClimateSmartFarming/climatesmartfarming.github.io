@@ -23,40 +23,39 @@ const navigationItems: NavigationItem[] = [
   },
   {
     label: 'CSF Tools',
-    dropdown: [
-      { label: 'CSF Decision Tools', href: '/tools/decision' },
-      { label: 'CSF Climate Tools', href: '/tools/climate' },
-    ]
+    href: '/tools'
   },
   {
     label: 'Extension Materials',
     dropdown: [
-      { label: 'Explore Our Network', href: '/network' },
       { label: 'Programs', href: '/programs' },
-      { label: 'Videos and Webinars', href: '/videos' },
+      { label: 'Videos & Webinars', href: '/videos' },
+      { label: 'Explore Our Network', href: '/network' },
+      { label: 'Fact Sheets', href: '/fact-sheets' },
+      { label: 'Projects', href: '/projects' },
+      { label: 'Climate Impacts', href: '/climate-impacts' },
+    ]
+  },
+  {
+    label: 'Community News & Stories',
+    dropdown: [
+      { label: 'News', href: '/news' },
+      { label: 'Blog', href: '/blog' },
+      { label: 'Farmer Stories', href: '/farmer-stories' },
     ]
   },
   {
     label: 'Additional Resources',
     dropdown: [
       { label: 'External Resources', href: '/resources/external' },
-      { label: 'Videos', href: '/videos' },
     ]
   },
   {
     label: 'About',
     dropdown: [
       { label: 'About Us', href: '/about' },
-      { label: 'Climate Impacts', href: '/climate-impacts' },
-      { label: 'Meet Our Collaborators', href: '/collaborators' },
-      { label: 'News & Updates', href: '/news' },
-    ]
-  },
-  {
-    label: 'Contact',
-    dropdown: [
+      { label: 'Our Network', href: '/network' },
       { label: 'Contact Us', href: '/contact' },
-      { label: 'Find Your Extension Associate', href: '/network' },
     ]
   },
 ];
@@ -66,21 +65,10 @@ const Header: React.FC = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [logoError, setLogoError] = useState(false);
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
-  const handleMouseEnter = (label: string) => {
-    setActiveDropdown(label);
-  };
-
-  const handleMouseLeave = () => {
-    setActiveDropdown(null);
-  };
-
-  const handleLogoError = () => {
-    setLogoError(true);
-  };
+  const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+  const handleMouseEnter = (label: string) => setActiveDropdown(label);
+  const handleMouseLeave = () => setActiveDropdown(null);
+  const handleLogoError = () => setLogoError(true);
 
   return (
     <header className={styles.header}>

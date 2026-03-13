@@ -1,84 +1,127 @@
-import React from 'react';
-import HeroSection from '../../components/sections/HeroSection/HeroSection';
-import styles from '../HomePage/HomePage.module.css';
-import Container from '../../components/common/Container/Container';
+import { useMemo } from 'react';
+import { useMarkdownContent } from '../../hooks/useMarkdownContent';
+import { marked } from 'marked';
+import styles from './AboutPage.module.css';
 
-const AboutPage: React.FC = () => {
+const files = import.meta.glob('/src/content/about/*.md', {
+  eager: true, query: '?raw', import: 'default',
+}) as Record<string, string>;
+
+const PILLARS = [
+  {
+    icon: '📈',
+    label: 'Productivity',
+    desc: 'Increase agricultural productivity and farming incomes sustainably',
+  },
+  {
+    icon: '🌱',
+    label: 'Mitigation',
+    desc: 'Reduce greenhouse gas emissions through best management practices and renewable energy',
+  },
+  {
+    icon: '🛡',
+    label: 'Resiliency',
+    desc: 'Increase farm resilience to extreme weather through climate change adaptation practices',
+  },
+];
+
+export default function AboutPage() {
+  const { items } = useMarkdownContent(files);
+
+  const { meta, html } = useMemo(() => {
+    const item = items[0];
+    if (!item) return { meta: {}, html: '<p>Content coming soon.</p>' };
+    return {
+      meta: item.meta,
+      html: marked(item.body) as string,
+    };
+  }, [items]);
+
   return (
-    <div className={styles.homePage}>
+    <div className={styles.page}>
+      <div
+        className={styles.hero}
+        style={meta.image ? { backgroundImage: `url(${meta.image})` } : {}}
+      >
+        <div className={styles.heroOverlay} />
+        <div className={styles.heroInner}>
+          <p className={styles.heroEyebrow}>Cornell Climate Smart Farming</p>
+          <h1 className={styles.heroTitle}>About Our Program</h1>
+          <div className={styles.heroDivider} />
+          <p className={styles.heroTagline}>
+            Empowering Northeast farmers with science-based tools and strategies for a changing climate
+          </p>
+        </div>
+      </div>
 
-        <main className={styles.mainContent}>
-            <HeroSection
-              title="About Us"
-            />
+      <div className={styles.pillarsBar}>
+        <div className={styles.pillarsInner}>
+          {PILLARS.map(p => (
+            <div key={p.label} className={styles.pillar}>
+              <span className={styles.pillarIcon}>{p.icon}</span>
+              <strong className={styles.pillarLabel}>{p.label}</strong>
+              <p className={styles.pillarDesc}>{p.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
 
-            <Container>
-                <img src="https://climatesmartfarming.org/wp-content/uploads/2015/10/LauraMcDermottfield-240x176.jpg"
-                     alt="LauraMcDermottfield" width="240" height="176"/>
+      <div className={styles.body}>
+        <div className={styles.contentWrap}>
+          <blockquote className={styles.pullQuote}>
+            "Our program follows the three pillars of Climate-Smart Agriculture, as defined by the
+            UN Food and Agriculture Organization, and the USDA's Climate-Smart Agriculture and
+            Forestry Initiative."
+          </blockquote>
 
-                <h3>
-                    The Cornell Climate Smart Farming program is a voluntary initiative that
-                    helps farmers in New York and the Northeastern US to:
-                </h3>
+          <div className={styles.imageContentRow}>
+            <div className={styles.imageBlock}>
+              <img
+                src={meta.image || '/images/about/about-hero.jpg'}
+                alt="Cornell Climate Smart Farming Program"
+                className={styles.featuredImage}
+              />
+              <div className={styles.imageCaption}>
+                Cornell University researchers and extension specialists work directly with farmers across New York State.
+              </div>
+            </div>
+            <div className={styles.introText}>
+              <h2 className={styles.sectionTitle}>A Trusted Partner for Farmers</h2>
+              <p>
+                The Cornell Climate Smart Farming program is a voluntary initiative helping farmers
+                across New York and the Northeastern United States navigate the challenges and
+                opportunities of a changing climate — through cutting-edge research, practical
+                extension outreach, and free digital decision-support tools.
+              </p>
+              <p>
+                Working in partnership with climate scientists and agriculture researchers at Cornell
+                University and other Land Grant Universities in the Northeast, our network draws on
+                the latest science to answer producers' questions about farming and management
+                practices that can reduce risks and help them adapt.
+              </p>
+              <a href="/network" className={styles.ctaLink}>Meet the CSF Network →</a>
+            </div>
+          </div>
 
-                <ul>
-                    <li>Increase agricultural productivity and farming incomes sustainably</li>
-                    <li>Reduce greenhouse gas emissions from agricultural production through adoption of best
-                        management practices, increased energy efficiency, use of renewable energy, and increased
-                        carbon sequestration
-                    </li>
-                    <li>Increase farm resiliency to extreme weather and climate variability through the adoption of
-                        best management practices for climate change adaptation
-                    </li>
-                </ul>
+          <div
+            className={styles.markdownBody}
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
 
-                <p>
-                    Our program follows the three pillars of <a
-                    href="https://www.fao.org/climate-smart-agriculture/en/">Climate-Smart Agriculture</a>, as
-                    defined by the UN Food and Agriculture Organization, and the USDA’s <a
-                    href="https://www.usda.gov/climate-solutions">Climate-Smart Agriculture and Forestry
-                    Initiative</a>.
-                </p>
-
-                <h3>
-                    Research and Extension Specialists can help farmers to:
-                </h3>
-
-                <ul>
-                    <li>Identify on-farm vulnerabilities to extreme weather and variability; inventory energy use
-                        and greenhouse gas (GHG) emissions on the farm; set goals and plan for adaptation,
-                        mitigation, and increased carbon sequestration
-                    </li>
-                    <li>Increase on-farm adaptation through best management practices, including cropping systems,
-                        IPM, land-use planning, and water resource management
-                    </li>
-                    <li>Upgrade infrastructure, such as cooling, irrigation, drainage, and waste management systems
-                        for increased resiliency
-                    </li>
-                    <li>Increase&nbsp;farm energy efficiency and install renewable energy systems on the farm, which
-                        can contribute to cost savings
-                    </li>
-                    <li>Adopt best management practices to reduce GHG emissions and sequester carbon through
-                        Cornell-recommended practices (e.g. soil health, cover crops, low-till practices)
-                    </li>
-                    <li>Improve on-farm recycling, solid waste disposal, and nutrient management practices</li>
-                    <li>Utilize new climate-smart agricultural decision support tools with Cornell University</li>
-                    <li>Support local food and climate-smart initiatives in the surrounding community</li>
-                    <li>Inform and inspire other farmers to be leaders and innovators through peer-to-peer
-                        information exchange and recognition
-                    </li>
-                </ul>
-                <p>
-                    <strong>For more information, contact the CSF Program at:<br/>
-                        <a href="mailto:climatesmartsolutions@gmail.com">climatesmartsolutions@gmail.com</a>
-                    </strong>
-                </p>
-            </Container>
-
-        </main>
-
+          <div className={styles.contactCta}>
+            <div className={styles.contactCtaInner}>
+              <h3>Get In Touch</h3>
+              <p>
+                For more information about the Cornell Climate Smart Farming Program, reach out to our team directly.
+              </p>
+              <a href="mailto:climatesmartsolutions@gmail.com" className={styles.contactBtn}>
+                climatesmartsolutions@gmail.com
+              </a>
+              <a href="/contact" className={styles.contactBtnSecondary}>Visit Contact Page →</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
-};
-
-export default AboutPage;
+}

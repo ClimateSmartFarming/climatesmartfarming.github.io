@@ -1,23 +1,22 @@
 // src/components/sections/ToolsSection/ToolsSection.tsx
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { featuredTools } from '../../../data/tools';
 import styles from './ToolsSection.module.css';
-
-interface Tool {
-  id: string;
-  title: string;
-  description: string;
-  icon: string;
-  link: string;
-}
 
 interface ToolsSectionProps {
   title: string;
-  tools: Tool[];
+  maxTools?: number;
   viewAllLink?: string;
 }
 
-const ToolsSection: React.FC<ToolsSectionProps> = ({ title, tools, viewAllLink }) => {
+const ToolsSection: React.FC<ToolsSectionProps> = ({
+  title,
+  maxTools = 6,
+  viewAllLink = '/tools',
+}) => {
+  const toolsToShow = featuredTools.slice(0, maxTools);
+
   return (
     <section className={styles.toolsSection}>
       <div className={styles.toolsContainer}>
@@ -29,12 +28,11 @@ const ToolsSection: React.FC<ToolsSectionProps> = ({ title, tools, viewAllLink }
             </Link>
           )}
         </div>
-
         <div className={styles.toolsGrid}>
-          {tools.map((tool) => (
+          {toolsToShow.map((tool) => (
             <Link
               key={tool.id}
-              to={tool.link}
+              to={`/tools/${tool.id}`}
               className={styles.toolCard}
             >
               <div className={styles.toolIcon}>{tool.icon}</div>

@@ -1,44 +1,55 @@
-import VideosPage from './pages/VideosPage/VideosPage';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HomePage from "./pages/HomePage/HomePage";
-import AboutPage from "./pages/AboutPage/AboutPage";
-import NewsPage from "./pages/NewsPage/NewsPage";
-import NewsArticlePage from "./pages/NewsPage/NewsArticlePage";
-import ProgramsPage from "./pages/ProgramsPage/ProgramsPage";
-import ToolsSummaryPage from "./pages/ToolsPage/ToolsSummaryPage";
-import ToolPage from './pages/ToolsPage/ToolPage';
-import DecisionToolsPage from './pages/DecisionToolsPage/DecisionToolsPage';
-import ClimateToolsPage from './pages/ClimateToolsPage/ClimateToolsPage';
-import Header from "./components/layout/Header/Header";
-import Footer from "./components/layout/Footer/Footer";
-import ExternalResourcesPage from './pages/ExternalResourcesPage/ExternalResourcesPage';
-import ClimateImpactsPage from './pages/ClimateImpactsPage/ClimateImpactsPage';
+// src/App.tsx
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import HomePage from './pages/HomePage/HomePage';
+import AboutPage from './pages/AboutPage/AboutPage';
+import NetworkPage from './pages/NetworkPage/NetworkPage';
 import ContactPage from './pages/ContactPage/ContactPage';
-import NetworkMapPage from './pages/NetworkMapPage/NetworkMapPage';
-
-
+import NewsPage from './pages/NewsPage/NewsPage';
+import NewsArticlePage from './pages/NewsPage/NewsArticlePage';
+import ProgramsPage from './pages/ProgramsPage/ProgramsPage';
+import ToolsSummaryPage from './pages/ToolsPage/ToolsSummaryPage';
+import ToolPage from './pages/ToolsPage/ToolPage';
+import ExternalResourcesPage from './pages/ExternalResourcesPage/ExternalResourcesPage';
+import ResourceDetailPage from './pages/ExternalResourcesPage/ResourceDetailPage';
+import ClimateImpactsPage from './pages/ClimateImpactsPage/ClimateImpactsPage';
+import BlogPage from './pages/BlogPage/BlogPage';
+import BlogArticlePage from './pages/BlogPage/BlogArticlePage';
+import FarmerStoriesPage from './pages/FarmerStoriesPage/FarmerStoriesPage';
+import FarmerStoryPage from './pages/FarmerStoriesPage/FarmerStoryPage';
+import FactSheetsPage from './pages/FactSheetsPage/FactSheetsPage';
+import ProjectsPage from './pages/ProjectsPage/ProjectsPage';
+import ProjectDetailPage from './pages/ProjectsPage/ProjectDetailPage';
+import Header from './components/layout/Header/Header';
+import Footer from './components/layout/Footer/Footer';
 
 function App() {
   return (
     <Router>
-      <Header/>
-          <Routes>
-              <Route path="/videos" element={<VideosPage />} />
-              <Route path="/" element={<HomePage />} />
-              <Route path="/about" element={<AboutPage />} />
-              <Route path="/news" element={<NewsPage />} />
-              <Route path="/news/:id" element={<NewsArticlePage />} />
-              <Route path="/programs" element={<ProgramsPage />} />
-              <Route path="/tools" element={<ToolsSummaryPage />} />
-              <Route path="/tools/:id" element={<ToolPage />} />
-              <Route path="/tools/decision" element={<DecisionToolsPage />} />
-              <Route path="/resources/external" element={<ExternalResourcesPage />} />
-              <Route path="/tools/climate" element={<ClimateToolsPage />} />
-              <Route path="/climate-impacts" element={<ClimateImpactsPage />} />
-              <Route path="/contact" element={<ContactPage />} />
-              <Route path="/network" element={<NetworkMapPage />} />
-          </Routes>
-      <Footer/>
+      <Header />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/network" element={<NetworkPage />} />
+        <Route path="/news" element={<NewsPage />} />
+        <Route path="/news/:id" element={<NewsArticlePage />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:id" element={<BlogArticlePage />} />
+        <Route path="/farmer-stories" element={<FarmerStoriesPage />} />
+        <Route path="/farmer-stories/:id" element={<FarmerStoryPage />} />
+        <Route path="/fact-sheets" element={<FactSheetsPage />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/projects/:id" element={<ProjectDetailPage />} />
+        <Route path="/programs" element={<ProgramsPage />} />
+        <Route path="/tools" element={<ToolsSummaryPage />} />
+        <Route path="/tools/:id" element={<ToolPage />} />
+        <Route path="/tools/decision" element={<Navigate to="/tools" replace />} />
+        <Route path="/tools/climate" element={<Navigate to="/tools" replace />} />
+        <Route path="/resources/external" element={<ExternalResourcesPage />} />
+        <Route path="/resources/:id" element={<ResourceDetailPage />} />
+        <Route path="/climate-impacts" element={<ClimateImpactsPage />} />
+      </Routes>
+      <Footer />
     </Router>
   );
 }

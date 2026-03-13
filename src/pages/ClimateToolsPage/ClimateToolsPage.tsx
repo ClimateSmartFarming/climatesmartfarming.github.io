@@ -2,22 +2,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import HeroSection from '../../components/sections/HeroSection/HeroSection';
-import { climateTools } from '../../data/climateTools';
+import { featuredTools } from '../../data/tools';
 import styles from './ClimateToolsPage.module.css';
 import pageStyles from '../HomePage/HomePage.module.css';
 
 const ClimateToolsPage: React.FC = () => {
-  // Group tools by category
-  const categories = Array.from(new Set(climateTools.map(tool => tool.category || 'Other')));
+  const categories = Array.from(new Set(featuredTools.map(tool => tool.category)));
 
   return (
     <div className={pageStyles.homePage}>
       <main className={pageStyles.mainContent}>
         <HeroSection
-          title="CSF Climate Tools"
+          title="CSF Tools"
           subtitle="Monitor weather conditions, track climate trends, and access historical climate data for your region"
         />
-
         <section className={styles.toolsSection}>
           <div className={styles.container}>
             <p className={styles.intro}>
@@ -25,41 +23,30 @@ const ClimateToolsPage: React.FC = () => {
               and future climate projections. Use these tools to track growing degree days, monitor drought conditions,
               understand climate trends, and plan for long-term climate variability.
             </p>
-
             {categories.map((category) => {
-              const categoryTools = climateTools.filter(
-                tool => (tool.category || 'Other') === category
-              );
-
+              const categoryTools = featuredTools.filter(t => t.category === category);
               return (
                 <div key={category} className={styles.categorySection}>
                   <h2 className={styles.categoryTitle}>{category}</h2>
                   <div className={styles.toolsGrid}>
                     {categoryTools.map((tool) => (
-                      <a
+                      <Link
                         key={tool.id}
-                        href={tool.externalLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        to={`/tools/${tool.id}`}
                         className={styles.toolCard}
                       >
                         <div className={styles.toolIcon}>{tool.icon}</div>
                         <h3 className={styles.toolTitle}>{tool.title}</h3>
                         <p className={styles.toolDescription}>{tool.description}</p>
-                        <span className={styles.externalLink}>
-                          Open Tool →
-                        </span>
-                      </a>
+                        <span className={styles.externalLink}>Open Tool →</span>
+                      </Link>
                     ))}
                   </div>
                 </div>
               );
             })}
-
             <div className={styles.backSection}>
-              <Link to="/" className={styles.backLink}>
-                ← Back to Home
-              </Link>
+              <Link to="/tools" className={styles.backLink}>← Back to Tools</Link>
             </div>
           </div>
         </section>
