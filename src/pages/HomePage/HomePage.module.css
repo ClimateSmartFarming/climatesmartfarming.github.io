@@ -1,32 +1,1423 @@
+/* HomePage.module.css - Option 3 Palette Applied */
+
+/* ===== LAYOUT ===== */
 .homePage {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  flex: 1 0 auto;
 }
 
 .mainContent {
-  flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-/* Ensure smooth scrolling for navigation */
-html {
-  scroll-behavior: smooth;
+/* ===== SECTION HEADERS ===== */
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
 }
 
-/* Add spacing for fixed header */
-.mainContent > section:first-child {
-  scroll-margin-top: var(--header-height);
+.sectionTitle {
+  font-family: var(--font-sans, 'Source Sans 3', system-ui, sans-serif);
+  font-size: var(--text-3xl, 2rem);
+  font-weight: 700;
+  color: var(--color-forest, #3D5A45);
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.01em;
 }
 
-/* Print styles */
-@media print {
-  .homePage {
+.sectionSubtitle {
+  font-family: var(--font-serif, Georgia, serif);
+  color: var(--color-text-muted, #6B6E68);
+  font-size: 1.1875rem; /* #1: Body paragraphs bumped to 19px */
+  line-height: 1.7;
+  margin: 0;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sectionHeaderRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.viewAllLink {
+  font-family: var(--font-sans, 'Source Sans 3', system-ui, sans-serif);
+  color: var(--color-gold, #A98B3F);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem; /* #1: Links at 16px */
+}
+
+.viewAllLink:hover {
+  color: var(--color-gold-hover, #8a7232);
+  text-decoration: underline;
+}
+
+/* ===== TOOLS SECTION - Warm Stone Background ===== */
+.toolsSection {
+  padding: var(--section-gap, 5rem) 0;
+  background: var(--color-stone-bg, #F5F4F0);
+}
+
+/* ===== SEASONAL SPOTLIGHT BAND ===== */
+.seasonalBand {
+  background: var(--color-bg-band, #EAF0E8);
+  border: 1px solid var(--color-border-band, #d7e0d4);
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin-bottom: 3rem;
+}
+
+.seasonPill {
+  display: inline-block;
+  background: var(--color-forest, #3D5A45);
+  color: #fff;
+  font-family: var(--font-sans, 'Source Sans 3', system-ui, sans-serif);
+  font-size: var(--text-sm, 0.9375rem);
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  letter-spacing: 0.02em;
+}
+
+.heroStrip {
+  display: flex;
+  background: #fff;
+  border: 1px solid #dce4d9;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  min-height: 280px;
+  transition: box-shadow 0.2s ease;
+}
+
+.heroStrip:hover {
+  box-shadow: 0 6px 24px rgba(61, 90, 69, 0.12);
+}
+
+/* Hero Text Side - 60% */
+.heroText {
+  flex: 0 0 60%;
+  padding: 32px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.heroRotationTag {
+  font-family: var(--font-sans, 'Source Sans 3', system-ui, sans-serif);
+  font-size: 1rem; /* #1: Meta text at 16px */
+  font-weight: 600;
+  color: var(--color-text-muted, #6B6E68);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+}
+
+.heroTitle {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: var(--color-forest, #3D5A45);
+  margin: 0 0 16px 0;
+  line-height: 1.3;
+}
+
+.heroDescription {
+  font-family: var(--font-sans, 'Source Sans 3', system-ui, sans-serif);
+  font-size: 1.1875rem; /* #1: Body paragraphs at 19px */
+  color: var(--color-text-muted, #6B6E68);
+  line-height: 1.65;
+  margin: 0 0 24px 0;
+}
+
+.heroLink {
+  font-family: var(--font-sans, 'Source Sans 3', system-ui, sans-serif);
+  font-size: 1rem; /* #1: Links at 16px */
+  font-weight: 600;
+  color: var(--color-gold, #A98B3F);
+}
+
+.heroStrip:hover .heroLink {
+  text-decoration: underline;
+}
+
+/* Hero Image Side - 40% */
+.heroImageWrapper {
+  flex: 0 0 40%;
+  min-height: 280px;
+  background: linear-gradient(135deg, var(--color-forest, #3D5A45) 0%, #2a4330 100%);
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Spotlight Navigation */
+.spotlightNav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.navArrow {
+  background: none;
+  border: none;
+  font-size: 1.75rem;
+  color: var(--color-forest, #3D5A45);
+  cursor: pointer;
+  padding: 4px 10px;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.navArrow:hover {
+  color: var(--color-forest-dark, #2a4330);
+}
+
+.navDots {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background: #c2cdbf;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.navDot:hover {
+  background: #9aa897;
+}
+
+.navDotActive {
+  width: 24px;
+  background: var(--color-forest, #3D5A45);
+}
+
+/* ===== FEATURED TOOLS GRID ===== */
+.featuredToolsSection {
+  margin-top: 0.5rem;
+}
+
+.featuredToolsTitle {
+  font-family: var(--font-sans, 'Source Sans 3', system-ui, sans-serif);
+  font-size: var(--text-xl, 1.375rem);
+  font-weight: 600;
+  color: var(--color-forest, #3D5A45);
+  margin: 0 0 1.75rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--color-border-light, #DDE4DC);
+  display: inline-block;
+}
+
+.featuredToolsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--card-gap, 1.75rem);
+}
+
+.featuredToolCard {
+  background: #fff;
+  border: 1px solid var(--color-border, #e0e6dd);
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.featuredToolCard:hover {
+  border-color: var(--color-forest, #3D5A45);
+  box-shadow: 0 8px 28px rgba(61, 90, 69, 0.14);
+  transform: translateY(-4px);
+}
+
+.featuredToolImageWrapper {
+  height: 200px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--color-forest, #3D5A45) 0%, #2a4330 100%);
+}
+
+.featuredToolImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featuredToolContent {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.featuredToolTitle {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 1.375rem; /* #1: Card titles bumped */
+  font-weight: 400;
+  color: var(--color-forest, #3D5A45);
+  margin: 0 0 0.75rem 0;
+  line-height: 1.3;
+}
+
+.featuredToolDescription {
+  font-family: var(--font-sans, 'Source Sans 3', system-ui, sans-serif);
+  color: var(--color-text-muted, #6B6E68);
+  font-size: 1.0625rem; /* #1: Card descriptions at 17px */
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0 0 1.25rem 0;
+  flex-grow: 1;
+}
+
+.featuredToolLink {
+  font-family: var(--font-sans, 'Source Sans 3', system-ui, sans-serif);
+  color: var(--color-gold, #A98B3F);
+  font-size: 1rem; /* #1: Links at 16px */
+  font-weight: 600;
+}
+
+.featuredToolCard:hover .featuredToolLink {
+  text-decoration: underline;
+}
+
+.viewAllWrapper {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.viewAllButton {
+  display: inline-block;
+  font-family: var(--font-sans, 'Source Sans 3', system-ui, sans-serif);
+  background: var(--color-forest, #3D5A45);
+  color: #fff;
+  padding: 1rem 2.25rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem; /* #1: Buttons at 16px */
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.viewAllButton:hover {
+  background: var(--color-forest-dark, #2a4330);
+  text-decoration: none;
+}
+
+/* ===== RESOURCES SECTION - White Background ===== */
+.resourcesSection {
+  padding: var(--section-gap, 5rem) 0;
+  background: var(--color-bg-white, #FFFFFF);
+}
+
+.resourcesHeader {
+  margin-bottom: 3rem;
+}
+
+.resourcesTitle {
+  font-family: var(--font-sans, 'Source Sans 3', system-ui, sans-serif);
+  font-size: var(--text-3xl, 2rem);
+  font-weight: 700;
+  color: var(--color-forest, #3D5A45);
+  margin: 0;
+  text-align: center;
+}
+
+/* Resource Tabs */
+.resourceTabs {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.resourceTab {
+  position: relative;
+  padding: 1rem 2rem;
+  font-family: var(--font-sans, 'Source Sans 3', system-ui, sans-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-muted, #6B6E68);
+  transition: color 0.2s ease;
+}
+
+/* Top bar - appears when active */
+.resourceTab::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  transition: height 0.2s ease;
+}
+
+/* Bottom bar - always visible */
+.resourceTab::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 12px;
+}
+
+.resourceTab:hover {
+  color: var(--color-forest, #3D5A45);
+}
+
+/* Overview tab - gray */
+.resourceTabOverview {
+  color: #6B6E68;
+}
+.resourceTabOverview::before,
+.resourceTabOverview::after {
+  background: #6B6E68;
+}
+.resourceTabOverview.resourceTabActive::before {
+  height: 12px;
+}
+
+/* Farmer Stories tab - forest green */
+.resourceTabFarmerStory {
+  color: #3D5A45;
+}
+.resourceTabFarmerStory::before,
+.resourceTabFarmerStory::after {
+  background: #3D5A45;
+}
+.resourceTabFarmerStory.resourceTabActive::before {
+  height: 12px;
+}
+
+/* Videos tab - gold */
+.resourceTabVideo {
+  color: #A98B3F;
+}
+.resourceTabVideo::before,
+.resourceTabVideo::after {
+  background: #A98B3F;
+}
+.resourceTabVideo.resourceTabActive::before {
+  height: 12px;
+}
+
+/* Fact Sheets tab - sage */
+.resourceTabFactSheet {
+  color: #8DA290;
+}
+.resourceTabFactSheet::before,
+.resourceTabFactSheet::after {
+  background: #8DA290;
+}
+.resourceTabFactSheet.resourceTabActive::before {
+  height: 12px;
+}
+
+/* Tab Content */
+.resourceTabContent {
+  min-height: 300px;
+}
+
+.resourceTabPanel {
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.resourceTabFooter {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Collapsed view - 3 columns (1 of each) */
+.resourceRowCollapsed {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--card-gap, 1.75rem);
+}
+
+/* Expanded view - 3 columns (3 of selected category) */
+.resourceRowExpanded {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--card-gap, 1.75rem);
+}
+
+/* Color bar on images - 16px (4x the original 4px) */
+.resourceColorBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 16px;
+}
+
+.colorBarFarmerStory {
+  background: #3D5A45;
+}
+
+.colorBarVideo {
+  background: #A98B3F;
+}
+
+.colorBarFactSheet {
+  background: #8DA290;
+}
+
+.resourceBlock {
+  margin-bottom: 3.5rem;
+}
+
+.resourceBlock:last-child {
+  margin-bottom: 0;
+}
+
+.resourceBlockHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-border, #e0e6dd);
+}
+
+.resourceBlockTitle {
+  font-family: var(--font-sans, 'Source Sans 3', system-ui, sans-serif);
+  font-size: var(--text-2xl, 1.5rem);
+  font-weight: 600;
+  color: var(--color-forest, #3D5A45);
+  margin: 0;
+}
+
+.resourceBlockLink {
+  font-family: var(--font-sans, 'Source Sans 3', system-ui, sans-serif);
+  color: var(--color-gold, #A98B3F);
+  text-decoration: none;
+  font-size: 1rem; /* #1: Links at 16px */
+  font-weight: 600;
+}
+
+.resourceBlockLink:hover {
+  text-decoration: underline;
+}
+
+/* #3: Resource cards with category color accents */
+.resourceImageCard {
+  background: #fff;
+  border: 1px solid #e3e2db;
+  border-left: 16px solid var(--color-forest, #3D5A45); /* Match bottom bar thickness */
+  border-radius: 0 10px 10px 0; /* Square left, rounded right */
+  overflow: hidden;
+  text-decoration: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.resourceImageCard:hover {
+  border-color: #e3e2db;
+  border-left-color: var(--color-forest, #3D5A45);
+  box-shadow: 0 6px 20px rgba(61, 90, 69, 0.1);
+}
+
+/* Category-specific accent colors - 16px left border */
+.resourceImageCard[data-category="farmer-story"] {
+  border-left-color: #3D5A45; /* Forest green */
+}
+
+.resourceImageCard[data-category="video"] {
+  border-left-color: #A98B3F; /* Gold */
+}
+
+.resourceImageCard[data-category="fact-sheet"] {
+  border-left-color: #8DA290; /* Sage */
+}
+
+.resourceImageWrapper {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #f0f2ef;
+}
+
+.resourceImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.videoPlayOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.resourceImageCard:hover .videoPlayOverlay {
+  opacity: 1;
+}
+
+.videoPlayButton {
+  width: 56px;
+  height: 56px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.375rem;
+  color: var(--color-forest, #3D5A45);
+}
+
+.videoCategoryBadge,
+.factSheetBadge {
+  position: absolute;
+  bottom: 0.625rem;
+  left: 0.625rem;
+  background: rgba(61, 90, 69, 0.92);
+  color: #fff;
+  font-family: var(--font-sans, 'Source Sans 3', system-ui, sans-serif);
+  font-size: var(--text-xs, 0.8125rem);
+  font-weight: 600;
+  padding: 0.35rem 0.7rem;
+  border-radius: 4px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.resourceImageContent {
+  padding: 1.25rem 1.375rem;
+}
+
+/* #3: Category label above title */
+.resourceCategoryLabel {
+  display: block;
+  font-family: var(--font-sans, 'Source Sans 3', system-ui, sans-serif);
+  font-size: 1.25rem; /* 100% increase from 0.625rem */
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.resourceCategoryLabel.farmerStory {
+  color: #3D5A45; /* Forest green */
+}
+
+.resourceCategoryLabel.video {
+  color: #A98B3F; /* Gold */
+}
+
+.resourceCategoryLabel.factSheet {
+  color: #8DA290; /* Sage */
+}
+
+.resourceMeta {
+  display: block;
+  font-family: var(--font-sans, 'Source Sans 3', system-ui, sans-serif);
+  color: var(--color-gold, #A98B3F);
+  font-size: 1rem; /* #1: Meta text at 16px */
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.resourceImageTitle {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 1.25rem; /* #1: Card titles bumped */
+  font-weight: 400;
+  color: var(--color-forest, #3D5A45);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.resourceExcerpt {
+  font-family: var(--font-sans, 'Source Sans 3', system-ui, sans-serif);
+  color: var(--color-text-muted, #6B6E68);
+  font-size: 1.0625rem; /* #1: Card descriptions at 17px */
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0.625rem 0 0 0;
+}
+
+.resourceLink {
+  font-family: var(--font-sans, 'Source Sans 3', system-ui, sans-serif);
+  color: var(--color-gold, #A98B3F);
+  font-size: 1rem; /* #1: Links at 16px */
+  font-weight: 600;
+  margin-top: 0.75rem;
+  display: inline-block;
+}
+
+/* ===== NEWS SECTION - Stone Background ===== */
+.newsSection {
+  padding: var(--section-gap, 5rem) 0;
+  background: var(--color-stone-bg, #F5F4F0);
+}
+
+.newsGrid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: var(--card-gap, 1.75rem);
+  align-items: stretch;
+}
+
+/* Featured news card (left column) */
+.newsCardFeatured {
+  background: #fff;
+  border: 1px solid #e3e2db;
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.newsCardFeatured:hover {
+  border-color: var(--color-forest, #3D5A45);
+  box-shadow: 0 6px 20px rgba(61, 90, 69, 0.1);
+}
+
+.newsCardFeatured .newsImageWrapper {
+  height: 450px;
+  overflow: hidden;
+  background: #f0f2ef;
+}
+
+.newsCardFeatured .newsImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.newsCardFeatured .newsContent {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.newsCardFeatured .newsDate {
+  font-family: var(--font-sans, 'Source Sans 3', system-ui, sans-serif);
+  color: var(--color-text-light, #8A8D87);
+  font-size: 1.125rem; /* Middle ground */
+  margin-bottom: 0.625rem;
+}
+
+.newsCardFeatured .newsTitle {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 1.625rem; /* Middle ground */
+  font-weight: 400;
+  color: var(--color-forest, #3D5A45);
+  margin: 0 0 0.75rem 0;
+  line-height: 1.35;
+}
+
+.newsCardFeatured .newsExcerpt {
+  font-family: var(--font-sans, 'Source Sans 3', system-ui, sans-serif);
+  color: var(--color-text-muted, #6B6E68);
+  font-size: 1.125rem; /* Middle ground */
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0 0 1.125rem 0;
+  flex-grow: 1;
+}
+
+.newsCardFeatured .newsLink {
+  font-family: var(--font-sans, 'Source Sans 3', system-ui, sans-serif);
+  color: var(--color-gold, #A98B3F);
+  font-size: 1.125rem; /* Middle ground */
+  font-weight: 600;
+}
+
+.newsCardFeatured:hover .newsLink {
+  text-decoration: underline;
+}
+
+/* Stacked news cards (right column - 3 cards) */
+.newsStackedColumn {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--card-gap, 1.75rem) / 2);
+}
+
+.newsCardSmall {
+  background: #fff;
+  border: 1px solid #e3e2db;
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.newsCardSmall:hover {
+  border-color: var(--color-forest, #3D5A45);
+  box-shadow: 0 6px 20px rgba(61, 90, 69, 0.1);
+}
+
+.newsCardSmall .newsImageWrapper {
+  flex: 0 0 187px;
+  min-height: 150px;
+  overflow: hidden;
+  background: #f0f2ef;
+}
+
+.newsCardSmall .newsImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.newsCardSmall .newsContent {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.newsCardSmall .newsDate {
+  font-family: var(--font-sans, 'Source Sans 3', system-ui, sans-serif);
+  color: var(--color-text-light, #8A8D87);
+  font-size: 1.125rem; /* Middle ground */
+  margin-bottom: 0.25rem;
+}
+
+.newsCardSmall .newsTitle {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 1.25rem; /* Middle ground - slightly smaller than featured */
+  font-weight: 400;
+  color: var(--color-forest, #3D5A45);
+  margin: 0 0 0.375rem 0;
+  line-height: 1.3;
+}
+
+.newsCardSmall .newsLink {
+  font-family: var(--font-sans, 'Source Sans 3', system-ui, sans-serif);
+  color: var(--color-gold, #A98B3F);
+  font-size: 1.125rem; /* Middle ground */
+  font-weight: 600;
+}
+
+.newsCardSmall:hover .newsLink {
+  text-decoration: underline;
+}
+
+/* Legacy classes for backwards compatibility */
+.newsCard {
+  background: #fff;
+  border: 1px solid #e3e2db;
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.newsCard:hover {
+  border-color: var(--color-forest, #3D5A45);
+  box-shadow: 0 6px 20px rgba(61, 90, 69, 0.1);
+}
+
+.newsImageWrapper {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #f0f2ef;
+}
+
+.newsImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.newsContent {
+  padding: 1.375rem;
+}
+
+.newsDate {
+  display: block;
+  font-family: var(--font-sans, 'Source Sans 3', system-ui, sans-serif);
+  color: var(--color-text-light, #8A8D87);
+  font-size: 1rem;
+  margin-bottom: 0.625rem;
+}
+
+.newsTitle {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 1.375rem;
+  font-weight: 400;
+  color: var(--color-forest, #3D5A45);
+  margin: 0 0 0.625rem 0;
+  line-height: 1.35;
+}
+
+.newsExcerpt {
+  font-family: var(--font-sans, 'Source Sans 3', system-ui, sans-serif);
+  color: var(--color-text-muted, #6B6E68);
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0 0 1.125rem 0;
+}
+
+.newsLink {
+  font-family: var(--font-sans, 'Source Sans 3', system-ui, sans-serif);
+  color: var(--color-gold, #A98B3F);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.newsCard:hover .newsLink {
+  text-decoration: underline;
+}
+
+/* ===== EXTERNAL RESOURCES SECTION - White Background ===== */
+.externalSection {
+  padding: var(--section-gap, 5rem) 0;
+  background: var(--color-bg-white, #FFFFFF);
+}
+
+.externalGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--card-gap, 1.75rem);
+}
+
+.externalCard {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  background: #fff;
+  border: 1px solid var(--color-border, #e0e6dd);
+  border-radius: 12px;
+  padding: 1.375rem;
+  text-decoration: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.externalCard:hover {
+  border-color: var(--color-forest, #3D5A45);
+  box-shadow: 0 6px 20px rgba(61, 90, 69, 0.1);
+}
+
+.externalImageWrapper {
+  flex-shrink: 0;
+  width: 320px;
+  aspect-ratio: 16 / 10;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f0f2ef;
+}
+
+.externalImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.externalInfo {
+  flex-grow: 1;
+}
+
+.externalInfo h3 {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 1.375rem; /* #1: Card titles bumped */
+  font-weight: 400;
+  color: var(--color-forest, #3D5A45);
+  margin: 0 0 0.625rem 0;
+}
+
+.externalInfo p {
+  font-family: var(--font-sans, 'Source Sans 3', system-ui, sans-serif);
+  color: var(--color-text-muted, #6B6E68);
+  font-size: 1.0625rem; /* #1: Card descriptions at 17px */
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.externalArrow {
+  flex-shrink: 0;
+  font-size: 1.625rem;
+  color: var(--color-gold, #A98B3F);
+}
+
+/* External Resource Tabs */
+.externalTabs {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.externalTab {
+  position: relative;
+  padding: 1rem 1.5rem;
+  font-family: var(--font-sans, 'Source Sans 3', system-ui, sans-serif);
+  font-size: 1.125rem;
+  font-weight: 600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-muted, #6B6E68);
+  transition: color 0.2s ease;
+}
+
+.externalTab::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  background: var(--color-forest, #3D5A45);
+  transition: height 0.2s ease;
+}
+
+.externalTab::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: var(--color-forest, #3D5A45);
+}
+
+.externalTab:hover {
+  color: var(--color-forest, #3D5A45);
+}
+
+/* Overview tab - gray */
+.externalTabOverview {
+  color: #6B6E68;
+}
+.externalTabOverview::before,
+.externalTabOverview::after {
+  background: #6B6E68;
+}
+.externalTabOverview.externalTabActive::before {
+  height: 8px;
+}
+
+/* Dairy, Poultry, and Livestock - rust/brown */
+.externalTabDairy {
+  color: #8B5A2B;
+}
+.externalTabDairy::before,
+.externalTabDairy::after {
+  background: #8B5A2B;
+}
+.externalTabDairy.externalTabActive::before {
+  height: 8px;
+}
+
+/* General - teal */
+.externalTabGeneral {
+  color: #2A7B7B;
+}
+.externalTabGeneral::before,
+.externalTabGeneral::after {
+  background: #2A7B7B;
+}
+.externalTabGeneral.externalTabActive::before {
+  height: 8px;
+}
+
+/* Field Crops - golden wheat */
+.externalTabFieldCrops {
+  color: #B8860B;
+}
+.externalTabFieldCrops::before,
+.externalTabFieldCrops::after {
+  background: #B8860B;
+}
+.externalTabFieldCrops.externalTabActive::before {
+  height: 8px;
+}
+
+/* Multiple Vulnerabilities - deep purple */
+.externalTabMultiple {
+  color: #6B5B7A;
+}
+.externalTabMultiple::before,
+.externalTabMultiple::after {
+  background: #6B5B7A;
+}
+.externalTabMultiple.externalTabActive::before {
+  height: 8px;
+}
+
+/* External Tab Content */
+.externalTabContent {
+  min-height: 280px;
+}
+
+.externalTabFooter {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* External Grid - 4 columns for overview */
+.externalGridFour {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--card-gap, 1.75rem);
+}
+
+/* External Grid - 3 columns for category view */
+.externalGridThree {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--card-gap, 1.75rem);
+}
+
+/* Compact external card for tabbed view */
+.externalCardCompact {
+  background: #fff;
+  border: 1px solid var(--color-border, #e0e6dd);
+  border-left: 8px solid var(--color-forest, #3D5A45);
+  border-radius: 0 10px 10px 0;
+  overflow: hidden;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.externalCardCompact:hover {
+  box-shadow: 0 6px 20px rgba(61, 90, 69, 0.1);
+}
+
+.externalImageWrapperCompact {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #f0f2ef;
+}
+
+.externalImageWrapperCompact::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: var(--color-forest, #3D5A45);
+}
+
+.externalInfoCompact {
+  padding: 1.25rem;
+  flex-grow: 1;
+}
+
+.externalCategoryLabel {
+  display: block;
+  font-family: var(--font-sans, 'Source Sans 3', system-ui, sans-serif);
+  font-size: 1.25rem; /* 100% increase from 0.625rem */
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-forest, #3D5A45);
+  margin-bottom: 0.5rem;
+}
+
+/* Category label colors */
+.externalCategoryLabel.dairy {
+  color: #8B5A2B;
+}
+.externalCategoryLabel.general {
+  color: #2A7B7B;
+}
+.externalCategoryLabel.fieldCrops {
+  color: #B8860B;
+}
+.externalCategoryLabel.multiple {
+  color: #6B5B7A;
+}
+
+/* Category card border colors */
+.externalCardCompact.dairy {
+  border-left-color: #8B5A2B;
+}
+.externalCardCompact.dairy .externalImageWrapperCompact::after {
+  background: #8B5A2B;
+}
+
+.externalCardCompact.general {
+  border-left-color: #2A7B7B;
+}
+.externalCardCompact.general .externalImageWrapperCompact::after {
+  background: #2A7B7B;
+}
+
+.externalCardCompact.fieldCrops {
+  border-left-color: #B8860B;
+}
+.externalCardCompact.fieldCrops .externalImageWrapperCompact::after {
+  background: #B8860B;
+}
+
+.externalCardCompact.multiple {
+  border-left-color: #6B5B7A;
+}
+.externalCardCompact.multiple .externalImageWrapperCompact::after {
+  background: #6B5B7A;
+}
+
+.externalInfoCompact h3 {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 1.4625rem; /* 30% increase from 1.125rem */
+  font-weight: 400;
+  color: var(--color-forest, #3D5A45);
+  margin: 0 0 0.5rem 0;
+  line-height: 1.35;
+}
+
+.externalInfoCompact p {
+  font-family: var(--font-sans, 'Source Sans 3', system-ui, sans-serif);
+  color: var(--color-text-muted, #6B6E68);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1200px) {
+  .externalGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .externalImageWrapper {
+    width: 280px;
+  }
+
+  .externalGridFour {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .featuredToolsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .heroStrip {
+    flex-direction: column;
     min-height: auto;
   }
-  
-  .mainContent {
+
+  .heroText {
     flex: none;
+    order: 2;
+    padding: 24px 28px;
+  }
+
+  .heroImageWrapper {
+    flex: none;
+    height: 220px;
+    order: 1;
+  }
+
+  .newsGrid {
+    grid-template-columns: 1.4fr 1fr;
+  }
+
+  .resourceRowCollapsed,
+  .resourceRowExpanded {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .externalGridThree {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .externalTabs {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .externalTab {
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .toolsSection,
+  .resourcesSection,
+  .newsSection,
+  .externalSection {
+    padding: var(--section-gap-mobile, 3.5rem) 0;
+  }
+
+  .featuredToolsGrid,
+  .resourceRowCollapsed,
+  .resourceRowExpanded,
+  .externalGridFour,
+  .externalGridThree {
+    grid-template-columns: 1fr;
+  }
+
+  /* News collapses to single column on mobile */
+  .newsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .newsStackedColumn {
+    flex-direction: column;
+  }
+
+  .newsCardSmall {
+    flex-direction: column;
+  }
+
+  .newsCardSmall .newsImageWrapper {
+    flex: none;
+    height: 160px;
+  }
+
+  .resourceTabs,
+  .externalTabs {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .resourceTab {
+    padding: 0.875rem 1.5rem;
+    border-radius: 8px;
+  }
+
+  .resourceTab::before {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: auto;
+    width: 0;
+    height: auto;
+  }
+
+  .resourceTab::after {
+    top: 0;
+    bottom: 0;
+    left: auto;
+    right: 0;
+    width: 12px;
+    height: auto;
+    border-radius: 0 8px 8px 0;
+  }
+
+  .resourceTabOverview.resourceTabActive::before,
+  .resourceTabFarmerStory.resourceTabActive::before,
+  .resourceTabVideo.resourceTabActive::before,
+  .resourceTabFactSheet.resourceTabActive::before {
+    width: 12px;
+    border-radius: 8px 0 0 8px;
+  }
+
+  .externalTab {
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+  }
+
+  .externalTab::before {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: auto;
+    width: 0;
+    height: auto;
+  }
+
+  .externalTab::after {
+    top: 0;
+    bottom: 0;
+    left: auto;
+    right: 0;
+    width: 8px;
+    height: auto;
+    border-radius: 0 8px 8px 0;
+  }
+
+  .externalTabActive::before {
+    width: 8px;
+    border-radius: 8px 0 0 8px;
+  }
+
+  .sectionHeaderRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .externalCard {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .externalImageWrapper {
+    width: 100%;
+  }
+
+  .externalArrow {
+    display: none;
+  }
+
+  .seasonalBand {
+    padding: 16px 18px;
+  }
+
+  .heroText {
+    padding: 20px 22px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .heroStrip,
+  .featuredToolCard,
+  .resourceImageCard,
+  .newsCard,
+  .newsCardFeatured,
+  .newsCardSmall,
+  .externalCard {
+    transition: none;
+  }
+
+  .featuredToolCard:hover {
+    transform: none;
   }
 }

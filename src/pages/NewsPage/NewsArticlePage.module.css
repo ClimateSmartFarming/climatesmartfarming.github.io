@@ -1,45 +1,93 @@
+/* ContentDetail.module.css */
+
 .article {
-  max-width: 720px;
-  margin: 48px auto;
-  padding: 0 20px;
+  max-width: min(90%, 1800px);
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 3vw, 3rem);
   font-family: Georgia, serif;
   color: #333;
 }
 
+/* Header section with back link */
+.header {
+  padding: 2rem 0 1.5rem;
+  border-bottom: 3px solid #1a1a1a;
+  margin-bottom: 2.5rem;
+}
+
 .backLink {
-  display: inline-block;
-  margin-bottom: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   color: #2e7d32;
   font-weight: 600;
-  text-decoration: underline;
-  cursor: pointer;
+  font-size: 1rem;
+  text-decoration: none;
+  font-family: sans-serif;
   transition: color 0.2s;
 }
 .backLink:hover {
-  color: #43a047;
+  color: #1b5e20;
+}
+
+/* Article content wrapper - centered with readable width */
+.contentWrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-bottom: 4rem;
 }
 
 .title {
-  font-size: 2rem;
-  color: #2e7d32;
-  font-weight: 700;
-  margin-bottom: 10px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: #1a1a1a;
+  font-weight: 800;
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .date {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #666;
-  display: block;
-  margin-bottom: 20px;
+  font-family: sans-serif;
+}
+
+.author {
+  font-size: 1rem;
+  color: #2e7d32;
+  font-weight: 600;
+  font-family: sans-serif;
+}
+
+.category {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  background: #2e7d32;
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+  font-family: sans-serif;
 }
 
 .imageContainer {
   width: 100%;
   height: auto;
-  margin-bottom: 32px;
+  margin-bottom: 2.5rem;
   overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 3px 12px #cce0ccaa;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 .image {
   width: 100%;
@@ -48,17 +96,130 @@
   object-fit: cover;
 }
 
+/* Article content styles */
+.content {
+  font-size: 1.2rem;
+  line-height: 1.75;
+  color: #333;
+}
+
+.content h1 {
+  display: none; /* Hide the h1 since we show title separately */
+}
+
+.content h2 {
+  font-size: 1.75rem;
+  color: #1a1a1a;
+  font-weight: 700;
+  margin: 2.5rem 0 1rem;
+  line-height: 1.3;
+}
+
+.content h3 {
+  font-size: 1.4rem;
+  color: #1a1a1a;
+  font-weight: 600;
+  margin: 2rem 0 0.75rem;
+  line-height: 1.35;
+}
+
 .content p {
-  margin-bottom: 1.3rem;
-  line-height: 1.6;
-  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.75;
+  font-size: 1.15rem;
 }
 
 .content p a {
   color: #2e7d32;
   text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .content p a:hover {
-  color: #43a047;
+  color: #1b5e20;
+}
+
+.content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin: 2rem 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.content ul,
+.content ol {
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.content li {
+  margin-bottom: 0.75rem;
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+.content blockquote {
+  margin: 2rem 0;
+  padding: 1.5rem 2rem;
+  background: #f5f9f5;
+  border-left: 4px solid #2e7d32;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: #555;
+}
+
+.content blockquote p {
+  margin-bottom: 0;
+}
+
+.content em {
+  font-style: italic;
+}
+
+.content strong {
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .article {
+    padding: 0 1rem;
+  }
+
+  .header {
+    padding: 1.5rem 0 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .contentWrapper {
+    padding-bottom: 3rem;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .content {
+    font-size: 1.1rem;
+  }
+
+  .content p {
+    font-size: 1.05rem;
+  }
+
+  .content h2 {
+    font-size: 1.5rem;
+  }
+
+  .content h3 {
+    font-size: 1.25rem;
+  }
 }

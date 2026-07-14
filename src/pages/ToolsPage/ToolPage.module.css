@@ -10,16 +10,93 @@
   padding: 3rem 2rem;
 }
 
+/* ══════════════════════════════════════════════════════════════════════════ */
+/* ── External Tool Layout (simple like original CSF site) ────────────────── */
+/* ══════════════════════════════════════════════════════════════════════════ */
+
+.externalLayout {
+  max-width: min(90%, 1000px);
+  margin: 0 auto;
+  padding: 2rem clamp(1rem, 3vw, 3rem) 4rem;
+}
+
+.externalTitle {
+  font-family: Georgia, serif;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: #1a2e1a;
+  margin: 0 0 1.5rem;
+  line-height: 1.2;
+}
+
+.externalImageLink {
+  display: block;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.externalImageLink:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  transform: translateY(-2px);
+}
+
+.externalImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.externalBody {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+.externalBody p {
+  margin: 0 0 1.25rem;
+}
+
+.externalBody p:last-child {
+  margin-bottom: 0;
+}
+
+.externalBody a {
+  color: #2e7d32;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.externalBody a:hover {
+  color: #1b5e20;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════ */
+/* ── Iframe Tool Layout (full featured) ──────────────────────────────────── */
+/* ══════════════════════════════════════════════════════════════════════════ */
+
 /* ── Title band ───────────────────────────────────────────────────────────── */
 .titleBand {
-  background: #fff;
+  position: relative;
+  background: url('/images/banner/banner.jpg') center/cover no-repeat;
   border-bottom: 1px solid #e8ede8;
 }
 
+.titleBand::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(248, 250, 248, 0.95) 100%);
+}
+
 .titleBandInner {
-  max-width: 1240px;
+  position: relative;
+  z-index: 1;
+  max-width: min(90%, 1800px);
   margin: 0 auto;
-  padding: 2rem 3rem 2.5rem;
+  padding: 2rem clamp(1rem, 3vw, 3rem) 2.5rem;
 }
 
 .backLink {
@@ -91,8 +168,8 @@
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #b71c1c;
-  background: #ffebee;
+  color: #b45309;
+  background: #fef3c7;
   padding: 0.2rem 0.6rem;
   border-radius: 3px;
 }
@@ -146,11 +223,37 @@
 }
 .linkRepo:hover { color: #1a1a1a; border-color: #999; }
 
+/* ── Detail band ──────────────────────────────────────────────────────────── */
+.detailBand {
+  background: #f0f5f0;
+  border-bottom: 1px solid #e0e8e0;
+}
+
+.detailInner {
+  max-width: min(90%, 1800px);
+  margin: 0 auto;
+  padding: 2rem clamp(1rem, 3vw, 3rem);
+}
+
+.detailBody {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #444;
+}
+
+.detailBody p {
+  margin: 0 0 1rem;
+}
+
+.detailBody p:last-child {
+  margin-bottom: 0;
+}
+
 /* ── Tool area ────────────────────────────────────────────────────────────── */
 .toolArea {
-  max-width: 1240px;
+  max-width: min(90%, 1800px);
   margin: 0 auto;
-  padding: 2rem 3rem 4rem;
+  padding: 2rem clamp(1rem, 3vw, 3rem) 4rem;
 }
 
 /* ── Iframe ───────────────────────────────────────────────────────────────── */
@@ -200,22 +303,7 @@
   color: #888;
 }
 
-/* ── External only ────────────────────────────────────────────────────────── */
-.externalOnly {
-  background: #fff;
-  border-radius: 10px;
-  padding: 4rem;
-  text-align: center;
-  border: 1px solid #e0e0e0;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
-}
-
-.externalNote {
-  font-size: 1rem;
-  color: #666;
-  margin: 0 0 2rem;
-}
-
+/* ── External button (for iframe error fallback) ─────────────────────────── */
 .externalBtn {
   display: inline-block;
   background: #2e7d32;
@@ -231,13 +319,15 @@
 
 /* ── Responsive ───────────────────────────────────────────────────────────── */
 @media (max-width: 900px) {
-  .titleBandInner { padding: 1.5rem 1.5rem 2rem; }
-  .toolArea { padding: 1.5rem 1.5rem 3rem; }
+  .titleBandInner { padding: 1.5rem clamp(1rem, 3vw, 3rem) 2rem; }
+  .toolArea { padding: 1.5rem clamp(1rem, 3vw, 3rem) 3rem; }
   .titleRow { flex-direction: column; gap: 1.25rem; }
   .titleImg, .titleImgPlaceholder { width: 100%; height: 200px; }
+  .externalLayout { padding: 1.5rem clamp(1rem, 3vw, 3rem) 3rem; }
 }
 
 @media (max-width: 600px) {
-  .titleBandInner { padding: 1.25rem; }
-  .toolArea { padding: 1.25rem 1.25rem 2.5rem; }
+  .titleBandInner { padding: clamp(1rem, 3vw, 3rem); }
+  .toolArea { padding: clamp(1rem, 3vw, 3rem) clamp(1rem, 3vw, 3rem) 2.5rem; }
+  .externalLayout { padding: clamp(1rem, 3vw, 3rem); }
 }

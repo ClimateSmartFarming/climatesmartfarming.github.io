@@ -26,29 +26,19 @@ const navigationItems: NavigationItem[] = [
     href: '/tools'
   },
   {
-    label: 'Extension Materials',
+    label: 'Farmer Resources',
     dropdown: [
-      { label: 'Programs', href: '/programs' },
-      { label: 'Videos & Webinars', href: '/videos' },
-      { label: 'Explore Our Network', href: '/network' },
-      { label: 'Fact Sheets', href: '/fact-sheets' },
-      { label: 'Projects', href: '/projects' },
       { label: 'Climate Impacts', href: '/climate-impacts' },
-    ]
-  },
-  {
-    label: 'Community News & Stories',
-    dropdown: [
-      { label: 'News', href: '/news' },
-      { label: 'Blog', href: '/blog' },
       { label: 'Farmer Stories', href: '/farmer-stories' },
+      { label: 'Videos & Webinars', href: '/videos' },
+      { label: 'Fact Sheets', href: '/fact-sheets' },
+      { label: 'Programs', href: '/programs' },
+      { label: 'External Resources', href: '/resources' },
     ]
   },
   {
-    label: 'Additional Resources',
-    dropdown: [
-      { label: 'External Resources', href: '/resources/external' },
-    ]
+    label: 'News',
+    href: '/news'
   },
   {
     label: 'About',

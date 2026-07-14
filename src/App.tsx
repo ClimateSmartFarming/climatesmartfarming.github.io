@@ -1,4 +1,3 @@
-// src/App.tsx
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import HomePage from './pages/HomePage/HomePage';
 import AboutPage from './pages/AboutPage/AboutPage';
@@ -9,8 +8,8 @@ import NewsArticlePage from './pages/NewsPage/NewsArticlePage';
 import ProgramsPage from './pages/ProgramsPage/ProgramsPage';
 import ToolsSummaryPage from './pages/ToolsPage/ToolsSummaryPage';
 import ToolPage from './pages/ToolsPage/ToolPage';
-import ExternalResourcesPage from './pages/ExternalResourcesPage/ExternalResourcesPage';
-import ResourceDetailPage from './pages/ExternalResourcesPage/ResourceDetailPage';
+import ResourcesPage from './pages/ResourcesPage/ResourcesPage';
+import ResourcePage from './pages/ResourcesPage/ResourcePage';
 import ClimateImpactsPage from './pages/ClimateImpactsPage/ClimateImpactsPage';
 import BlogPage from './pages/BlogPage/BlogPage';
 import BlogArticlePage from './pages/BlogPage/BlogArticlePage';
@@ -19,6 +18,8 @@ import FarmerStoryPage from './pages/FarmerStoriesPage/FarmerStoryPage';
 import FactSheetsPage from './pages/FactSheetsPage/FactSheetsPage';
 import ProjectsPage from './pages/ProjectsPage/ProjectsPage';
 import ProjectDetailPage from './pages/ProjectsPage/ProjectDetailPage';
+import VideosPage from './pages/VideosPage/VideosPage';
+import VideoDetailPage from './pages/VideosPage/VideoDetailPage';
 import Header from './components/layout/Header/Header';
 import Footer from './components/layout/Footer/Footer';
 
@@ -45,8 +46,11 @@ function App() {
         <Route path="/tools/:id" element={<ToolPage />} />
         <Route path="/tools/decision" element={<Navigate to="/tools" replace />} />
         <Route path="/tools/climate" element={<Navigate to="/tools" replace />} />
-        <Route path="/resources/external" element={<ExternalResourcesPage />} />
-        <Route path="/resources/:id" element={<ResourceDetailPage />} />
+        <Route path="/videos" element={<VideosPage />} />
+        <Route path="/videos/:id" element={<VideoDetailPage />} />
+        <Route path="/resources" element={<ResourcesPage />} />
+        <Route path="/resources/external" element={<ResourcesPage />} />
+        <Route path="/resources/:id" element={<ResourcePage />} />
         <Route path="/climate-impacts" element={<ClimateImpactsPage />} />
       </Routes>
       <Footer />

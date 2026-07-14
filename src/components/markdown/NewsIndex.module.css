@@ -9,8 +9,8 @@
 /* ── Masthead ─────────────────────────────────────────────── */
 .masthead {
   background: #fff;
-  padding: 1.5rem 2rem 0;
-  max-width: 1240px;
+  padding: 1.75rem clamp(1rem, 3vw, 3rem) 0;
+  max-width: min(90%, 1800px);
   margin: 0 auto;
 }
 
@@ -18,11 +18,11 @@
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  padding-bottom: 1rem;
+  padding-bottom: 1.25rem;
 }
 
 .mastheadTitle {
-  font-size: 2.8rem;
+  font-size: 3.2rem;
   font-weight: 900;
   color: #1a1a1a;
   letter-spacing: -0.02em;
@@ -32,17 +32,17 @@
 }
 
 .mastheadSub {
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   color: #2e7d32;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin: 0.3rem 0 0;
+  margin: 0.4rem 0 0;
   font-family: sans-serif;
 }
 
 .mastheadTagline {
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   color: #888;
   font-style: italic;
   margin: 0;
@@ -56,9 +56,9 @@
 
 /* ── Hero section ─────────────────────────────────────────── */
 .heroSection {
-  max-width: 1240px;
+  max-width: min(90%, 1800px);
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 clamp(1rem, 3vw, 3rem);
   background: #fff;
 }
 
@@ -77,10 +77,13 @@
   overflow: hidden;
   text-decoration: none;
   background: #1a1a1a;
-  min-height: 440px;
+  aspect-ratio: 4 / 3;
 }
 
 .heroMainImage {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -95,9 +98,11 @@
 }
 
 .heroMainPlaceholder {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  min-height: 440px;
   background: linear-gradient(135deg, #1b5e20, #2e7d32, #43a047);
 }
 
@@ -106,41 +111,41 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 2rem;
+  padding: 2.5rem;
   background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 70%, transparent 100%);
 }
 
 .heroCategory {
   display: inline-block;
-  font-size: 0.65rem;
+  font-size: 0.85rem;
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #fff;
   background: #2e7d32;
-  padding: 0.2rem 0.55rem;
+  padding: 0.35rem 0.75rem;
   border-radius: 3px;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.75rem;
   font-family: sans-serif;
 }
 
 .heroMainTitle {
-  font-size: 1.75rem;
+  font-size: 2.2rem;
   font-weight: 800;
   color: #fff;
   line-height: 1.2;
-  margin: 0 0 0.4rem;
+  margin: 0 0 0.5rem;
   font-family: Georgia, serif;
 }
 
 .heroMainMeta {
-  font-size: 0.78rem;
+  font-size: 1rem;
   color: rgba(255,255,255,0.7);
   margin: 0;
   font-family: sans-serif;
 }
 
-/* Right side offset grid — 2x2 with bottom spanning wide */
+/* Right side offset grid — 2 small on top, 1 wide on bottom */
 .heroSideGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -148,13 +153,13 @@
   gap: 3px;
 }
 
+/* Side cards */
 .heroSideCard {
   position: relative;
   display: block;
   overflow: hidden;
   text-decoration: none;
   background: #222;
-  min-height: 218px;
 }
 
 /* 3rd side card (index 2) spans both columns */
@@ -163,6 +168,9 @@
 }
 
 .heroSideImage {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -177,9 +185,11 @@
 }
 
 .heroSidePlaceholder {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  min-height: 218px;
   background: linear-gradient(135deg, #2e7d32, #558b2f);
 }
 
@@ -188,26 +198,26 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 1rem 1.1rem;
+  padding: 1.35rem 1.5rem;
   background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, transparent 100%);
 }
 
 .heroSideCategory {
   display: block;
-  font-size: 0.6rem;
+  font-size: 0.8rem;
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #a5d6a7;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.4rem;
   font-family: sans-serif;
 }
 
 .heroSideTitle {
-  font-size: 0.95rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: #fff;
-  line-height: 1.25;
+  line-height: 1.3;
   margin: 0;
   font-family: Georgia, serif;
 }
@@ -217,14 +227,14 @@
   background: #fff;
   border-top: 1px solid #e8e8e8;
   border-bottom: 3px solid #1a1a1a;
-  padding: 1rem 0;
+  padding: 1.25rem 0;
   display: flex;
   align-items: flex-start;
-  gap: 1.5rem;
+  gap: 1.75rem;
 }
 
 .popularLabel {
-  font-size: 0.65rem;
+  font-size: 0.85rem;
   font-weight: 900;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -245,10 +255,10 @@
 .popularItem {
   display: flex;
   align-items: flex-start;
-  gap: 0.6rem;
-  padding: 0 1.25rem 0 0;
+  gap: 0.75rem;
+  padding: 0 1.5rem 0 0;
   border-right: 1px solid #e0e0e0;
-  margin-right: 1.25rem;
+  margin-right: 1.5rem;
   text-decoration: none;
   color: inherit;
   flex: 1;
@@ -264,7 +274,7 @@
 .popularItem:hover { opacity: 0.65; }
 
 .popularNum {
-  font-size: 1.4rem;
+  font-size: 1.75rem;
   font-weight: 900;
   color: #2e7d32;
   line-height: 1;
@@ -273,10 +283,10 @@
 }
 
 .popularTitle {
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   font-weight: 600;
   color: #1a1a1a;
-  line-height: 1.35;
+  line-height: 1.4;
   font-family: sans-serif;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -286,9 +296,9 @@
 
 /* ── Section divider ──────────────────────────────────────── */
 .sectionDivider {
-  max-width: 1240px;
-  margin: 2.5rem auto 0;
-  padding: 0 2rem;
+  max-width: min(90%, 1800px);
+  margin: 2.75rem auto 0;
+  padding: 0 clamp(1rem, 3vw, 3rem);
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -303,7 +313,7 @@
 }
 
 .sectionDividerText {
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   font-weight: 900;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -315,11 +325,11 @@
 /* ── Body: sidebar + grid ─────────────────────────────────── */
 .body {
   display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 2.5rem;
-  max-width: 1240px;
+  grid-template-columns: 240px 1fr;
+  gap: 3rem;
+  max-width: min(90%, 1800px);
   margin: 0 auto;
-  padding: 2rem 2rem 5rem;
+  padding: 2.5rem clamp(1rem, 3vw, 3rem) 5rem;
   align-items: start;
 }
 
@@ -330,13 +340,13 @@
 }
 
 .sidebarHeading {
-  font-size: 0.65rem;
+  font-size: 0.85rem;
   font-weight: 900;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: #1a1a1a;
-  margin: 0 0 0.75rem;
-  padding-bottom: 0.5rem;
+  margin: 0 0 0.85rem;
+  padding-bottom: 0.6rem;
   border-bottom: 2px solid #1a1a1a;
   font-family: sans-serif;
 }
@@ -355,8 +365,8 @@
   background: none;
   border: none;
   border-bottom: 1px solid #efefef;
-  padding: 0.5rem 0.4rem;
-  font-size: 0.85rem;
+  padding: 0.65rem 0.5rem;
+  font-size: 1rem;
   color: #444;
   cursor: pointer;
   font-family: sans-serif;
@@ -378,9 +388,9 @@
 .gridArea { min-width: 0; }
 
 .resultsInfo {
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: #999;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
   font-family: sans-serif;
 }
 
@@ -389,22 +399,24 @@
   font-style: italic;
   padding: 3rem 0;
   text-align: center;
+  font-size: 1.15rem;
   font-family: sans-serif;
 }
 
+/* Max 4 columns with larger minimum card size */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
   margin-bottom: 2.5rem;
 }
 
-/* ── Card ─────────────────────────────────────────────────── */
+/* ── Card - larger ────────────────────────────────────────── */
 .card {
   display: flex;
   flex-direction: column;
   background: #fff;
-  border-radius: 6px;
+  border-radius: 8px;
   overflow: hidden;
   border: 1px solid #e8e8e8;
   text-decoration: none;
@@ -413,17 +425,22 @@
 }
 
 .card:hover {
-  box-shadow: 0 6px 24px rgba(0,0,0,0.1);
-  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+  transform: translateY(-4px);
 }
 
 .cardImageWrapper {
+  position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 10;
   overflow: hidden;
+  background: #f0f0f0;
 }
 
 .cardImage {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -435,16 +452,16 @@
 
 .cardImagePlaceholder {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 10;
   background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 2.75rem;
 }
 
 .cardBody {
-  padding: 1rem 1.1rem 1.25rem;
+  padding: 1.35rem 1.5rem 1.65rem;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -452,37 +469,37 @@
 
 .cardCategory {
   display: inline-block;
-  font-size: 0.62rem;
+  font-size: 0.82rem;
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #2e7d32;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
   font-family: sans-serif;
 }
 
 .cardTitle {
-  font-size: 0.97rem;
+  font-size: 1.2rem;
   font-weight: 700;
   line-height: 1.35;
   color: #1a1a1a;
-  margin: 0 0 0.35rem;
+  margin: 0 0 0.5rem;
   font-family: Georgia, serif;
 }
 
 .cardMeta {
-  font-size: 0.72rem;
-  color: #bbb;
-  margin: 0 0 0.5rem;
+  font-size: 0.92rem;
+  color: #999;
+  margin: 0 0 0.65rem;
   font-family: sans-serif;
 }
 
 .cardExcerpt {
-  font-size: 0.85rem;
+  font-size: 1.02rem;
   color: #666;
-  line-height: 1.5;
+  line-height: 1.55;
   flex: 1;
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.85rem;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -491,7 +508,7 @@
 }
 
 .cardReadMore {
-  font-size: 0.8rem;
+  font-size: 0.98rem;
   font-weight: 700;
   color: #2e7d32;
   margin-top: auto;
@@ -502,17 +519,17 @@
 .pagination {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 1.5rem 0;
+  gap: 0.5rem;
+  padding: 1.75rem 0;
 }
 
 .pageBtn {
-  padding: 0.4rem 0.8rem;
+  padding: 0.55rem 1.1rem;
   border: 1px solid #ddd;
   border-radius: 4px;
   background: #fff;
   color: #333;
-  font-size: 0.85rem;
+  font-size: 1rem;
   cursor: pointer;
   font-family: sans-serif;
   transition: background 0.15s;
@@ -527,29 +544,61 @@
   text-align: center;
   padding: 6rem 2rem;
   color: #999;
+  font-size: 1.15rem;
   font-family: sans-serif;
 }
 
 /* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 1400px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 960px) {
   .heroGrid { grid-template-columns: 1fr; }
-  .heroMain { min-height: 300px; }
+  .heroMain { aspect-ratio: 16 / 9; }
   .heroSideGrid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-  .heroSideCardWide { grid-column: auto; }
+  .heroSideCard { aspect-ratio: 16 / 9; }
+  .heroSideCardWide { grid-column: 1 / -1; }
   .popularList { flex-wrap: wrap; }
   .body { grid-template-columns: 1fr; }
   .sidebar { position: static; }
 }
 
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.35rem;
+  }
+}
+
 @media (max-width: 600px) {
-  .masthead { padding: 1rem 1rem 0; }
-  .mastheadTitle { font-size: 1.8rem; }
-  .heroSection { padding: 0 1rem; }
+  .masthead { padding: 1.35rem clamp(1rem, 3vw, 3rem) 0; }
+  .mastheadTitle { font-size: 2.4rem; }
+  .mastheadSub { font-size: 0.88rem; }
+  .mastheadTagline { font-size: 1rem; }
+  .heroSection { padding: 0 clamp(1rem, 3vw, 3rem); }
+  .heroMain { aspect-ratio: 4 / 3; }
+  .heroMainTitle { font-size: 1.75rem; }
+  .heroMainOverlay { padding: 1.75rem; }
   .heroSideGrid { grid-template-columns: 1fr; }
-  .popularStrip { flex-direction: column; gap: 0.75rem; }
+  .heroSideCard { aspect-ratio: 16 / 9; }
+  .heroSideTitle { font-size: 1.1rem; }
+  .popularStrip { flex-direction: column; gap: 0.85rem; }
   .popularList { flex-direction: column; }
-  .popularItem { border-right: none; border-bottom: 1px solid #e0e0e0; padding-bottom: 0.75rem; margin-bottom: 0.75rem; }
-  .body { padding: 1.5rem 1rem 3rem; }
+  .popularItem { border-right: none; border-bottom: 1px solid #e0e0e0; padding-bottom: 0.85rem; margin-bottom: 0.85rem; }
+  .popularTitle { font-size: 0.92rem; }
+  .body { padding: 1.75rem clamp(1rem, 3vw, 3rem) 3rem; }
   .grid { grid-template-columns: 1fr; }
-  .sectionDivider { padding: 0 1rem; }
+  .sectionDivider { padding: 0 clamp(1rem, 3vw, 3rem); }
+  .cardTitle { font-size: 1.15rem; }
+  .cardExcerpt { font-size: 0.98rem; }
+  .cardBody { padding: 1.25rem 1.35rem 1.5rem; }
 }

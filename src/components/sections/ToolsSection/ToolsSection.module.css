@@ -1,16 +1,13 @@
-/* src/components/sections/ToolsSection/ToolsSection.module.css */
-
 .toolsSection {
   padding: 4rem 0;
   background-color: #ffffff;
 }
 
-/* Container that scales with the page - 75% width */
 .toolsContainer {
-  width: 75%;
-  max-width: 1500px;
+  width: 100%;
+  max-width: min(90%, 1800px);
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 clamp(1rem, 3vw, 3rem);
 }
 
 .header {
@@ -34,12 +31,8 @@
   font-weight: 600;
   transition: color 0.3s ease;
 }
+.viewAllLink:hover { color: #1b5e20; }
 
-.viewAllLink:hover {
-  color: #1b5e20;
-}
-
-/* Grid - exactly 4 columns */
 .toolsGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -57,17 +50,13 @@
   display: flex;
   flex-direction: column;
 }
-
 .toolCard:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 24px rgba(46, 125, 50, 0.15);
   border-color: #2e7d32;
 }
 
-.toolIcon {
-  font-size: 2.5rem;
-  margin-bottom: 0.75rem;
-}
+.toolIcon { font-size: 2.5rem; margin-bottom: 0.75rem; }
 
 .toolTitle {
   font-size: 1.2rem;
@@ -91,164 +80,21 @@
   transition: color 0.3s ease;
   align-self: flex-start;
 }
+.toolCard:hover .learnMore { color: #1b5e20; }
 
-.toolCard:hover .learnMore {
-  color: #1b5e20;
-}
-
-/* Responsive Design */
-
-/* Large screens */
-@media (min-width: 1600px) {
-  .toolsContainer {
-    width: 75%;
-  }
-
-  .toolsGrid {
-    gap: 2rem;
-  }
-
-  .toolCard {
-    padding: 2rem;
-  }
-
-  .toolIcon {
-    font-size: 3rem;
-  }
-
-  .toolTitle {
-    font-size: 1.35rem;
-  }
-
-  .toolDescription {
-    font-size: 1rem;
-  }
-}
-
-/* Medium-large screens - still 4 columns */
-@media (max-width: 1400px) {
-  .toolsContainer {
-    width: 85%;
-  }
-
-  .toolsGrid {
-    gap: 1.25rem;
-  }
-
-  .toolCard {
-    padding: 1.25rem;
-  }
-
-  .toolTitle {
-    font-size: 1.1rem;
-  }
-
-  .toolDescription {
-    font-size: 0.85rem;
-  }
-}
-
-/* Tablet - 2 columns */
 @media (max-width: 1024px) {
-  .toolsContainer {
-    width: 90%;
-    padding: 0 1.5rem;
-  }
-
-  .toolsGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-
-  .toolCard {
-    padding: 1.5rem;
-  }
-
-  .toolIcon {
-    font-size: 2.5rem;
-  }
-
-  .toolTitle {
-    font-size: 1.2rem;
-  }
-
-  .toolDescription {
-    font-size: 0.9rem;
-  }
+  .toolsGrid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
 }
 
-/* Small tablet / large phone */
 @media (max-width: 768px) {
-  .toolsSection {
-    padding: 3rem 0;
-  }
-
-  .toolsContainer {
-    width: 95%;
-    padding: 0 1rem;
-  }
-
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-    margin-bottom: 2rem;
-  }
-
-  .title {
-    font-size: 2rem;
-  }
-
-  .viewAllLink {
-    font-size: 1rem;
-  }
-
-  .toolsGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-
-  .toolCard {
-    padding: 1.25rem;
-  }
-
-  .toolIcon {
-    font-size: 2rem;
-  }
-
-  .toolTitle {
-    font-size: 1.1rem;
-  }
-
-  .toolDescription {
-    font-size: 0.85rem;
-  }
+  .toolsSection { padding: 3rem 0; }
+  .header { flex-direction: column; align-items: flex-start; gap: 1rem; margin-bottom: 2rem; }
+  .title { font-size: 2rem; }
+  .toolsGrid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
 }
 
-/* Phone - 1 column */
 @media (max-width: 480px) {
-  .toolsSection {
-    padding: 2rem 0;
-  }
-
-  .title {
-    font-size: 1.75rem;
-  }
-
-  .toolsGrid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .toolCard {
-    padding: 1.25rem;
-  }
-
-  .toolIcon {
-    font-size: 2.25rem;
-  }
-
-  .toolTitle {
-    font-size: 1.15rem;
-  }
+  .toolsSection { padding: 2rem 0; }
+  .title { font-size: 1.75rem; }
+  .toolsGrid { grid-template-columns: 1fr; }
 }

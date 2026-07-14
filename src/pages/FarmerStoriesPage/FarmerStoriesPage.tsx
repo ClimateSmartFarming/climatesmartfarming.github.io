@@ -1,4 +1,3 @@
-// src/pages/FarmerStoriesPage/FarmerStoriesPage.tsx
 import React from 'react';
 import FarmerStoriesIndex from '../../components/markdown/FarmerStoriesIndex';
 

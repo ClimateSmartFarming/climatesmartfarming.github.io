@@ -1,6 +1,6 @@
 // src/components/markdown/NewsIndex.tsx
 // Newspaper-style news page:
-//   - Top: offset hero grid with 5 most recent posts (TNW-style)
+//   - Top: offset hero grid with 4 most recent posts
 //   - Below: sticky left sidebar with category filters + scrollable card grid
 
 import React, { useState, useMemo } from 'react';
@@ -43,11 +43,11 @@ const NewsIndex: React.FC<Props> = ({ files, basePath }) => {
   const formatDateShort = (d: string) =>
     d ? new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : '';
 
-  // Top 5 for hero — always most recent regardless of category filter
-  const heroItems = useMemo(() => items.slice(0, 5), [items]);
+  // Top 4 for hero — always most recent regardless of category filter
+  const heroItems = useMemo(() => items.slice(0, 4), [items]);
   const [heroMain, ...heroSide] = heroItems;
 
-  // Remaining items for the scrollable grid (exclude hero 5)
+  // Remaining items for the scrollable grid (exclude hero 4)
   const heroSlugs = useMemo(() => new Set(heroItems.map(i => i.slug)), [heroItems]);
 
   const filtered = useMemo(() => {
@@ -113,7 +113,7 @@ const NewsIndex: React.FC<Props> = ({ files, basePath }) => {
             </Link>
           )}
 
-          {/* Right side: 2x2 offset grid */}
+          {/* Right side: 2 small cards + 1 wide card */}
           <div className={styles.heroSideGrid}>
             {heroSide.map((item, idx) => (
               <Link

@@ -10,9 +10,9 @@
   display: grid;
   grid-template-columns: 240px 1fr;
   gap: 2.5rem;
-  max-width: 1200px;
+  max-width: min(90%, 1800px);
   margin: 0 auto;
-  padding: 2.5rem 2rem 4rem;
+  padding: 2.5rem clamp(1rem, 3vw, 3rem) 4rem;
   align-items: start;
 }
 
@@ -34,7 +34,7 @@
   padding: 0.65rem 2.5rem 0.65rem 0.9rem;
   border: 1.5px solid #c8e6c9;
   border-radius: 8px;
-  font-size: 0.9rem;
+  font-size: 1.13rem;
   background: #fff;
   color: #333;
   outline: none;
@@ -56,7 +56,7 @@
 .sidebarSection {}
 
 .sidebarHeading {
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -84,7 +84,7 @@
   background: none;
   border: none;
   padding: 0.4rem 0.6rem;
-  font-size: 0.88rem;
+  font-size: 1.1rem;
   color: #444;
   cursor: pointer;
   border-radius: 5px;
@@ -106,21 +106,21 @@
 }
 
 .aboutTitle {
-  font-size: 0.85rem;
+  font-size: 1.06rem;
   font-weight: 800;
   color: #1a1a1a;
   margin: 0 0 0.5rem;
 }
 
 .aboutText {
-  font-size: 0.82rem;
+  font-size: 1.03rem;
   color: #666;
   line-height: 1.55;
   margin: 0 0 0.75rem;
 }
 
 .aboutLink {
-  font-size: 0.82rem;
+  font-size: 1.03rem;
   color: #2e7d32;
   font-weight: 600;
   text-decoration: none;
@@ -161,7 +161,7 @@
 
 .featuredImageWrapper {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 21 / 9;
   overflow: hidden;
 }
 
@@ -177,7 +177,7 @@
 
 .featuredImagePlaceholder {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 21 / 9;
   background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
   display: flex;
   align-items: center;
@@ -191,7 +191,7 @@
 
 .featuredCategory {
   display: inline-block;
-  font-size: 0.7rem;
+  font-size: 0.88rem;
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -211,20 +211,20 @@
 }
 
 .featuredExcerpt {
-  font-size: 0.95rem;
+  font-size: 1.19rem;
   color: #555;
   line-height: 1.65;
   margin: 0 0 0.75rem;
 }
 
 .featuredMeta {
-  font-size: 0.8rem;
-  color: #999;
+  font-size: 1.25rem;
+  color: #666;
   margin: 0 0 1rem;
 }
 
 .readMore {
-  font-size: 0.9rem;
+  font-size: 1.13rem;
   font-weight: 700;
   color: #2e7d32;
 }
@@ -238,7 +238,7 @@
 }
 
 .staffPicksTitle {
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 800;
   color: #1a1a1a;
   margin: 0 0 1rem;
@@ -274,7 +274,7 @@
 .staffPickLink:hover { opacity: 0.7; }
 
 .staffPickCategory {
-  font-size: 0.65rem;
+  font-size: 0.81rem;
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -282,7 +282,7 @@
 }
 
 .staffPickTitle {
-  font-size: 0.88rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: #1a1a1a;
   line-height: 1.35;
@@ -290,7 +290,7 @@
 
 /* ── More posts grid ─────────────────────────────────────── */
 .morePostsHeading {
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 800;
   color: #333;
   margin: 0 0 1.25rem;
@@ -300,7 +300,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   margin-bottom: 3rem;
 }
@@ -324,7 +324,7 @@
 
 .cardImageWrapper {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 3 / 2;
   overflow: hidden;
 }
 
@@ -349,7 +349,7 @@
 }
 
 .cardBody {
-  padding: 1rem 1.1rem 1.25rem;
+  padding: 0.7rem 0.8rem 0.9rem;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -357,7 +357,7 @@
 
 .cardCategory {
   display: inline-block;
-  font-size: 0.67rem;
+  font-size: 0.84rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -370,7 +370,7 @@
 }
 
 .cardTitle {
-  font-size: 0.95rem;
+  font-size: 1.06rem;
   font-weight: 700;
   line-height: 1.35;
   color: #1a1a1a;
@@ -378,13 +378,13 @@
 }
 
 .cardMeta {
-  font-size: 0.75rem;
+  font-size: 0.94rem;
   color: #aaa;
   margin: 0 0 0.5rem;
 }
 
 .cardExcerpt {
-  font-size: 0.85rem;
+  font-size: 1.06rem;
   color: #666;
   line-height: 1.5;
   flex: 1;
@@ -396,7 +396,7 @@
 }
 
 .cardReadMore {
-  font-size: 0.82rem;
+  font-size: 1.03rem;
   font-weight: 700;
   color: #2e7d32;
   margin-top: auto;
@@ -430,7 +430,7 @@
 }
 
 @media (max-width: 600px) {
-  .layout { padding: 1.5rem 1rem 3rem; }
+  .layout { padding: 1.5rem clamp(1rem, 3vw, 3rem) 3rem; }
   .featuredTitle { font-size: 1.2rem; }
   .grid { grid-template-columns: 1fr; }
 }

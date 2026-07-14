@@ -1,0 +1,16 @@
+---
+title: "Climate Smart Farming at the 2025 United Nations Climate Change Conference"
+date: "2025-11-26"
+author: "Candace Hulbert"
+category: "Events & Conferences"
+image: "/images/news/1763868912685-1.jpeg"
+excerpt: "Cornell University delegation shares Climate Smart Farming work at COP30 in Belém, Brazil."
+---
+
+![Cornell booth at COP30](/images/news/1763868912685-1.jpeg#left) Last week, I had the honor of attending Week 2 of the UN Climate Change Conference in Belém, Brazil, as a part of the Cornell University delegation, where I shared the work of the Cornell Atkinson Center for Sustainability, AI-LEAF Institute, Cornell Climate Smart Farming Program, and the Johannes Lehmann Lab. COP30 was incredibly insightful, offering a window into climate policy from the local to the global scale. I had the opportunity to connect with climate professionals from all over the world, observe international climate negotiations, learn from leading experts about carbon markets for high-integrity removal, and participate in an interactive workshop focused on making climate content feel community-focused and culturally relevant.
+
+![AI-LEAF presentation at COP30](/images/news/1763868914727.jpeg#right) I also managed the booth for Cornell University, which we were honored to share with Tufts University, The Fletcher School at Tufts University, and Climate Policy Lab. At the Cornell booth, I shared information about the Cornell Atkinson Center for Sustainability, AI-LEAF Institute, Cornell Climate Smart Farming, and the Johannes Lehmann Lab. On Saturday, November 15, AI-LEAF also co-sponsored a side event titled "Leveraging AI-Augmented Digital Technologies for Climate Security, Adaptation, and Mitigation," which featured AI-LEAF researchers Allison Morrill Chatrchyan and Yiqi Luo. Dr. Chatrchyan presented about her work engaging stakeholders in co-designing AI for agriculture solutions. Her presentation focused on AI-LEAF's agile co-design process and stakeholder needs assessment research with agriculture and forestry advisors. Dr. Luo shared his work on artificial intelligence and climate mitigation, highlighting AI tools developed at Cornell, such as PRODA for measuring soil carbon and BINN for measuring forest carbon.
+
+![Belém, Brazil](/images/news/1763868908719.jpeg#left) A very special thank you to the people of Belém for being such kind and generous hosts! Belém is a city with a rich culture and life, nestled on the edge of the Amazonian basin. I had the chance to take a boat ride to Combu Island and explore the Basilica of Our Lady Nazareth, the Ver-O-Peso market, the Mercado de São Brás, and the Estação das Docas. I made wonderful friends in Belém and am so thankful for the opportunity to learn and experience all that the city has to offer. The city's vibrant atmosphere and warm hospitality made this trip truly unforgettable, and I look forward to returning someday to continue exploring its rich history and natural beauty.
+
+Shoutout to my wonderful Week 2 COP Cornellians — Erika Styger, Alexander Gonzalez, PhD, Sabine Paz-Le Draoulec, Sophia Caporusso, and Ethan Kellogg.

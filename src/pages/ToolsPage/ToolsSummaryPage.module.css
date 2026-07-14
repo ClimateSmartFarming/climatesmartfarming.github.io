@@ -7,14 +7,24 @@
 
 /* ── Hero ─────────────────────────────────────────────────── */
 .hero {
-  background: linear-gradient(135deg, #1b3a1f 0%, #2e7d32 100%);
+  position: relative;
+  background: url('/images/banner/banner.jpg') center/cover no-repeat;
   padding: 4rem 0 3.5rem;
 }
 
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(27, 58, 31, 0.9) 0%, rgba(46, 125, 50, 0.85) 100%);
+}
+
 .heroInner {
-  max-width: 1240px;
+  position: relative;
+  z-index: 1;
+  max-width: min(90%, 1800px);
   margin: 0 auto;
-  padding: 0 6rem;
+  padding: 0 clamp(1rem, 3vw, 3rem);
 }
 
 .heroEyebrow {
@@ -57,9 +67,9 @@
   display: grid;
   grid-template-columns: 260px 1fr;
   gap: 2.5rem;
-  max-width: 1240px;
+  max-width: min(90%, 1800px);
   margin: 0 auto;
-  padding: 3rem 6rem 6rem;
+  padding: 3rem clamp(1rem, 3vw, 3rem) 6rem;
   align-items: start;
 }
 
@@ -89,7 +99,7 @@
   flex: 1;
   border: none;
   outline: none;
-  font-size: 0.9rem;
+  font-size: 1.13rem;
   color: #1a1a1a;
   background: transparent;
   font-family: sans-serif;
@@ -115,7 +125,7 @@
 }
 
 .catHeading {
-  font-size: 0.65rem;
+  font-size: 0.81rem;
   font-weight: 900;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -135,7 +145,7 @@
   border: none;
   cursor: pointer;
   text-align: left;
-  font-size: 0.88rem;
+  font-size: 1.1rem;
   color: #444;
   padding: 0.45rem 0.6rem;
   border-radius: 6px;
@@ -150,7 +160,7 @@
 }
 
 .catCount {
-  font-size: 0.75rem;
+  font-size: 0.94rem;
   color: #aaa;
   font-weight: 600;
 }
@@ -164,7 +174,7 @@
 }
 
 .aboutLabel {
-  font-size: 0.68rem;
+  font-size: 0.85rem;
   font-weight: 900;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -174,7 +184,7 @@
 }
 
 .aboutText {
-  font-size: 0.84rem;
+  font-size: 1.05rem;
   color: rgba(255,255,255,0.9);
   line-height: 1.6;
   margin: 0 0 1rem;
@@ -183,7 +193,7 @@
 
 .aboutLink {
   display: inline-block;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 700;
   color: #fff;
   text-decoration: none;
@@ -212,7 +222,7 @@
 }
 
 .sectionTitle {
-  font-size: 1.3rem;
+  font-size: 1.63rem;
   font-weight: 800;
   color: #1a1a1a;
   margin: 0;
@@ -220,13 +230,13 @@
 }
 
 .sectionCount {
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: #aaa;
   font-family: sans-serif;
 }
 
 .sectionNote {
-  font-size: 0.88rem;
+  font-size: 1.1rem;
   color: #888;
   margin: 0 0 1.25rem;
   font-family: sans-serif;
@@ -235,7 +245,7 @@
 /* ── Tool grid ────────────────────────────────────────────── */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
 }
 
@@ -262,14 +272,14 @@
 }
 
 .cardImage {
-  height: 160px;
+  height: 200px;
   background-size: cover;
   background-position: center;
   flex-shrink: 0;
 }
 
 .cardImagePlaceholder {
-  height: 160px;
+  height: 200px;
   background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
   display: flex;
   align-items: center;
@@ -283,14 +293,14 @@
 }
 
 .cardBody {
-  padding: 1.2rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
 .cardCategory {
-  font-size: 0.62rem;
+  font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -302,7 +312,7 @@
 }
 
 .cardTitle {
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: #1a1a1a;
   margin: 0.4rem 0 0.6rem;
@@ -311,7 +321,7 @@
 }
 
 .cardDesc {
-  font-size: 0.85rem;
+  font-size: 1.06rem;
   color: #666;
   line-height: 1.6;
   margin: 0;
@@ -329,14 +339,14 @@
 }
 
 .cardCta {
-  font-size: 0.82rem;
+  font-size: 1.03rem;
   font-weight: 700;
   color: #2e7d32;
   font-family: sans-serif;
 }
 
 .cardRepo {
-  font-size: 0.75rem;
+  font-size: 0.94rem;
   color: #aaa;
   text-decoration: none;
   font-family: sans-serif;
@@ -344,6 +354,70 @@
   transition: color 0.15s;
 }
 .cardRepo:hover { color: #2e7d32; }
+
+.resultsRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.perPageSelect {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.perPageLabel {
+  font-size: 0.95rem;
+  color: #888;
+  font-family: sans-serif;
+}
+
+.perPageDropdown {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: #444;
+  background: #fff;
+  cursor: pointer;
+  font-family: sans-serif;
+}
+.perPageDropdown:focus { outline: none; border-color: #2e7d32; }
+
+.resultsInfo {
+  font-size: 0.95rem;
+  color: #888;
+  margin: 0 0 1.25rem;
+  font-family: sans-serif;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 2rem 0 1rem;
+  flex-wrap: wrap;
+}
+
+.pageBtn {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fff;
+  color: #444;
+  font-size: 0.95rem;
+  cursor: pointer;
+  font-family: sans-serif;
+  transition: background 0.15s, border-color 0.15s;
+}
+.pageBtn:hover:not(:disabled) { background: #e8f5e9; border-color: #a5d6a7; }
+.pageBtn:disabled { opacity: 0.4; cursor: not-allowed; }
+.pageActive { background: #2e7d32 !important; color: #fff !important; border-color: #2e7d32 !important; }
 
 /* ── Empty state ──────────────────────────────────────────── */
 .empty {
@@ -371,21 +445,24 @@
 
 /* ── Responsive ───────────────────────────────────────────── */
 @media (max-width: 1100px) {
-  .heroInner { padding: 0 3rem; }
-  .layout { padding: 2.5rem 3rem 5rem; }
+  .heroInner { padding: 0 clamp(1rem, 3vw, 3rem); }
+  .layout { padding: 2.5rem clamp(1rem, 3vw, 3rem) 5rem; }
 }
 
 @media (max-width: 900px) {
   .layout {
     grid-template-columns: 1fr;
-    padding: 2rem 1.5rem 4rem;
+    padding: 2rem clamp(1rem, 3vw, 3rem) 4rem;
   }
   .sidebar { position: static; }
-  .heroInner { padding: 0 2rem; }
+  .heroInner { padding: 0 clamp(1rem, 3vw, 3rem); }
   .hero { padding: 2.5rem 0; }
 }
 
-@media (max-width: 600px) {
-  .heroInner { padding: 0 1.25rem; }
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 580px) {
   .grid { grid-template-columns: 1fr; }
 }

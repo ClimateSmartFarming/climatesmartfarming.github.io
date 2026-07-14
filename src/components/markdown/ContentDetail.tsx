@@ -1,14 +1,17 @@
 // src/components/markdown/ContentDetail.tsx
-// Editorial article page — Option 2 (magazine) + Option 3 (Field Report / CSF brand)
+// Editorial article page — Magazine Spread + Asymmetrical Layout
 //
-// Layout:
-//   - Full-width dark green header band with title overlaid in serif type
-//   - Narrow centered article body with drop cap on first paragraph
-//   - Pull quotes break out to the side in green boxes
+// Features:
+//   - Full-width dark green header band with title overlaid
+//   - First image large, then alternating left/right smaller images
+//   - Pull quotes that break into margins
+//   - Reading time indicator
+//   - Progress bar on scroll
+//   - Drop cap on first paragraph
 //   - Right sidebar: related CSF tools + recent articles
 //   - Prev/next navigation at the bottom
 
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useMarkdownContent } from '../../hooks/useMarkdownContent';
 import MarkdownRenderer from './MarkdownRenderer';
@@ -26,6 +29,37 @@ const ContentDetail: React.FC<Props> = ({ files, backPath, backLabel = 'Back' })
   const { id } = useParams<{ id: string }>();
   const { getItem, items } = useMarkdownContent(files);
   const item = id ? getItem(id) : undefined;
+  const [readingProgress, setReadingProgress] = useState(0);
+  const articleRef = useRef<HTMLElement>(null);
+
+  // Calculate reading time (average 200 words per minute)
+  const calculateReadingTime = (text: string) => {
+    const words = text.trim().split(/\s+/).length;
+    const minutes = Math.ceil(words / 200);
+    return minutes;
+  };
+
+  // Track reading progress
+  useEffect(() => {
+    const handleScroll = () => {
+      const article = document.querySelector('[data-article-content]');
+      if (!article) return;
+
+      const articleTop = article.getBoundingClientRect().top + window.scrollY;
+      const articleHeight = article.getBoundingClientRect().height;
+      const windowHeight = window.innerHeight;
+      const scrollY = window.scrollY;
+
+      const progress = Math.min(
+        Math.max((scrollY - articleTop + windowHeight * 0.5) / articleHeight, 0),
+        1
+      );
+      setReadingProgress(progress * 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const formatDate = (d: string) =>
     d ? new Date(d).toLocaleDateString('en-US', {
@@ -46,6 +80,7 @@ const ContentDetail: React.FC<Props> = ({ files, backPath, backLabel = 'Back' })
   const currentIndex = items.findIndex(i => i.slug === item.slug);
   const prevItem = currentIndex < items.length - 1 ? items[currentIndex + 1] : null;
   const nextItem = currentIndex > 0 ? items[currentIndex - 1] : null;
+  const readingTime = calculateReadingTime(item.body);
 
   // Pick 3 random tools for sidebar
   const sidebarTools = featuredTools.slice(0, 3);
@@ -55,6 +90,13 @@ const ContentDetail: React.FC<Props> = ({ files, backPath, backLabel = 'Back' })
 
   return (
     <div className={styles.page}>
+      {/* Reading progress bar */}
+      <div className={styles.progressBar}>
+        <div
+          className={styles.progressFill}
+          style={{ width: `${readingProgress}%` }}
+        />
+      </div>
 
       {/* ── Hero band ─────────────────────────────────────────── */}
       <div className={styles.heroBand}>
@@ -70,19 +112,28 @@ const ContentDetail: React.FC<Props> = ({ files, backPath, backLabel = 'Back' })
             <Link to={backPath} className={styles.heroBackLink}>
               ← {backLabel}
             </Link>
-            {item.meta.category && (
-              <span className={styles.heroCategory}>{item.meta.category as string}</span>
-            )}
+            <div className={styles.heroMeta}>
+              {item.meta.category && (
+                <span className={styles.heroCategory}>{item.meta.category as string}</span>
+              )}
+              <span className={styles.readingTime}>📖 {readingTime} min read</span>
+            </div>
             <h1 className={styles.heroTitle}>{item.meta.title}</h1>
             {item.meta.excerpt && (
               <p className={styles.heroDeck}>{item.meta.excerpt as string}</p>
             )}
-            <div className={styles.heroMeta}>
+            <div className={styles.heroByline}>
               {item.meta.author && (
-                <span className={styles.heroAuthor}>By {item.meta.author as string}</span>
+                <>
+                  <div className={styles.authorAvatarSmall}>
+                    {(item.meta.author as string).charAt(0)}
+                  </div>
+                  <div className={styles.bylineText}>
+                    <span className={styles.heroAuthor}>{item.meta.author as string}</span>
+                    <span className={styles.heroDate}>{formatDate(item.meta.date)}</span>
+                  </div>
+                </>
               )}
-              {item.meta.author && item.meta.date && <span className={styles.heroDot}>·</span>}
-              <span className={styles.heroDate}>{formatDate(item.meta.date)}</span>
             </div>
           </div>
         </div>
@@ -92,8 +143,22 @@ const ContentDetail: React.FC<Props> = ({ files, backPath, backLabel = 'Back' })
       <div className={styles.bodyLayout}>
 
         {/* Article column */}
-        <article className={styles.article}>
+        <article className={styles.article} data-article-content ref={articleRef}>
           <MarkdownRenderer content={item.body} className={styles.body} />
+
+          {/* Clear any floats */}
+          <div className={styles.clearfix}></div>
+
+          {/* Share bar */}
+          <div className={styles.shareBar}>
+            <span className={styles.shareLabel}>Share this article</span>
+            <div className={styles.shareButtons}>
+              <button className={styles.shareButton} title="Share on Twitter">𝕏</button>
+              <button className={styles.shareButton} title="Share on Facebook">f</button>
+              <button className={styles.shareButton} title="Share on LinkedIn">in</button>
+              <button className={styles.shareButton} title="Copy link">🔗</button>
+            </div>
+          </div>
 
           {/* Author card */}
           {item.meta.author && (
@@ -101,7 +166,8 @@ const ContentDetail: React.FC<Props> = ({ files, backPath, backLabel = 'Back' })
               <div className={styles.authorAvatar}>
                 {(item.meta.author as string).charAt(0)}
               </div>
-              <div>
+              <div className={styles.authorInfo}>
+                <p className={styles.authorLabel}>Written by</p>
                 <p className={styles.authorName}>{item.meta.author as string}</p>
                 <p className={styles.authorRole}>Cornell Climate Smart Farming Program</p>
               </div>
@@ -113,7 +179,7 @@ const ContentDetail: React.FC<Props> = ({ files, backPath, backLabel = 'Back' })
             <div className={styles.prevNextItem}>
               {prevItem && (
                 <Link to={`${backPath}/${prevItem.slug}`} className={styles.navLink}>
-                  <span className={styles.navDirection}>← Older</span>
+                  <span className={styles.navDirection}>← Previous Article</span>
                   <span className={styles.navTitle}>{prevItem.meta.title}</span>
                 </Link>
               )}
@@ -121,7 +187,7 @@ const ContentDetail: React.FC<Props> = ({ files, backPath, backLabel = 'Back' })
             <div className={`${styles.prevNextItem} ${styles.nextItem}`}>
               {nextItem && (
                 <Link to={`${backPath}/${nextItem.slug}`} className={styles.navLink}>
-                  <span className={styles.navDirection}>Newer →</span>
+                  <span className={styles.navDirection}>Next Article →</span>
                   <span className={styles.navTitle}>{nextItem.meta.title}</span>
                 </Link>
               )}

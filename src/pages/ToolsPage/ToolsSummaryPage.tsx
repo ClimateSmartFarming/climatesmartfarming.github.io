@@ -1,32 +1,37 @@
-// src/pages/ToolsPage/ToolsSummaryPage.tsx
-// Full tools directory with category sidebar filter.
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { featuredTools, toolCategories } from '../../data/tools';
 import styles from './ToolsSummaryPage.module.css';
 
-const cornellTools = featuredTools.filter(t => t.hasIframe);
-const externalTools = featuredTools.filter(t => !t.hasIframe);
-
 const ToolsSummaryPage: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState('All');
   const [search, setSearch] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(15);
 
-  const filterTools = (tools: typeof featuredTools) =>
-    tools.filter(t => {
-      const matchCat = activeCategory === 'All' || t.category === activeCategory;
-      const q = search.toLowerCase();
-      const matchSearch = !q ||
-        t.title.toLowerCase().includes(q) ||
-        t.description.toLowerCase().includes(q) ||
-        t.category.toLowerCase().includes(q);
-      return matchCat && matchSearch;
-    });
+  const filtered = featuredTools.filter(t => {
+    const matchCat = activeCategory === 'All' || t.category === activeCategory;
+    const q = search.toLowerCase();
+    const matchSearch = !q ||
+      t.title.toLowerCase().includes(q) ||
+      t.description.toLowerCase().includes(q) ||
+      t.category.toLowerCase().includes(q);
+    return matchCat && matchSearch;
+  });
 
-  const visibleCornell = filterTools(cornellTools);
-  const visibleExternal = filterTools(externalTools);
-  const totalVisible = visibleCornell.length + visibleExternal.length;
+  const totalPages = Math.ceil(filtered.length / itemsPerPage);
+  const start = (currentPage - 1) * itemsPerPage;
+  const paginated = filtered.slice(start, start + itemsPerPage);
+
+  const handleFilter = (cat: string) => {
+    setActiveCategory(cat);
+    setCurrentPage(1);
+  };
+
+  const handleSearch = (q: string) => {
+    setSearch(q);
+    setCurrentPage(1);
+  };
 
   return (
     <div className={styles.page}>
@@ -38,12 +43,7 @@ const ToolsSummaryPage: React.FC = () => {
           <p className={styles.heroSubtitle}>
             Free, location-specific climate and weather tools designed to help Northeast farmers
             make informed decisions — developed by the{' '}
-            <a
-              href="https://www.nrcc.cornell.edu/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.heroLink}
-            >
+            <a href="https://www.nrcc.cornell.edu/" target="_blank" rel="noopener noreferrer" className={styles.heroLink}>
               Northeast Regional Climate Center
             </a>{' '}
             at Cornell University.
@@ -60,11 +60,11 @@ const ToolsSummaryPage: React.FC = () => {
               type="text"
               placeholder="Search tools…"
               value={search}
-              onChange={e => setSearch(e.target.value)}
+              onChange={e => handleSearch(e.target.value)}
               className={styles.searchInput}
             />
             {search && (
-              <button className={styles.clearBtn} onClick={() => setSearch('')}>✕</button>
+              <button className={styles.clearBtn} onClick={() => handleSearch('')}>✕</button>
             )}
           </div>
 
@@ -73,7 +73,7 @@ const ToolsSummaryPage: React.FC = () => {
             {toolCategories.map(cat => (
               <button
                 key={cat}
-                onClick={() => setActiveCategory(cat)}
+                onClick={() => handleFilter(cat)}
                 className={`${styles.catBtn} ${activeCategory === cat ? styles.catBtnActive : ''}`}
               >
                 {cat}
@@ -89,119 +89,80 @@ const ToolsSummaryPage: React.FC = () => {
           <div className={styles.aboutBox}>
             <p className={styles.aboutLabel}>🏛️ NRCC at Cornell</p>
             <p className={styles.aboutText}>
-              These tools are built and maintained by the Northeast Regional Climate Center
-              (NRCC), which has 41 open-source repositories on GitHub.
+              These tools are built and maintained by the Northeast Regional Climate Center (NRCC).
               All tools are free and updated daily with observed climate data.
             </p>
-            <a
-              href="https://github.com/nrcc-cornell"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.aboutLink}
-            >
+            <a href="https://github.com/nrcc-cornell" target="_blank" rel="noopener noreferrer" className={styles.aboutLink}>
               View All Repos on GitHub ↗
             </a>
           </div>
         </aside>
 
         <main className={styles.main}>
-          {totalVisible === 0 ? (
+          {filtered.length === 0 ? (
             <div className={styles.empty}>
               <p>No tools match your search. Try a different keyword or category.</p>
-              <button onClick={() => { setSearch(''); setActiveCategory('All'); }} className={styles.resetBtn}>
+              <button onClick={() => { handleSearch(''); handleFilter('All'); }} className={styles.resetBtn}>
                 Reset filters
               </button>
             </div>
           ) : (
             <>
-              {visibleCornell.length > 0 && (
-                <section className={styles.section}>
-                  <div className={styles.sectionHeader}>
-                    <h2 className={styles.sectionTitle}>Cornell / NRCC Tools</h2>
-                    <span className={styles.sectionCount}>{visibleCornell.length} tools</span>
-                  </div>
+              <div className={styles.resultsRow}>
+                <p className={styles.resultsInfo}>
+                  Showing {start + 1}–{Math.min(start + itemsPerPage, filtered.length)} of {filtered.length} tools
+                </p>
+                <div className={styles.perPageSelect}>
+                  <label className={styles.perPageLabel}>Per page:</label>
+                  <select
+                    className={styles.perPageDropdown}
+                    value={itemsPerPage}
+                    onChange={e => { setItemsPerPage(Number(e.target.value)); setCurrentPage(1); }}
+                  >
+                    <option value={15}>15</option>
+                    <option value={30}>30</option>
+                    <option value={50}>50</option>
+                    <option value={100}>All</option>
+                  </select>
+                </div>
+              </div>
 
-                  <div className={styles.grid}>
-                    {visibleCornell.map(tool => (
-                      <Link key={tool.id} to={`/tools/${tool.id}`} className={styles.card}>
-                        {tool.image ? (
-                          <div className={styles.cardImage} style={{ backgroundImage: `url(${tool.image})` }} />
-                        ) : (
-                          <div className={styles.cardImagePlaceholder}>
-                            <span className={styles.cardIconLarge}>{tool.icon}</span>
-                          </div>
-                        )}
-                        <div className={styles.cardBody}>
-                          <span className={styles.cardCategory}>{tool.category}</span>
-                          <h3 className={styles.cardTitle}>{tool.title}</h3>
-                          <p className={styles.cardDesc}>{tool.description}</p>
-                          <div className={styles.cardFooter}>
-                            <span className={styles.cardCta}>Launch Tool →</span>
-                            <a
-                              href={tool.repoUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className={styles.cardRepo}
-                              onClick={e => e.stopPropagation()}
-                            >
-                              GitHub ↗
-                            </a>
-                          </div>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                </section>
-              )}
+              <div className={styles.grid}>
+                {paginated.map(tool => (
+                  <Link
+                    key={tool.id}
+                    to={`/tools/${tool.id}`}
+                    className={`${styles.card} ${!tool.hasIframe ? styles.cardExternal : ''}`}
+                  >
+                    {tool.image ? (
+                      <div className={styles.cardImage} style={{ backgroundImage: `url(${tool.image})` }} />
+                    ) : (
+                      <div className={styles.cardImagePlaceholder}>
+                        <span className={styles.cardIconLarge}>{tool.icon}</span>
+                      </div>
+                    )}
+                    <div className={styles.cardBody}>
+                      <span className={styles.cardCategory}>{tool.category}</span>
+                      <h3 className={styles.cardTitle}>{tool.title}</h3>
+                      <p className={styles.cardDesc}>{tool.description}</p>
+                      <div className={styles.cardFooter}>
+                        <span className={styles.cardCta}>
+                          {tool.hasIframe ? 'Launch Tool →' : 'View Details →'}
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
 
-              {visibleExternal.length > 0 && (
-                <section className={styles.section}>
-                  <div className={styles.sectionHeader}>
-                    <h2 className={styles.sectionTitle}>🔗 Additional & Partner Tools</h2>
-                    <span className={styles.sectionCount}>{visibleExternal.length} tools</span>
-                  </div>
-                  <p className={styles.sectionNote}>
-                    Tools from NOAA, USDA, and other NRCC repositories — open in a new tab.
-                  </p>
-                  <div className={styles.grid}>
-                    {visibleExternal.map(tool => (
-                      <a
-                        key={tool.id}
-                        href={tool.externalLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`${styles.card} ${styles.cardExternal}`}
-                      >
-                        {tool.image ? (
-                          <div className={styles.cardImage} style={{ backgroundImage: `url(${tool.image})` }} />
-                        ) : (
-                          <div className={styles.cardImagePlaceholder}>
-                            <span className={styles.cardIconLarge}>{tool.icon}</span>
-                          </div>
-                        )}
-                        <div className={styles.cardBody}>
-                          <span className={styles.cardCategory}>{tool.category}</span>
-                          <h3 className={styles.cardTitle}>{tool.title}</h3>
-                          <p className={styles.cardDesc}>{tool.description}</p>
-                          <div className={styles.cardFooter}>
-                            <span className={styles.cardCta}>Open Tool ↗</span>
-                            {tool.repoUrl && tool.repoUrl.includes('github.com/nrcc-cornell/') && (
-                              <a
-                                href={tool.repoUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className={styles.cardRepo}
-                                onClick={e => e.stopPropagation()}
-                              >
-                                GitHub ↗
-                              </a>
-                            )}
-                          </div>
-                        </div>
-                      </a>
-                    ))}
-                  </div>
-                </section>
+              {totalPages > 1 && (
+                <div className={styles.pagination}>
+                  <button className={styles.pageBtn} onClick={() => setCurrentPage(p => p - 1)} disabled={currentPage === 1}>← Previous</button>
+                  {Array.from({ length: totalPages }, (_, i) => i + 1).map(p => (
+                    <button key={p} className={`${styles.pageBtn} ${currentPage === p ? styles.pageActive : ''}`} onClick={() => setCurrentPage(p)}>{p}</button>
+                  ))}
+                  <button className={styles.pageBtn} onClick={() => setCurrentPage(p => p + 1)} disabled={currentPage === totalPages}>Next →</button>
+                </div>
               )}
             </>
           )}

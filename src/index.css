@@ -1,100 +1,156 @@
-@import './styles/globals.css';
-/* src/index.css or src/App.css - Add these global responsive styles */
+/* index.css - Global Styles */
 
-/* ============================================
-   FLUID RESPONSIVE DESIGN SYSTEM
-   ============================================ */
+/* ===== GOOGLE FONTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap');
 
+/* ===== CSS CUSTOM PROPERTIES - OPTION 3 PALETTE ===== */
 :root {
-  /* Fluid Typography Scale */
-  --font-xs: clamp(0.75rem, 1.5vw, 0.875rem);
-  --font-sm: clamp(0.875rem, 1.8vw, 1rem);
-  --font-base: clamp(1rem, 2vw, 1.125rem);
-  --font-lg: clamp(1.125rem, 2.2vw, 1.25rem);
-  --font-xl: clamp(1.25rem, 2.5vw, 1.5rem);
-  --font-2xl: clamp(1.5rem, 3vw, 2rem);
-  --font-3xl: clamp(2rem, 4vw, 2.5rem);
-  --font-4xl: clamp(2.5rem, 5vw, 3.5rem);
+  /* Typography */
+  --font-serif: Georgia, 'Times New Roman', serif;
+  --font-sans: 'Source Sans 3', system-ui, -apple-system, sans-serif;
 
-  /* Fluid Spacing Scale */
-  --space-xs: clamp(0.25rem, 1vw, 0.5rem);
-  --space-sm: clamp(0.5rem, 1.5vw, 0.75rem);
-  --space-md: clamp(1rem, 2vw, 1.5rem);
-  --space-lg: clamp(1.5rem, 3vw, 2rem);
-  --space-xl: clamp(2rem, 4vw, 3rem);
-  --space-2xl: clamp(3rem, 6vw, 5rem);
-  --space-3xl: clamp(4rem, 8vw, 7rem);
+  /* Option 3 Color Palette - Warm & Muted */
+  --color-forest: #3D5A45;           /* Primary forest green - headings, buttons */
+  --color-forest-dark: #2a4330;      /* Darker forest for hover states */
+  --color-gold: #A98B3F;             /* Gold accent - links, CTAs */
+  --color-gold-hover: #8a7232;       /* Gold hover state */
+  --color-sage: #6B8E6B;             /* Sage green - secondary accents */
+  --color-stone-bg: #F5F4F0;         /* Warm stone - alternating section bg */
+  --color-cream-bg: #FAFAF8;         /* Cream white - section bg */
 
-  /* Container Widths */
-  --container-sm: min(95%, 640px);
-  --container-md: min(92%, 1024px);
-  --container-lg: min(90%, 1400px);
-  --container-xl: min(88%, 1800px);
+  /* Text Colors */
+  --color-text-primary: #2D3A2E;     /* Dark forest for primary text */
+  --color-text-body: #3D4A3E;        /* Body text */
+  --color-text-muted: #6B6E68;       /* Muted/secondary text */
+  --color-text-light: #8A8D87;       /* Light text for meta */
 
-  /* Colors */
-  --color-primary: #2e7d32;
-  --color-primary-dark: #1b5e20;
-  --color-primary-light: #4caf50;
+  /* Borders */
+  --color-border: #e0e6dd;           /* Standard border */
+  --color-border-light: #DDE4DC;     /* Light border */
+  --color-border-band: #d7e0d4;      /* Band/card borders */
+
+  /* Backgrounds */
+  --color-bg-white: #FFFFFF;
+  --color-bg-band: #EAF0E8;          /* Seasonal band background */
+
+  /* Type Scale - Properly sized */
+  --text-xs: 0.8125rem;      /* 13px - eyebrows, badges */
+  --text-sm: 0.9375rem;      /* 15px - meta text */
+  --text-base: 1rem;         /* 16px - buttons, base */
+  --text-md: 1.0625rem;      /* 17px - card descriptions */
+  --text-lg: 1.125rem;       /* 18px - body paragraphs */
+  --text-xl: 1.375rem;       /* 22px - card titles */
+  --text-2xl: 1.5rem;        /* 24px - H3 */
+  --text-3xl: 2rem;          /* 32px - H2 section headings */
+  --text-4xl: 2.5rem;        /* 40px - Hero titles */
+
+  /* Spacing */
+  --section-gap: 5rem;
+  --section-gap-mobile: 3.5rem;
+  --card-gap: 1.75rem;
+
+  /* Header */
+  --header-height: 112px;
 }
 
-/* Base responsive font size */
+/* ===== RESET & BASE ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html {
-  font-size: 16px; /* Base for rem calculations */
+  font-size: 16px; /* Explicit base - ensures rem calculations are correct */
+  scroll-behavior: smooth;
 }
 
 body {
-  font-size: var(--font-base);
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
   line-height: 1.6;
+  color: var(--color-text-body);
+  background-color: var(--color-bg-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Responsive headings using fluid scale */
+/* ===== TYPOGRAPHY DEFAULTS ===== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  color: var(--color-forest);
+  line-height: 1.3;
+  margin: 0;
+}
+
 h1 {
-  font-size: var(--font-4xl);
-  line-height: 1.2;
+  font-size: var(--text-4xl);
 }
 
 h2 {
-  font-size: var(--font-3xl);
-  line-height: 1.25;
+  font-size: var(--text-3xl);
 }
 
 h3 {
-  font-size: var(--font-2xl);
-  line-height: 1.3;
+  font-size: var(--text-2xl);
 }
 
 h4 {
-  font-size: var(--font-xl);
-  line-height: 1.35;
+  font-size: var(--text-xl);
 }
 
-h5 {
-  font-size: var(--font-lg);
-  line-height: 1.4;
+p {
+  margin: 0 0 1rem 0;
+  font-size: var(--text-lg);
+  line-height: 1.7;
+  color: var(--color-text-body);
 }
 
-h6 {
-  font-size: var(--font-base);
-  line-height: 1.5;
+a {
+  color: var(--color-gold);
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-/* ============================================
-   HOW TO USE IN YOUR COMPONENTS:
-   ============================================
+a:hover {
+  color: var(--color-gold-hover);
+  text-decoration: underline;
+}
 
-   Instead of:
-     font-size: 24px;
-     padding: 32px;
-     margin-bottom: 48px;
+/* ===== UTILITY CLASSES ===== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 
-   Use:
-     font-size: var(--font-2xl);
-     padding: var(--space-xl);
-     margin-bottom: var(--space-2xl);
+/* ===== APP LAYOUT ===== */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
-   Or use clamp() directly:
-     font-size: clamp(1.5rem, 3vw, 2rem);
-     padding: clamp(1rem, 4vw, 3rem);
-     gap: clamp(1rem, 2vw, 2rem);
+#root > main,
+#root > div:first-of-type {
+  flex: 1 0 auto;
+}
 
-   ============================================ */
+#root > footer {
+  flex-shrink: 0;
+}
+
+/* Print styles */
+@media print {
+  body {
+    background: white;
+  }
+}
