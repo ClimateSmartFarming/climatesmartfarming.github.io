@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Container from '../../common/Container/Container';
 import styles from './Footer.module.css';
 
@@ -16,33 +17,24 @@ interface Partner {
   name: string;
   logo: string;
   url: string;
-  scale?: number; // Custom scale multiplier
 }
 
-const partners: Partner[] = [
-  {
-    name: 'AI-LEAF',
-    logo: '/logos/ai-leaf-logo.jpeg',
-    url: 'https://ai-leaf.org',
-    scale: 1.25 // 25% larger
-  },
-  {
-    name: 'Cornell University',
-    logo: '/logos/cornell-logo.png',
-    url: 'https://cornell.edu',
-    scale: 1.5 // 50% larger
-  },
+// Collaborators - light green section (use transparent logos)
+const collaborators: Partner[] = [
   {
     name: 'Northeast Regional Climate Center',
-    logo: '/logos/nrcc-logo.png',
-    url: 'http://www.nrcc.cornell.edu/',
-    scale: 1 // Base size
+    logo: '/logos/NRCC-banner.png',
+    url: 'http://www.nrcc.cornell.edu/'
   },
   {
     name: 'USDA Northeast Climate Hub',
-    logo: '/logos/usda-climate-hub-logo.jpg',
-    url: 'https://www.climatehubs.usda.gov/hubs/northeast',
-    scale: 1.5 // 50% larger
+    logo: '/logos/NEclimatehub.png',
+    url: 'https://www.climatehubs.usda.gov/hubs/northeast'
+  },
+  {
+    name: 'AI-LEAF',
+    logo: '/logos/ai-leaf-full-logo.png',
+    url: 'https://ai-leaf.org'
   }
 ];
 
@@ -50,9 +42,8 @@ const footerSections: FooterSection[] = [
   {
     title: 'Tools & Resources',
     links: [
-      { label: 'CSF Decision Tools', href: '/tools/decision' },
-      { label: 'CSF Climate Tools', href: '/tools/climate' },
-      { label: 'Extension Programs', href: '/programs' },
+      { label: 'CSF Decision Tools', href: '/tools' },
+      { label: 'Resources', href: '/resources' },
       { label: 'News and Updates', href: '/news' }
     ]
   }
@@ -60,16 +51,15 @@ const footerSections: FooterSection[] = [
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
-  const baseLogoHeight = 90; // Base height in pixels
 
   return (
     <footer className={styles.footer}>
-      {/* Partners Section */}
+      {/* Collaborators Section - Light Green */}
       <div className={styles.partnersSection}>
         <Container>
           <h3 className={styles.partnersTitle}>Our Collaborators</h3>
           <div className={styles.partnersGrid}>
-            {partners.map((partner) => (
+            {collaborators.map((partner) => (
               <a
                 key={partner.name}
                 href={partner.url}
@@ -82,9 +72,6 @@ const Footer: React.FC = () => {
                   src={partner.logo}
                   alt={`${partner.name} logo`}
                   className={styles.partnerLogo}
-                  style={{
-                    height: `${baseLogoHeight * (partner.scale || 1)}px`
-                  }}
                 />
               </a>
             ))}
@@ -92,24 +79,43 @@ const Footer: React.FC = () => {
         </Container>
       </div>
 
-      {/* Main Footer Content */}
+      {/* Main Footer Content - Dark Green */}
       <Container>
         <div className={styles.footerContent}>
+          {/* Cornell Branding Column */}
           <div className={styles.brandColumn}>
             <div className={styles.footerLogo}>
               <span className={styles.logoText}>Cornell Climate Smart Farming</span>
             </div>
             <div className={styles.footerDescription}>
               <p>
-                Supporting New York farmers with research-based tools and resources 
+                Supporting New York farmers with research-based tools and resources
                 for climate adaptation and sustainable agriculture.
               </p>
-              <p className={styles.affiliation}>
-                Cornell University • College of Agriculture and Life Sciences
-              </p>
+            </div>
+
+            {/* Cornell Logos Section */}
+            <div className={styles.cornellLogosSection}>
+              <div className={styles.cornellLogoItem}>
+                <span className={styles.cornellLogoLabel}>Cornell University</span>
+                <img
+                  src="/logos/Cornelllogofinal.png"
+                  alt="Cornell University logo"
+                  className={styles.cornellLogo}
+                />
+              </div>
+              <div className={styles.cornellLogoItem}>
+                <span className={styles.cornellLogoLabel}>College of Agriculture and Life Sciences</span>
+                <img
+                  src="/logos/Cornell-Cals-3.png"
+                  alt="Cornell CALS logo"
+                  className={styles.cornellLogo}
+                />
+              </div>
             </div>
           </div>
-          
+
+          {/* Links Column */}
           {footerSections.map((section) => (
             <div key={section.title} className={styles.footerColumn}>
               <h4 className={styles.columnTitle}>
@@ -118,29 +124,34 @@ const Footer: React.FC = () => {
               <ul className={styles.footerLinks}>
                 {section.links.map((link) => (
                   <li key={link.label}>
-                    <a 
-                      href={link.href}
-                      className={styles.footerLink}
-                      target={link.href.startsWith('http') ? '_blank' : undefined}
-                      rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    >
-                      {link.label}
-                    </a>
+                    {link.href.startsWith('http') ? (
+                      <a
+                        href={link.href}
+                        className={styles.footerLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link to={link.href} className={styles.footerLink}>
+                        {link.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
             </div>
           ))}
         </div>
-        
+
         <div className={styles.footerBottom}>
           <div className={styles.copyright}>
             <p>© {currentYear} Cornell University. All rights reserved.</p>
           </div>
           <div className={styles.bottomLinks}>
-            <a href="/privacy" className={styles.bottomLink}>Privacy Policy</a>
-            <a href="/accessibility" className={styles.bottomLink}>Accessibility</a>
-            <a href="/terms" className={styles.bottomLink}>Terms of Use</a>
+            <Link to="/privacy" className={styles.bottomLink}>Privacy Policy</Link>
+            <Link to="/accessibility" className={styles.bottomLink}>Accessibility</Link>
           </div>
         </div>
       </Container>

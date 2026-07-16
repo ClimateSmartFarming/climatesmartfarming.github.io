@@ -15,6 +15,33 @@ const markdownFiles = import.meta.glob('/src/content/tools/*.md', {
 // Fallback to tools.ts for tools not yet converted to markdown
 import { featuredTools } from '../../data/tools';
 
+function ToolFooter() {
+  return (
+    <div className={styles.toolFooter}>
+      <p>
+        <strong>
+          Unsure of what steps to take next?{' '}
+          <a href="http://cce.cornell.edu/localoffices" target="_blank" rel="noopener noreferrer">
+            Find your local Extension office
+          </a>{' '}
+          for more detailed advice.
+        </strong>
+      </p>
+      <p>
+        <strong>
+          Please take a few minutes to take a{' '}
+          <a href="https://cornell.qualtrics.com/jfe/form/SV_bj8b2GbRZJReGIB" target="_blank" rel="noopener noreferrer">
+            brief survey
+          </a>{' '}
+          on the CSF tools,
+        </strong>{' '}
+        so that we can continue to improve them, and develop new tools that are most needed! The
+        survey is voluntary and confidential (the password to complete the survey is CSF).
+      </p>
+    </div>
+  );
+}
+
 const ToolPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const { getItem } = useMarkdownContent(markdownFiles);
@@ -38,11 +65,13 @@ const ToolPage: React.FC = () => {
     externalLink: markdownTool.meta.externalLink as string | undefined,
     iframeUrl: markdownTool.meta.iframeUrl as string | undefined,
     iframeHeight: markdownTool.meta.iframeHeight as string | undefined,
+    iframeWidth: markdownTool.meta.iframeWidth as string | undefined,
     repoUrl: markdownTool.meta.repoUrl as string | undefined,
-    hasIframe: markdownTool.meta.hasIframe as boolean,
+    hasIframe: markdownTool.meta.hasIframe === true || markdownTool.meta.hasIframe === 'true',
     body: markdownTool.body,
   } : legacyTool ? {
     ...legacyTool,
+    iframeWidth: undefined as string | undefined,
     body: legacyTool.detail || '',
   } : null;
 
@@ -57,15 +86,51 @@ const ToolPage: React.FC = () => {
     );
   }
 
+  const titleBand = (
+    <div className={styles.titleBand}>
+      <div className={styles.titleBandInner}>
+        <Link to="/tools" className={styles.backLink}>← All Tools</Link>
+        <div className={styles.titleRow}>
+          <div className={styles.titleText}>
+            <h1 className={styles.title}>{tool.title}</h1>
+            <p className={styles.description}>{tool.description}</p>
+            <div className={styles.titleLinks}>
+              {tool.externalLink && (
+                <a href={tool.externalLink} target="_blank" rel="noopener noreferrer" className={styles.linkExternal}>
+                  Open full page ↗
+                </a>
+              )}
+              {tool.repoUrl && tool.repoUrl.includes('github.com') && (
+                <a href={tool.repoUrl} target="_blank" rel="noopener noreferrer" className={styles.linkRepo}>
+                  View source on GitHub
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  const metaBand = (
+    <div className={styles.metaBand}>
+      <div className={styles.metaInner}>
+        <div className={styles.titleMeta}>
+          <span className={styles.categoryBadge}>{tool.category}</span>
+          <span className={styles.cornellBadge}>Cornell / NRCC</span>
+        </div>
+        <ToolFooter />
+      </div>
+    </div>
+  );
+
   // External tools (hasIframe: false) get the simple markdown layout
   if (!tool.hasIframe) {
     return (
       <div className={styles.page}>
+        {titleBand}
+
         <div className={styles.externalLayout}>
-          <Link to="/tools" className={styles.backLink}>← All Tools</Link>
-
-          <h1 className={styles.externalTitle}>{tool.title}</h1>
-
           {/* Render markdown body (includes clickable image) */}
           {hasMarkdown ? (
             <MarkdownRenderer content={tool.body} className={styles.externalBody} />
@@ -73,12 +138,7 @@ const ToolPage: React.FC = () => {
             <>
               {/* Legacy fallback for tools not yet in markdown */}
               {tool.image && tool.externalLink && (
-                <a
-                  href={tool.externalLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.externalImageLink}
-                >
+                <a href={tool.externalLink} target="_blank" rel="noopener noreferrer" className={styles.externalImageLink}>
                   <img
                     src={tool.image}
                     alt={tool.title}
@@ -93,6 +153,8 @@ const ToolPage: React.FC = () => {
             </>
           )}
         </div>
+
+        {metaBand}
       </div>
     );
   }
@@ -101,52 +163,21 @@ const ToolPage: React.FC = () => {
   return (
     <div className={styles.page}>
 
-      {/* ── Title band ─────────────────────────────────────────────────── */}
-      <div className={styles.titleBand}>
-        <div className={styles.titleBandInner}>
-          <Link to="/tools" className={styles.backLink}>← All Tools</Link>
-          <div className={styles.titleRow}>
-            {tool.image ? (
-              <div className={styles.titleImg} style={{ backgroundImage: `url(${tool.image})` }} />
-            ) : (
-              <div className={styles.titleImgPlaceholder}>
-                <span>🔧</span>
-              </div>
-            )}
-            <div className={styles.titleText}>
-              <div className={styles.titleMeta}>
-                <span className={styles.categoryBadge}>{tool.category}</span>
-                <span className={styles.cornellBadge}>Cornell / NRCC</span>
-              </div>
-              <h1 className={styles.title}>{tool.title}</h1>
-              <p className={styles.description}>{tool.description}</p>
-              <div className={styles.titleLinks}>
-                {tool.externalLink && (
-                  <a href={tool.externalLink} target="_blank" rel="noopener noreferrer" className={styles.linkExternal}>
-                    Open full page ↗
-                  </a>
-                )}
-                {tool.repoUrl && tool.repoUrl.includes('github.com') && (
-                  <a href={tool.repoUrl} target="_blank" rel="noopener noreferrer" className={styles.linkRepo}>
-                    View source on GitHub
-                  </a>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      {titleBand}
 
       {/* ── Tool area ──────────────────────────────────────────────────── */}
       <div className={styles.toolArea}>
-        <div className={styles.iframeWrapper}>
-          {!iframeLoaded && !iframeError && (
+        <div
+          className={styles.iframeWrapper}
+          style={tool.iframeWidth ? { maxWidth: tool.iframeWidth } : {}}
+        >
+          {!iframeLoaded && !iframeError && tool.iframeUrl && (
             <div className={styles.iframeLoading}>
               <div className={styles.spinner} />
               <p>Loading tool…</p>
             </div>
           )}
-          {iframeError && (
+          {(iframeError || !tool.iframeUrl) && (
             <div className={styles.iframeError}>
               <p>⚠️ The tool could not be loaded inline.</p>
               {tool.externalLink && (
@@ -187,6 +218,8 @@ const ToolPage: React.FC = () => {
           </div>
         </div>
       )}
+
+      {metaBand}
 
     </div>
   );

@@ -6,7 +6,7 @@ subregion: "New York City"
 organization: "Cornell Cooperative Extension"
 email: "yg88@cornell.edu"
 phone: "(516) 305-0358"
-image: /images/network/yolanda-gonzalez.jpg
+image: /images/network/yolanda-gonzalez.png
 order: 9
 ---
 

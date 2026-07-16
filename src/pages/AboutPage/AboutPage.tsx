@@ -9,17 +9,14 @@ const files = import.meta.glob('/src/content/about/*.md', {
 
 const PILLARS = [
   {
-    icon: '📈',
     label: 'Productivity',
     desc: 'Increase agricultural productivity and farming incomes sustainably',
   },
   {
-    icon: '🌱',
     label: 'Mitigation',
     desc: 'Reduce greenhouse gas emissions through best management practices and renewable energy',
   },
   {
-    icon: '🛡',
     label: 'Resiliency',
     desc: 'Increase farm resilience to extreme weather through climate change adaptation practices',
   },
@@ -39,10 +36,7 @@ export default function AboutPage() {
 
   return (
     <div className={styles.page}>
-      <div
-        className={styles.hero}
-        style={meta.image ? { backgroundImage: `url(${meta.image})` } : {}}
-      >
+      <div className={styles.hero}>
         <div className={styles.heroOverlay} />
         <div className={styles.heroInner}>
           <p className={styles.heroEyebrow}>Cornell Climate Smart Farming</p>
@@ -52,13 +46,13 @@ export default function AboutPage() {
             Empowering Northeast farmers with science-based tools and strategies for a changing climate
           </p>
         </div>
+        <div className={styles.heroPattern} aria-hidden />
       </div>
 
       <div className={styles.pillarsBar}>
         <div className={styles.pillarsInner}>
           {PILLARS.map(p => (
             <div key={p.label} className={styles.pillar}>
-              <span className={styles.pillarIcon}>{p.icon}</span>
               <strong className={styles.pillarLabel}>{p.label}</strong>
               <p className={styles.pillarDesc}>{p.desc}</p>
             </div>
@@ -77,8 +71,8 @@ export default function AboutPage() {
           <div className={styles.imageContentRow}>
             <div className={styles.imageBlock}>
               <img
-                src={meta.image || '/images/about/about-hero.jpg'}
-                alt="Cornell Climate Smart Farming Program"
+                src={meta.image || '/images/about/LauraMcDermottfield.jpg'}
+                alt="Laura McDermott in the field"
                 className={styles.featuredImage}
               />
               <div className={styles.imageCaption}>

@@ -3,13 +3,20 @@ import { Link } from 'react-router-dom';
 import { featuredTools, toolCategories } from '../../data/tools';
 import styles from './ToolsSummaryPage.module.css';
 
+const sortedTools = [...featuredTools].sort((a, b) => a.title.localeCompare(b.title));
+
+const sortedCategories = [
+  'All',
+  ...toolCategories.filter(c => c !== 'All').sort((a, b) => a.localeCompare(b)),
+];
+
 const ToolsSummaryPage: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState('All');
   const [search, setSearch] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(15);
 
-  const filtered = featuredTools.filter(t => {
+  const filtered = sortedTools.filter(t => {
     const matchCat = activeCategory === 'All' || t.category === activeCategory;
     const q = search.toLowerCase();
     const matchSearch = !q ||
@@ -70,7 +77,7 @@ const ToolsSummaryPage: React.FC = () => {
 
           <div className={styles.catBox}>
             <p className={styles.catHeading}>Categories</p>
-            {toolCategories.map(cat => (
+            {sortedCategories.map(cat => (
               <button
                 key={cat}
                 onClick={() => handleFilter(cat)}
@@ -142,7 +149,6 @@ const ToolsSummaryPage: React.FC = () => {
                       </div>
                     )}
                     <div className={styles.cardBody}>
-                      <span className={styles.cardCategory}>{tool.category}</span>
                       <h3 className={styles.cardTitle}>{tool.title}</h3>
                       <p className={styles.cardDesc}>{tool.description}</p>
                       <div className={styles.cardFooter}>

@@ -6,7 +6,7 @@ subregion: "Northern New York"
 organization: "Cornell PRO-DAIRY Program"
 email: "lc636@cornell.edu"
 phone: "(607) 592-0290"
-image: /images/network/lindsay-ferlito.jpg
+image: /images/network/lindsay-ferlito.png
 order: 6
 ---
 

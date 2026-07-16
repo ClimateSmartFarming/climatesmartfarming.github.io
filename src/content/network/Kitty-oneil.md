@@ -6,7 +6,7 @@ subregion: "Northern New York"
 organization: "Cornell Cooperative Extension"
 email: "kitty.oneil@cornell.edu"
 phone: "(315) 379-9192"
-image: /images/network/kitty-oneil.jpg
+image: /images/network/kitty-oneil.jpeg
 order: 1
 ---
 

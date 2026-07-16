@@ -26,6 +26,7 @@ export const toolCategories = [
   'Carbon & GHG',
   'Climate Trends',
   'Climate Zones',
+  'IPM & Pest Forecasting',
 ];
 
 export const featuredTools: Tool[] = [
@@ -83,66 +84,6 @@ export const featuredTools: Tool[] = [
   },
 
   {
-    id: 'apple-freeze-classic',
-    image: '/images/tools/frapple_snapshot_20180103.png',
-    title: 'Apple Stage & Freeze Damage Tool (Classic)',
-    description: 'The original version of the apple stage and freeze damage probability tool — still actively maintained alongside the v4 release.',
-    category: 'Specialty Crops',
-    iframeUrl: 'https://nrcc-cornell.github.io/csf-frapple',
-    externalLink: 'https://climatesmartfarming.org/tools/csf-apple-stage/',
-    repoUrl: 'https://github.com/nrcc-cornell/csf-frapple',
-    hasIframe: true,
-  },
-
-  {
-    id: 'turf-heat-stress',
-    image: '/images/tools/Screen-Shot-2017-04-12-at-9.34.42-AM.png',
-    title: 'Turf Grass Heat Stress Tool',
-    description: 'Climate decision tool for turf grass managers, providing heat stress forecasts and historical climate context to guide irrigation and management decisions.',
-    category: 'Specialty Crops',
-    iframeUrl: 'https://nrcc-cornell.github.io/turf-page',
-    externalLink: 'https://github.com/nrcc-cornell/turf-page',
-    repoUrl: 'https://github.com/nrcc-cornell/turf-page',
-    hasIframe: true,
-  },
-
-  {
-    id: 'nwm-drought',
-    image: '/images/tools/20161101_northeast_trd.jpg',
-    title: 'Northeast Drought Indices (NWM)',
-    description: 'National Water Model drought indices for the Northeast U.S., providing hydrological drought monitoring at fine spatial resolution.',
-    category: 'Drought',
-    iframeUrl: 'https://nrcc-cornell.github.io/nwm-drought',
-    externalLink: 'https://github.com/nrcc-cornell/nwm-drought',
-    repoUrl: 'https://github.com/nrcc-cornell/nwm-drought',
-    hasIframe: true,
-  },
-
-  {
-    id: 'nedews',
-    image: '/images/tools/20161101_northeast_trd.jpg',
-    title: 'Northeast Drought Early Warning System',
-    description: 'Dashboard tracking drought conditions across the Northeast using multiple drought indices, providing early warning for farmers and water managers.',
-    category: 'Drought',
-    iframeUrl: 'https://nrcc-cornell.github.io/nedews-dashboard',
-    externalLink: 'https://github.com/nrcc-cornell/nedews-dashboard',
-    repoUrl: 'https://github.com/nrcc-cornell/nedews-dashboard',
-    hasIframe: true,
-  },
-
-  {
-    id: 'threadex',
-    image: '/images/tools/Screen-Shot-2017-01-13-at-11.44.06-AM.png',
-    title: 'ThreadEx Weather Data',
-    description: 'Provides long-term daily weather data for Northeast U.S. locations, combining station observations and gridded data to create seamless climate records.',
-    category: 'Historical Data',
-    iframeUrl: 'https://nrcc-cornell.github.io/threadex',
-    externalLink: 'https://github.com/nrcc-cornell/threadex',
-    repoUrl: 'https://github.com/nrcc-cornell/threadex',
-    hasIframe: true,
-  },
-
-  {
     id: 'grape-hardiness',
     image: '/images/tools/grapehard_snapshot_20180103.png',
     title: 'Grape Hardiness & Freeze Risk Tool',
@@ -151,39 +92,6 @@ export const featuredTools: Tool[] = [
     category: 'Specialty Crops',
     externalLink: 'https://climatesmartfarming.org/tools/csf-grape-hardiness/',
     repoUrl: 'https://github.com/nrcc-cornell/csf-grapehard',
-    hasIframe: false,
-  },
-
-  {
-    id: 'scan-acis',
-    image: '/images/tools/Screen-Shot-2016-05-04-at-10.52.40-AM.png',
-    title: 'SCAN-ACIS Soil Climate Decision Tools',
-    description: 'Decision support tools for the Soil Climate Analysis Network (SCAN), providing soil moisture and temperature data for agricultural management.',
-    category: 'Soil Health',
-    externalLink: 'https://github.com/nrcc-cornell/scan-acis-web',
-    repoUrl: 'https://github.com/nrcc-cornell/scan-acis-web',
-    hasIframe: false,
-  },
-
-  {
-    id: 'regional-swh',
-    image: '/images/tools/Screen-Shot-2016-05-04-at-10.49.44-AM.png',
-    title: 'Regional Soil Water Holding Tool',
-    description: 'Python-based regional tool for calculating and visualizing soil water holding capacity across the Northeast, supporting irrigation and drainage planning.',
-    category: 'Soil Health',
-    externalLink: 'https://github.com/nrcc-cornell/regional-swh',
-    repoUrl: 'https://github.com/nrcc-cornell/regional-swh',
-    hasIframe: false,
-  },
-
-  {
-    id: 'drought-monitor-editor',
-    image: '/images/tools/drought-monitor.jpg',
-    title: 'NRCC Drought Monitor Editor',
-    description: 'Internal NRCC tool for authoring and editing Drought Monitor assessments for the Northeast region.',
-    category: 'Drought',
-    externalLink: 'https://github.com/nrcc-cornell/nrcc-dm-editor',
-    repoUrl: 'https://github.com/nrcc-cornell/nrcc-dm-editor',
     hasIframe: false,
   },
 
@@ -208,6 +116,17 @@ export const featuredTools: Tool[] = [
     category: 'Climate Trends',
     externalLink: 'https://climatesmartfarming.org/tools/csf-county-climate-change/',
     repoUrl: 'https://github.com/nrcc-cornell',
+    hasIframe: false,
+  },
+
+{
+    id: 'soil-digital-twin',
+    title: 'Soil Digital Twin Tool',
+    description: 'Simulate soil processes in silico to explore how soil properties respond to management and environmental change.',
+    detail: `<p>The Soil Digital Twin Tool provides an in-silico environment for simulating soil processes and exploring how soil properties respond to management decisions and environmental conditions.</p>`,
+    category: 'Soil Properties',
+    externalLink: 'https://soiltwin.org/soils-in-silico/',
+    repoUrl: 'https://soiltwin.org/',
     hasIframe: false,
   },
 
@@ -249,7 +168,7 @@ export const featuredTools: Tool[] = [
 
   {
     id: 'comet-planner',
-    image: '/images/tools/Screen-Shot-2016-05-18-at-12.22.11-PM.png',
+    image: '/images/tools/Screen-Shot-2017-04-12-at-10.24.57-AM.png',
     title: 'COMET-Farm GHG Accounting Tool',
     description: 'COMET-Farm is a whole farm and ranch carbon and greenhouse gas accounting system.',
     detail: `<p>COMET-Farm is a tool developed by Colorado State University in conjunction with the USDA and NRCS that estimates the carbon footprint for all or part of your farm or ranch operation and allows you to evaluate different options for reducing GHG emissions and sequestering more carbon.</p><p>The tool uses detailed spatially-explicit data on climate and soil conditions for your location and allows you to enter detailed information for your field and livestock operations.</p>`,
@@ -261,7 +180,7 @@ export const featuredTools: Tool[] = [
 
   {
     id: 'climate-normals',
-    image: '/images/tools/Screen-Shot-2017-04-12-at-10.24.57-AM.png',
+    image: '/images/tools/Screen-Shot-2016-05-18-at-12.22.11-PM.png',
     title: 'Climate Normals — NRCC',
     description: 'Climate normals are an arithmetic average of a variable such as temperature over a prescribed 30-year period.',
     detail: `<p>The mission of the Northeast Regional Climate Center (NRCC) is to facilitate and enhance the collection, dissemination, and use of climate data and information, as well as to monitor and assess climatic conditions and impacts in the twelve-state northeastern region of the United States.</p><p>For more information on the NRCC tools, contact Dr. Art DeGaetano at <a href="mailto:atd2@cornell.edu">atd2@cornell.edu</a>.</p>`,
@@ -271,18 +190,17 @@ export const featuredTools: Tool[] = [
     hasIframe: false,
   },
 
-  {
+{
     id: 'newa',
     image: '/images/tools/newa-screenshot-cropped.png',
-    title: 'NEWA — Network for Environment and Weather Apps',
+    title: 'NEWA (Network for Enviro and Weather Apps)',
     description: 'NEWA makes it possible for farmers to share resources for weather data collection, analysis, distribution, and archiving.',
-    detail: `<p>NEWA delivers weather information and apps based on the weather collected that support and advance integrated pest management (IPM) and best management practices for agricultural and green industries.</p>`,
-    category: 'Historical Data',
+    detail: `<p>NEWA "delivers weather information and apps based on the weather collected that support and advance integrated pest management (IPM) and best management practices for agricultural and green industries. Our vision is that NEWA will become <em>the</em> source for weather-related information for the IPM practitioner in the Northeast."</p>`,
+    category: 'IPM & Pest Forecasting',
     externalLink: 'http://newa.cornell.edu/',
     repoUrl: 'http://newa.cornell.edu/',
     hasIframe: false,
   },
-
   {
     id: 'adapt-n',
     image: '/images/tools/Adapt-N_VRT_Rec_800x406.png',
@@ -297,7 +215,7 @@ export const featuredTools: Tool[] = [
 
   {
     id: 'noaa-temp-outlook',
-    image: '/images/tools/Screenshot-2023-11-20-at-11.07.25-AM.png',
+    image: '/images/tools/Screen-Shot-2016-05-04-at-10.52.40-AM.png',
     title: 'NOAA Seasonal Outlook: Temperature',
     description: 'A seasonal forecast is the best available prediction of what our climate will be like in the next few months.',
     detail: `<p>The Climate Prediction Center (CPC), under NOAA, delivers real-time products and information that predict and describe climate variations on timescales from weeks to years. For more information on how to read the Three-Month Outlook maps, see the <a href="http://www.cpc.ncep.noaa.gov/products/predictions/long_range/seasonal_info.php" target="_blank">CPC guidance page</a>.</p>`,
@@ -309,7 +227,7 @@ export const featuredTools: Tool[] = [
 
   {
     id: 'noaa-precip-outlook',
-    image: '/images/tools/Screenshot-2023-11-20-at-11.07.25-AM.png',
+    image: '/images/tools/Screen-Shot-2016-05-04-at-10.49.44-AM.png',
     title: 'NOAA Seasonal Outlook: Precipitation',
     description: 'A seasonal forecast is the best available prediction of what our climate will be like in the next few months.',
     detail: `<p>The Climate Prediction Center (CPC), under NOAA, delivers real-time products and information that predict and describe climate variations on timescales from weeks to years. For more information on how to read the Three-Month Outlook maps, see the <a href="http://www.cpc.ncep.noaa.gov/products/predictions/long_range/seasonal_info.php" target="_blank">CPC guidance page</a>.</p>`,
@@ -319,12 +237,12 @@ export const featuredTools: Tool[] = [
     hasIframe: false,
   },
 
-  {
+{
     id: 'cornell-cover-crop-veg',
-    image: '/images/tools/covercrop_thumbnail.png',
+    image: '/images/tools/Screen-Shot-2016-04-19-at-3.03.20-PM.png',
     title: 'Cornell Cover Crop Tool for Vegetable Growers',
     description: 'This is an online tool to help you quickly narrow the choices of cover crop for your situation.',
-    detail: `<p>This tool helps you quickly narrow the choices of cover crop for your situation based on Management Goal, Planting Time, and Duration. It is designed for the soil, climate, cropping practices and seed market in New York.</p><p>Please take a few minutes to fill out a <a href="https://cornell.ca1.qualtrics.com/jfe/form/SV_0vc48MwnoVRBq6N" target="_blank" rel="noopener noreferrer">brief questionnaire</a> on the CSF tools so that we can continue to improve them.</p>`,
+    detail: `<p>This is an online tool to help you quickly narrow the choices of cover crop for your situation. In a few seconds, you will have growing instructions for the cover crop that will do the job you need. This tool is based on:</p><p>– Management Goal: the reason you need a cover crop<br/>– Planting Time: when you have a chance to plant<br/>– Duration: how long it can stay in the field until you need to plant your next crop</p><p>This tool is designed for the soil, climate, cropping practices and seed market in New York. It is probably useful in adjacent states and provinces as well. However, even slightly different timing of cash crop sowing or harvest can change the opportunity to use particular cover crops.</p><p>Please take a few minutes to fill out a <a href="https://cornell.ca1.qualtrics.com/jfe/form/SV_0vc48MwnoVRBq6N" target="_blank" rel="noopener noreferrer">brief questionnaire</a> on the CSF tools, so that we can continue to improve them, and develop new tools that are most needed! The questionnaire is voluntary and confidential, but we appreciate your input!</p>`,
     category: 'Crop Planning',
     externalLink: 'https://covercrop.org/cover_crops/',
     repoUrl: 'https://covercrop.org/',
@@ -333,25 +251,13 @@ export const featuredTools: Tool[] = [
 
   {
     id: 'nrel-tools',
-    image: '/images/tools/Screen-Shot-2016-05-18-at-12.22.11-PM.png',
+    image: '/images/tools/Screen-Shot-2017-04-12-at-9.34.42-AM.png',
     title: 'National Renewable Energy Laboratory Tools',
     description: 'Use models and tools developed or supported by NREL to assess, analyze, and optimize renewable energy and energy efficiency technologies for your project.',
     detail: `<p>Use models and tools developed or supported by NREL to assess, analyze, and optimize renewable energy and energy efficiency technologies for your project. Many of these tools can be applied on a global, regional, local, or project basis. NREL models and tools include several designed for the consumer or energy professional.</p>`,
     category: 'Carbon & GHG',
     externalLink: 'http://www.nrel.gov/analysis/models_tools.html',
     repoUrl: 'https://www.nrel.gov/',
-    hasIframe: false,
-  },
-
-  {
-    id: 'usda-adaptation-workbook',
-    image: '/images/tools/Screenshot-2023-11-20-at-11.07.25-AM.png',
-    title: 'USDA Adaptation Workbook Online',
-    description: 'An interactive online climate change tool developed by the USDA for land management and conservation in the Northeast and Midwest.',
-    detail: `<p>This online version of the USDA "Adaptation Resources for Agriculture" Workbook allows users to select their farm location and fill out information in interactive online forms to receive tailored information for their regional climate change impacts, to promote critical thinking and management.</p>`,
-    category: 'Climate Trends',
-    externalLink: 'https://adaptationworkbook.org/',
-    repoUrl: 'https://adaptationworkbook.org/',
     hasIframe: false,
   },
 

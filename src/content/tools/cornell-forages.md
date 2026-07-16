@@ -1,12 +1,16 @@
 ---
 title: Cornell Forage Species Selector Tool
-description: Interactive tool to help select appropriate forage species based on site conditions and management goals.
+description: Provides recommendations for field specific crops based on local soil type, drainage, and intended use.
 category: Livestock
 image: /images/tools/forages-screenshot-cropped.png
-externalLink: https://forages.cals.cornell.edu/
+externalLink: https://forages.org/
+repoUrl: https://forages.org/
 hasIframe: false
 toolType: external
 season: summer
 ---
 
-The Forage Species Selector helps farmers choose the best forage species for their conditions.
+[![Forages website screenshot](/images/tools/forages-screenshot-cropped.png)](https://forages.org/)
+
+The Forage Species Selector Tool utilizes local variables and user provided information to provide recommendations on what forage species may be a good fit for your farm.
+

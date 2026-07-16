@@ -1,6 +1,6 @@
 ---
 title: "About the Cornell Climate Smart Farming Program"
-image: /images/about/about-hero.jpg
+image: /images/about/LauraMcDermottfield.jpg
 ---
 
 The Cornell Climate Smart Farming program is a voluntary initiative that helps farmers in New York and the Northeastern US to:
@@ -11,9 +11,9 @@ The Cornell Climate Smart Farming program is a voluntary initiative that helps f
 
 Our program follows the three pillars of Climate-Smart Agriculture, as defined by the UN Food and Agriculture Organization, and the USDA's Climate-Smart Agriculture and Forestry Initiative.
 
-## How We Help Farmers
+## Research and Extension Specialists can help farmers to:
 
-Research and Extension Specialists can help farmers to:
+
 
 - Identify on-farm vulnerabilities to extreme weather and variability; inventory energy use and greenhouse gas (GHG) emissions on the farm; set goals and plan for adaptation, mitigation, and increased carbon sequestration
 - Increase on-farm adaptation through best management practices, including cropping systems, IPM, land-use planning, and water resource management

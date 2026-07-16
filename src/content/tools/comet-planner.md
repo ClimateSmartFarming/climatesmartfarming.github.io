@@ -9,4 +9,6 @@ toolType: external
 season: all
 ---
 
+[![COMET-Farm GHG Accounting Tool](/images/tools/Screen-Shot-2017-04-12-at-10.24.57-AM.png)](https://comet-planner.com/)
+
 COMET-Planner helps farmers evaluate the carbon sequestration potential of conservation practices.

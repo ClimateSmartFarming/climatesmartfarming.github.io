@@ -153,7 +153,7 @@ export default function ResourcePage() {
         <div className={styles.container}>
           <h1>Resource Not Found</h1>
           <p>The resource you're looking for doesn't exist.</p>
-          <Link to="/resources" className={styles.backLink}>
+          <Link to="/resources" className={styles.backLinkPlain}>
             ← Back to Resources
           </Link>
         </div>
@@ -165,6 +165,7 @@ export default function ResourcePage() {
   const { frontmatter, body } = parseFrontmatter(rawContent);
 
   const title = frontmatter.title as string || 'Untitled Resource';
+  const description = frontmatter.description as string || '';
   const externalLink = frontmatter.externalLink as string || '';
   const image = frontmatter.image as string || '';
   const tags = (frontmatter.tags as string[]) || [];
@@ -183,12 +184,17 @@ export default function ResourcePage() {
 
   return (
     <div className={styles.resourcePage}>
-      {/* Header breadcrumb area */}
-      <div className={styles.breadcrumbBar}>
-        <div className={styles.breadcrumbContainer}>
-          <Link to="/resources" className={styles.backLink}>
-            ← Back to Resources
-          </Link>
+      {/* Title band */}
+      <div className={styles.titleBand}>
+        <div className={styles.titleBandInner}>
+          <Link to="/resources" className={styles.backLink}>← All Resources</Link>
+          <h1 className={styles.title}>{title}</h1>
+          {description && <p className={styles.description}>{description}</p>}
+          {externalLink && (
+            <div className={styles.titleLinks}>
+              <a href={externalLink} target="_blank" rel="noopener noreferrer" className={styles.linkExternal}>Visit this website ↗</a>
+            </div>
+          )}
         </div>
       </div>
 
@@ -197,8 +203,6 @@ export default function ResourcePage() {
         <div className={styles.contentWrapper}>
           {/* Main Article */}
           <article className={styles.article}>
-            <h1 className={styles.title}>{title}</h1>
-
             {/* Content with optional image */}
             <div className={styles.contentArea}>
               {image && (
@@ -211,15 +215,7 @@ export default function ResourcePage() {
                 <ReactMarkdown
                   remarkPlugins={[remarkGfm]}
                   components={{
-                    a: ({ href, children }) => (
-                      <a
-                        href={href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {children}
-                      </a>
-                    ),
+                    a: ({ href, children }) => (<a href={href} target="_blank" rel="noopener noreferrer">{children}</a>),
                   }}
                 >
                   {body}
@@ -230,14 +226,7 @@ export default function ResourcePage() {
             {/* External Link Button */}
             {externalLink && (
               <div className={styles.ctaWrapper}>
-                <a
-                  href={externalLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.ctaButton}
-                >
-                  Visit This Website →
-                </a>
+                <a href={externalLink} target="_blank" rel="noopener noreferrer" className={styles.ctaButton}>Visit This Website →</a>
               </div>
             )}
 

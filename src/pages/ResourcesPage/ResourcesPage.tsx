@@ -306,15 +306,6 @@ export default function ResourcesPage() {
                     )}
                     <div className={styles.cardContent}>
                       <h3 className={styles.cardTitle}>{resource.title}</h3>
-                      {resource.tags.length > 0 && (
-                        <div className={styles.cardTags}>
-                          {resource.tags.slice(0, 2).map((tag, index) => (
-                            <span key={index} className={styles.cardTag}>
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      )}
                       <span className={styles.cardCta}>View Resource →</span>
                     </div>
                   </Link>

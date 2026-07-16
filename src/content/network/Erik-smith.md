@@ -6,7 +6,7 @@ subregion: "Central New York"
 organization: "Cornell Cooperative Extension — CNY Dairy, Livestock & Field Crops Team"
 email: "eas56@cornell.edu"
 phone: "(315) 219-7786"
-image: /images/network/erik-smith.jpg
+image: /images/network/erik-smith.jpeg
 order: 5
 ---
 

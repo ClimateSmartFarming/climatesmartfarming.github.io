@@ -6,7 +6,7 @@ subregion: "Central New York"
 organization: "Cornell Cooperative Extension — SCNY Dairy & Field Crops Team"
 email: "jgd3@cornell.edu"
 phone: "(607) 391-2660 Ext. 414"
-image: /images/network/janice-degni.jpg
+image: /images/network/janice-degni.jpeg
 order: 4
 ---
 
