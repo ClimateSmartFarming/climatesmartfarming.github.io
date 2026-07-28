@@ -241,7 +241,7 @@
   text-align: center;
   font-size: 1.05rem;
   color: #666;
-  max-width: 700px;
+  max-width: 100%;
   margin: 1.5rem auto 0;
   line-height: 1.7;
   font-style: italic;
@@ -253,6 +253,7 @@
 
 /* Join Network Button */
 .joinButton {
+  margin-bottom: 2rem;
   display: inline-block;
   padding: 0.75rem 1.5rem;
   background: #2e7d32;
@@ -358,7 +359,8 @@
 /* Grid */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
+  align-items: start;
   gap: 1rem;
 }
 
@@ -586,3 +588,4 @@
     border-radius: 0;
   }
 }
+

@@ -3,8 +3,7 @@ title: "Nitrogen Fertilizer Management & Greenhouse Gas Mitigation Opportunities
 description: "Nitrogen fertilizer is critical for crop production, but applying too much at an inopportune time reduces profitability and increases environmental harm. Farmers often apply extra nitrogen as ‘insuran..."
 category: "Dairy, Poultry, and Livestock"
 externalLink: "https://blogs.cornell.edu/woodbury/"
-image: "/images/resources/pexels-jan-kroon-1000057-scaled.jpg"
-tags: ["Dairy, Poultry, and Livestock", "Fact Sheet", "Farm &amp; Forest Greenhouse Gas Mitigation", "Field Crops", "Nitrogen Management"]
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784583277/csf/resources/pexels-jan-kroon-1000057-scaled.jpg"
 ---
 
 Nitrogen fertilizer is critical for crop production, but applying too much at an inopportune time reduces profitability and increases environmental harm. Farmers often apply extra nitrogen as ‘insurance’ to ensure the highest yield, but this practice causes unnecessary water pollution and GHG emissions. Some of the nitrogen applied to soils is lost in the form of nitrous oxide gas, a more potent greenhouse gas than carbon dioxide. Applying nitrogen fertilizer using the right source, right rate, right time, and right place increases crop yield and profitability.

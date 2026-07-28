@@ -23,18 +23,23 @@ interface Partner {
 const collaborators: Partner[] = [
   {
     name: 'Northeast Regional Climate Center',
-    logo: '/logos/NRCC-banner.png',
+    logo: 'https://res.cloudinary.com/evqzzm9k/image/upload/h_200/v1784697147/csf/logos/NRCC-banner.png',
     url: 'http://www.nrcc.cornell.edu/'
   },
   {
-    name: 'USDA Northeast Climate Hub',
-    logo: '/logos/NEclimatehub.png',
-    url: 'https://www.climatehubs.usda.gov/hubs/northeast'
+    name: 'NY Soil Health',
+    logo: 'https://res.cloudinary.com/evqzzm9k/image/upload/v1784746364/csf/logos/NYSoilHealthLogo.png',
+    url: 'https://www.newyorksoilhealth.org/'
   },
   {
     name: 'AI-LEAF',
-    logo: '/logos/ai-leaf-full-logo.png',
+    logo: 'https://res.cloudinary.com/evqzzm9k/image/upload/h_200/v1784686264/csf/logos/ai-leaf-full-logo.png',
     url: 'https://ai-leaf.org'
+  },
+  {
+    name: 'USDA Northeast Climate Hub',
+    logo: 'https://res.cloudinary.com/evqzzm9k/image/upload/h_200/v1784696809/csf/logos/NEclimatehub1.png',
+    url: 'https://www.climatehubs.usda.gov/hubs/northeast'
   }
 ];
 
@@ -99,7 +104,7 @@ const Footer: React.FC = () => {
               <div className={styles.cornellLogoItem}>
                 <span className={styles.cornellLogoLabel}>Cornell University</span>
                 <img
-                  src="/logos/Cornelllogofinal.png"
+                  src="https://res.cloudinary.com/evqzzm9k/image/upload/v1784746235/csf/logos/cornell_logo_simple_b31b1b.png"
                   alt="Cornell University logo"
                   className={styles.cornellLogo}
                 />
@@ -107,7 +112,7 @@ const Footer: React.FC = () => {
               <div className={styles.cornellLogoItem}>
                 <span className={styles.cornellLogoLabel}>College of Agriculture and Life Sciences</span>
                 <img
-                  src="/logos/Cornell-Cals-3.png"
+                  src="https://res.cloudinary.com/evqzzm9k/image/upload/v1784746236/csf/logos/Cornell-Cals-t.png"
                   alt="Cornell CALS logo"
                   className={styles.cornellLogo}
                 />
@@ -160,3 +165,6 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
+
+
+

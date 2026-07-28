@@ -3,7 +3,7 @@ title: "NYC Urban Climate Adaptation and Mitigation Program"
 date: "2025-06-11"
 author: "Allison Chatrchyan"
 category: "Programs & Initiatives"
-image: "/images/news/BFE8FAA9-C022-4245-A5CA-3F89649B1EAC-scaled.jpeg"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784582799/csf/news/BFE8FAA9-C022-4245-A5CA-3F89649B1EAC-scaled.jpg"
 excerpt: "Over 60 urban farmers and advisors completed the Urban CAMP training program focused on climate adaptation and mitigation in New York City."
 ---
 

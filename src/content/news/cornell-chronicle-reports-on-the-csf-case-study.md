@@ -3,7 +3,7 @@ title: "Cornell Chronicle Reports on the CSF Case Study"
 date: "2017-07-19"
 author: "Allison Chatrchyan"
 category: "In The News"
-image: "/images/news/DSC00053-e1457449102426.jpg"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784582810/csf/news/DSC00053-e1457449102426.jpg"
 excerpt: "The UN featured a case study on Cornell's Climate Smart Farming program as part of efforts to examine regional programs supporting farmer adaptation."
 ---
 

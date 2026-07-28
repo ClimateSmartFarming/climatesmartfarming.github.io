@@ -5,7 +5,8 @@ region: "Cornell University"
 subregion: "Campus Lead"
 organization: "Cornell University — Department of Earth and Atmospheric Sciences"
 email: "atd2@cornell.edu"
-image: /images/network/art-degaetano.jpg
+website: "https://cals.cornell.edu/people/arthur-degaetano"
+image: https://res.cloudinary.com/evqzzm9k/image/upload/v1784582776/csf/network/art-degaetano.jpg
 order: 10
 ---
 

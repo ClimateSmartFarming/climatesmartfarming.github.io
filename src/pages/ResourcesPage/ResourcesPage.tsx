@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import styles from './ResourcesPage.module.css';
+import { resources as resourcesData, filterCategories } from '../../data/resources';
 
 // Import all resource markdown files
 const resourceFiles = import.meta.glob('/src/content/resources/*.md', {
@@ -67,90 +68,16 @@ interface Resource {
 
 // Parse all resources
 function getAllResources(): Resource[] {
-  const resources: Resource[] = [];
-
-  for (const [path, content] of Object.entries(resourceFiles)) {
-    const slug = path.split('/').pop()?.replace('.md', '') || '';
-    const { frontmatter } = parseFrontmatter(content as string);
-
-    resources.push({
-      slug,
-      title: (frontmatter.title as string) || 'Untitled',
-      description: (frontmatter.description as string) || '',
-      category: (frontmatter.category as string) || 'General',
-      tags: (frontmatter.tags as string[]) || [],
-      externalLink: (frontmatter.externalLink as string) || '',
-      image: (frontmatter.image as string) || '',
-    });
-  }
-
-  return resources.sort((a, b) => a.title.localeCompare(b.title));
+  return resourcesData.map(r => ({
+    slug: r.id,
+    title: r.title,
+    description: '',
+    category: r.category,
+    tags: r.tags,
+    externalLink: r.externalLink,
+    image: r.cardImage,
+  })).sort((a, b) => a.title.localeCompare(b.title));
 }
-
-// Category data for sidebar filters
-const filterCategories = {
-  agriculturalSectors: {
-    title: 'Agricultural Sectors',
-    items: [
-      { name: 'Dairy, Poultry, and Livestock', slug: 'dairy-poultry-and-livestock' },
-      { name: 'Field Crops', slug: 'field-crops' },
-      { name: 'Forestry', slug: 'forestry' },
-      { name: 'Grapes', slug: 'grapes' },
-      { name: 'Greenhouse, Nursery, and Sod', slug: 'greenhouse-nursery-and-sod' },
-      { name: 'Maple', slug: 'maple' },
-      { name: 'Specialty Crops', slug: 'specialty-crops' },
-      { name: 'Tree Fruit and Berries', slug: 'tree-fruit-and-berries' },
-      { name: 'Vegetables', slug: 'vegetables' },
-    ],
-  },
-  mediaTypes: {
-    title: 'Media Types',
-    items: [
-      { name: 'Decision Support Tool', slug: 'decision-support-tool' },
-      { name: 'Fact Sheet', slug: 'fact-sheet' },
-      { name: 'Grant Program', slug: 'grant-program' },
-      { name: 'Online Courses', slug: 'online-courses' },
-      { name: 'Reports and Studies', slug: 'reports-and-studies' },
-      { name: 'Videos', slug: 'videos' },
-      { name: 'Weather Map', slug: 'weather-map' },
-      { name: 'Workshop Presentations', slug: 'workshop-presentations' },
-    ],
-  },
-  vulnerabilityTypes: {
-    title: 'Vulnerability Types',
-    items: [
-      { name: 'Drought', slug: 'drought' },
-      { name: 'Extreme Rainfall', slug: 'extreme-rainfall' },
-      { name: 'Flooding', slug: 'flooding' },
-      { name: 'Frost Risk', slug: 'frost-risk' },
-      { name: 'Heat Stress', slug: 'heat-stress' },
-      { name: 'Insects', slug: 'insects' },
-      { name: 'Multiple Vulnerabilities', slug: 'multiple-vulnerabilities' },
-      { name: 'Weeds', slug: 'weeds' },
-    ],
-  },
-  adaptationStrategies: {
-    title: 'Adaptation Strategies',
-    items: [
-      { name: 'Conservation Tillage', slug: 'conservation-tillage' },
-      { name: 'High-Residue Cover Crops', slug: 'high-residue-cover-crops' },
-      { name: 'Irrigation', slug: 'irrigation' },
-      { name: 'Multiple Adaptation Strategies', slug: 'multiple-adaptation-strategies' },
-      { name: 'Sod-Based Rotation', slug: 'sod-based-rotation' },
-      { name: 'Soil Health', slug: 'soil-health' },
-    ],
-  },
-  mitigationStrategies: {
-    title: 'Mitigation Strategies',
-    items: [
-      { name: 'Green House Gas Accounting', slug: 'green-house-gas-accounting' },
-      { name: 'Multiple Mitigation Strategies', slug: 'multiple-mitigation-strategies' },
-      { name: 'Nitrogen Management', slug: 'nitrogen-management' },
-      { name: 'Renewable Energy', slug: 'renewable-energy' },
-      { name: 'Solar', slug: 'solar' },
-    ],
-  },
-};
 
 function getFilterDisplayName(slug: string): string {
   for (const category of Object.values(filterCategories)) {
@@ -397,3 +324,6 @@ export default function ResourcesPage() {
     </div>
   );
 }
+
+
+

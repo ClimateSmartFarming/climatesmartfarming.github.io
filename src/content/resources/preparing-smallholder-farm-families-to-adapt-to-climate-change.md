@@ -3,8 +3,7 @@ title: "Preparing Smallholder Farm Families to Adapt to Climate Change"
 description: "*Preparing smallholder farm families to adapt to climate change *is a series of five pocket guides: (1) Extension practice for agricultural adaptation, (2) Managing crops, (3) Managing water resources..."
 category: "Dairy, Poultry, and Livestock"
 externalLink: "http://climatesmartfarming.org/wp-content/uploads/2016/04/MEAS-Simpson-2016-Extension-practice-for-ag-adaptation.pdf"
-image: "/images/resources/pexels-dodo-phanthamaly-916406-scaled.jpg"
-tags: ["Dairy, Poultry, and Livestock", "Drought", "Extreme Rainfall", "Field Crops", "Flooding"]
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784583274/csf/resources/pexels-dodo-phanthamaly-916406-scaled.jpg"
 ---
 
 *Preparing smallholder farm families to adapt to climate change *is a series of five pocket guides: (1) Extension practice for agricultural adaptation, (2) Managing crops, (3) Managing water resources, (4) Managing soils, and (5) Managing livestock.

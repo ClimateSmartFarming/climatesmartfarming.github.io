@@ -2,7 +2,7 @@
 title: CSF Apple Stage & Freeze Damage Probability Tool
 description: Charts observed/forecasted daily minimum temperatures vs. apple hardiness thresholds in order to assess potential risk for freeze damage.
 category: Specialty Crops
-image: /images/tools/frapple_snapshot_20180103.png
+image: https://res.cloudinary.com/evqzzm9k/image/upload/v1784583532/csf/tools/frapple_snapshot_20180103.png
 iframeUrl: https://nrcc-cornell.github.io/csf-frapple-v4
 externalLink: https://climatesmartfarming.org/tools/csf-apple-freeze-probability/
 repoUrl: https://github.com/nrcc-cornell/csf-frapple-v4

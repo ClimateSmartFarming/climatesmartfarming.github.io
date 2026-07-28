@@ -2,7 +2,7 @@
 title: Winter Cover Crop Planting Scheduler
 description: Understand how the chances of growing a successful winter cover crop at your location are affected by planting date selection.
 category: Crop Planning
-image: /images/tools/covercrop_thumbnail.png
+image: https://res.cloudinary.com/evqzzm9k/image/upload/v1784583528/csf/tools/covercrop_thumbnail.png
 iframeUrl: https://nrcc-cornell.github.io/csf-covercrop-v2
 externalLink: https://climatesmartfarming.org/tools/csf-cover-crop-planting-date-scheduler/
 repoUrl: https://github.com/nrcc-cornell/csf-covercrop-v2

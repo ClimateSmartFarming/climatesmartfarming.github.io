@@ -3,8 +3,7 @@ title: "Forest Management & Greenhouse Gas Mitigation Opportunities"
 description: "Forests play an important role in the global carbon cycle. Forests act as a carbon sink, meaning they take carbon out of the atmosphere and store it in accumulated living material. Protecting forests"
 category: "Fact Sheet"
 externalLink: "https://blogs.cornell.edu/woodbury/"
-image: "/images/resources/pexels-seb-360013-240x160.jpg"
-tags: ["Fact Sheet", "Farm &amp; Forest Greenhouse Gas Mitigation", "Green House Gas Accounting"]
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784583138/csf/resources/Forest-Management.jpg"
 ---
 
 Forests play an important role in the global carbon cycle. Forests act as a carbon sink, meaning they take carbon out of the atmosphere and store it in accumulated living material. Protecting forests and improving their management will help reduce greenhouse gas (GHG) emissions and mitigate the effects of climate change. Forest owners have an opportunity to increase profits through better management of forests which will create longer-lasting wood products. Additionally, improved forest management can increase bioenergy products to displace fossil fuels.

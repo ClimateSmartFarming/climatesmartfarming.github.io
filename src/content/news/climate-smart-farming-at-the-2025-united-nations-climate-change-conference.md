@@ -3,7 +3,7 @@ title: "Climate Smart Farming at the 2025 United Nations Climate Change Conferen
 date: "2025-11-26"
 author: "Candace Hulbert"
 category: "Events & Conferences"
-image: "/images/news/1763868912685-1.jpeg"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784582793/csf/news/1763868912685-1.jpg"
 excerpt: "Cornell University delegation shares Climate Smart Farming work at COP30 in Belém, Brazil."
 ---
 

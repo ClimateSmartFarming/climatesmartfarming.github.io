@@ -3,7 +3,7 @@ title: "Climate Smart Farming at Fruit and Veg Expo & NOFA-NY"
 date: "2016-01-16"
 author: "Allison Chatrchyan"
 category: "Events & Conferences"
-image: "/images/news/Vegetable-Bounty.jpg"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784582838/csf/news/Vegetable-Bounty.jpg"
 excerpt: "The Climate Smart Farming Program presented at two major agricultural events in January 2016."
 ---
 

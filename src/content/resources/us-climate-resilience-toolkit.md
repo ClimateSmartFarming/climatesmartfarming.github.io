@@ -3,8 +3,7 @@ title: "US Climate Resilience Toolkit"
 description: "The U.S. Climate Resilience Toolkit provides scientific tools, information, and expertise to help people manage their climate-related risks and opportunities, and improve their resilience to extreme e..."
 category: "Drought"
 externalLink: "https://toolkit.climate.gov/"
-image: "/images/resources/Screenshot-2024-01-24-115703.png"
-tags: ["Conservation Tillage", "Decision Support Tool", "Disasters and Extreme Weather", "Drought", "Extreme Rainfall"]
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784583407/csf/resources/Screenshot-2024-01-24-115703.png"
 ---
 
 The U.S. Climate Resilience Toolkit provides scientific tools, information, and expertise to help people manage their climate-related risks and opportunities, and improve their resilience to extreme events. The site is designed to serve interested citizens, communities, businesses, resource managers, planners, and policy leaders at all levels of government.

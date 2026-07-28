@@ -3,7 +3,7 @@ title: "USDA Grants Awarded for Addressing Environmental Shifts"
 date: "2017-07-20"
 author: "Allison Chatrchyan"
 category: "Grants & Funding"
-image: "/images/news/USDA-logo.jpg"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784582837/csf/news/USDA-logo.jpg"
 excerpt: "The Cornell Institute for Climate Smart Solutions was among nine recipients of USDA NIFA grants totaling over $8 million."
 ---
 

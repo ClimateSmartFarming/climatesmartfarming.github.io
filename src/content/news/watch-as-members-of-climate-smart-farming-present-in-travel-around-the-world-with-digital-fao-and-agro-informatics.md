@@ -3,7 +3,7 @@ title: "Watch As Members of Climate Smart Farming Present In 'Travel Around the 
 date: "2025-10-20"
 author: "Dalton Mullins"
 category: "Webinars & Events"
-image: "/images/news/AI-Farm-Image.jpg"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784582797/csf/news/AI-Farm-Image.jpg"
 excerpt: "Cornell faculty and students presented their work on using AI to help farmers mitigate and adapt to climate change at a FAO virtual workshop."
 ---
 

@@ -239,7 +239,7 @@ export const featuredTools: Tool[] = [
 
 {
     id: 'cornell-cover-crop-veg',
-    image: '/images/tools/Screen-Shot-2016-04-19-at-3.03.20-PM.png',
+    image: 'https://res.cloudinary.com/evqzzm9k/image/upload/v1784583536/csf/tools/Screen-Shot-2016-04-19-at-3.03.20-PM.png',
     title: 'Cornell Cover Crop Tool for Vegetable Growers',
     description: 'This is an online tool to help you quickly narrow the choices of cover crop for your situation.',
     detail: `<p>This is an online tool to help you quickly narrow the choices of cover crop for your situation. In a few seconds, you will have growing instructions for the cover crop that will do the job you need. This tool is based on:</p><p>– Management Goal: the reason you need a cover crop<br/>– Planting Time: when you have a chance to plant<br/>– Duration: how long it can stay in the field until you need to plant your next crop</p><p>This tool is designed for the soil, climate, cropping practices and seed market in New York. It is probably useful in adjacent states and provinces as well. However, even slightly different timing of cash crop sowing or harvest can change the opportunity to use particular cover crops.</p><p>Please take a few minutes to fill out a <a href="https://cornell.ca1.qualtrics.com/jfe/form/SV_0vc48MwnoVRBq6N" target="_blank" rel="noopener noreferrer">brief questionnaire</a> on the CSF tools, so that we can continue to improve them, and develop new tools that are most needed! The questionnaire is voluntary and confidential, but we appreciate your input!</p>`,

@@ -3,7 +3,7 @@ title: "New York State Department of Agriculture and Markets Announces Climate-R
 date: "2025-10-20"
 author: "Dalton Mullins"
 category: "Grants & Funding"
-image: "/images/news/main-hero-image_locations-pagejpg.jpg"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784582823/csf/news/main-hero-image_locations-pagejpg.jpg"
 excerpt: "New York announces funding for projects that mitigate agriculture's climate impact and enhance on-farm adaptation and resiliency."
 ---
 

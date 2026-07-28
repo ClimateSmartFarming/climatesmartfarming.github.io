@@ -78,18 +78,11 @@ const NewsIndex: React.FC<Props> = ({ files, basePath }) => {
     <div className={styles.page}>
 
       {/* ── Masthead ──────────────────────────────────────────── */}
-      <div className={styles.masthead}>
-        <div className={styles.mastheadInner}>
-          <div className={styles.mastheadLeft}>
-            <h1 className={styles.mastheadTitle}>News & Updates</h1>
-            <p className={styles.mastheadSub}>Cornell Climate Smart Farming</p>
-          </div>
-          <div className={styles.mastheadRight}>
-            <p className={styles.mastheadTagline}>Bridging climate science and Northeast agriculture</p>
-          </div>
+      {/* ── Hero Banner ──────────────────────────────────────── */}
+        <div className={styles.hero}>
+          <p className={styles.heroEyebrow}>Cornell Climate Smart Farming</p>
+          <h1 className={styles.heroTitle}>News & Updates</h1>
         </div>
-        <div className={styles.mastheadRule} />
-      </div>
 
       {/* ── Hero grid ─────────────────────────────────────────── */}
       <div className={styles.heroSection}>

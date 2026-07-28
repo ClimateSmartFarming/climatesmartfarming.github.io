@@ -3,7 +3,7 @@ title: "North Country Farmers are Already Adapting to Climate Change"
 date: "2015-10-19"
 author: "Allison Chatrchyan"
 category: "Climate Adaptation"
-image: "/images/news/NorthCountryfield.jpg"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784582824/csf/news/NorthCountryfield.jpg"
 excerpt: "Farmers in New York are reacting to the effects of climate change with help from Cornell's Climate Smart Farming tools."
 ---
 

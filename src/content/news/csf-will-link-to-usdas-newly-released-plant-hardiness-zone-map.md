@@ -3,7 +3,7 @@ title: "USDA Releases Updated Plant Hardiness Zone Map"
 date: "2023-11-15"
 author: "Allison Chatrchyan"
 category: "Tools & Resources"
-image: "/images/news/GettyImages1459952195.jpg"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784582812/csf/news/GettyImages1459952195.jpg"
 excerpt: "The USDA released an updated Plant Hardiness Zone Map, revealing that about half the country shifted to the next warmer half zone since 2012."
 ---
 

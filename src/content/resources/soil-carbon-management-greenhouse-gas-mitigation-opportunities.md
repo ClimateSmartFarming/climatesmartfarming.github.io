@@ -3,8 +3,7 @@ title: "Soil Carbon Management & Greenhouse Gas Mitigation Opportunities"
 description: "Management of soil carbon can increase the amount of carbon in soil organic matter, which reduces carbon dioxide (CO2) in the atmosphere and improves soil health. Soil carbon benefits soil health by i..."
 category: "Fact Sheet"
 externalLink: "https://blogs.cornell.edu/woodbury/"
-image: "/images/resources/pexels-photomix-company-1002703-scaled.jpg"
-tags: ["Conservation Tillage", "Fact Sheet", "Farm &amp; Forest Greenhouse Gas Mitigation", "High-Residue Cover Crops", "Soil Health"]
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784583296/csf/resources/pexels-photomix-company-1002703-scaled.jpg"
 ---
 
 Management of soil carbon can increase the amount of carbon in soil organic matter, which reduces carbon dioxide (CO2) in the atmosphere and improves soil health. Soil carbon benefits soil health by improving water retention, reducing erosion, and increasing biological activity. Increasing the amount of carbon stored in soils has both agricultural and environmental benefits such as higher yields and lower CO2 emissions. Reducing CO2 emissions is important for mitigating the extent and impacts of climate change.

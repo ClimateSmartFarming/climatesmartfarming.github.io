@@ -3,8 +3,7 @@ title: "Dairy Manure Storage & Greenhouse Gas Mitigation Opportunities"
 description: "Due to increasing farm size and water quality requirements, more farms are storing manure in order to apply valuable nutrients to cropland during the growing season. Stored manure is often anaerobic (..."
 category: "Dairy, Poultry, and Livestock"
 externalLink: "http://blogs.cornell.edu/woodbury/"
-image: ""
-tags: ["Dairy, Poultry, and Livestock", "Fact Sheet", "Farm &amp; Forest Greenhouse Gas Mitigation"]
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784583239/csf/resources/Manure-Silo.jpg"
 ---
 
 Due to increasing farm size and water quality requirements, more farms are storing manure in order to apply valuable nutrients to cropland during the growing season. Stored manure is often anaerobic (low oxygen) and produces methane, a greenhouse gas (GHG) that is 34 times more potent than carbon dioxide over 100 years. Stored manure also produces other greenhouse gases such as N2O and H2S which can impact human and livestock health.

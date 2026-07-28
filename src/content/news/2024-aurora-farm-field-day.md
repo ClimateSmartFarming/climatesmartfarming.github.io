@@ -3,7 +3,7 @@ title: "2024 Aurora Farm Field Day"
 date: "2024-06-21"
 author: "Sophie Lundberg"
 category: "Events & Conferences"
-image: "/images/news/musgrave-field-day-aerial.jpg"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784582823/csf/news/musgrave-field-day-aerial.jpg"
 excerpt: "The annual Cornell Research Field Day featured walking and hay wagon tours with presentations on weed control, soil health, and on-farm experimentation."
 ---
 

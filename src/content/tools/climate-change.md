@@ -2,7 +2,7 @@
 title: Visualizing Climate Change in the NE
 description: Find out how the climate has changed in your county since 1950, and what is projected over the next century.
 category: Climate Trends
-image: /images/tools/changetool_thumbnail_180_90.png
+image: https://res.cloudinary.com/evqzzm9k/image/upload/v1784583527/csf/tools/changetool_thumbnail_180_90.png
 iframeUrl: https://nrcc-cornell.github.io/csf-climatechange-v8
 externalLink: https://climatesmartfarming.org/tools/csf-county-climate-change/
 repoUrl: https://github.com/nrcc-cornell/csf-climatechange-v8

@@ -2,7 +2,7 @@
 title: Grape Hardiness & Freeze Risk Tool
 description: Charts hardiness temperature vs. daily observed/forecast temperatures for several varieties of grapes.
 category: Specialty Crops
-image: /images/tools/grapehard_snapshot_20180103.png
+image: https://res.cloudinary.com/evqzzm9k/image/upload/v1784583532/csf/tools/grapehard_snapshot_20180103.png
 iframeUrl: https://nrcc-cornell.github.io/csf-grapehard-v2
 externalLink: https://climatesmartfarming.org/tools/csf-grape-hardiness/
 repoUrl: https://github.com/nrcc-cornell/csf-grapehard

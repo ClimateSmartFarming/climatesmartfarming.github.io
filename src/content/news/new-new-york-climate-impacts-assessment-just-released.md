@@ -3,7 +3,7 @@ title: "New York Climate Impacts Assessment Just Released"
 date: "2024-02-08"
 author: "Candace Hulbert"
 category: "Research & Publications"
-image: "/images/news/Untitled-design-5.png"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784582836/csf/news/Untitled-design-5.png"
 excerpt: "The agriculture chapter of New York's statewide climate impacts assessment examines how farmers are adapting to extreme weather caused by climate change."
 ---
 

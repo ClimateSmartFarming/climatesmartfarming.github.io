@@ -3,7 +3,7 @@ title: "CSF Team Winter Webinar Series"
 date: "2021-02-09"
 author: "Allison Chatrchyan"
 category: "Webinars & Events"
-image: "/images/news/winterfarm-ny.jpeg"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784582839/csf/news/winterfarm-ny.jpg"
 excerpt: "The Cornell Climate Smart Farming Program hosted winter webinars on solar installations, growing degree days, and irrigation management tools."
 ---
 

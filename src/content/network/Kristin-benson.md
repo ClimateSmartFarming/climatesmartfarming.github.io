@@ -2,7 +2,7 @@
 name: "Kristin Benson"
 title: "ORISE Fellow"
 region: "USDA Northeast Climate Hub"
-subregion: "Federal Partner"
+subregion: "Climate Hub Partner"
 organization: "USDA Forest Service & USDA Northeast Climate Hub"
 email: "kristin.benson@usda.gov"
 image: /images/network/kristin-benson.jpg

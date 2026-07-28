@@ -2,7 +2,7 @@
 title: Water Deficit Calculator
 description: Estimates current and forecasted water deficit in the effective root zone for specific crops, soil types, and irrigation applications across the Northeast.
 category: Water Management
-image: /images/tools/water-def-calculator-v4.png
+image: https://res.cloudinary.com/evqzzm9k/image/upload/v1784583546/csf/tools/water-def-calculator-v4.png
 iframeUrl: https://nrcc-cornell.github.io/csf-waterdef-v4
 externalLink: https://climatesmartfarming.org/tools/csf-water-deficit-calculator/
 repoUrl: https://github.com/nrcc-cornell/csf-waterdef-v4

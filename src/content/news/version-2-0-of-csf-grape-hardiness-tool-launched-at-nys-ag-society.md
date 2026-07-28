@@ -3,7 +3,7 @@ title: "Version 2.0 of CSF Grape Hardiness Tool Launched at NYS Ag Society"
 date: "2018-01-03"
 author: "Allison Chatrchyan"
 category: "Tools & Resources"
-image: "/images/news/grape-shoot-freeze_5-27-14.jpg"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784582813/csf/news/grape-shoot-freeze_5-27-14.jpg"
 excerpt: "The Climate Smart Farming team launched an updated Grape Hardiness and Freeze Risk Tool with improved weather data and faster graphical output."
 ---
 

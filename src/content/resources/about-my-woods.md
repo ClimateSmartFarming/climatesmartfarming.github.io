@@ -3,8 +3,7 @@ title: "About My Woods"
 description: "[About My Woods](https://www.nefainfo.org/aboutmywoods.html) is a **free** smartphone app, is now available for download.  Woodland owners in Maine, New Hampshire, Vermont and New York now have a new"
 category: "Forestry"
 externalLink: "https://www.nefainfo.org/aboutmywoods.html"
-image: "/images/resources/On-Farm-Vulnerabilites-32.png"
-tags: ["Decision Support Tool", "Forestry", "Maple", "Smartphone App"]
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784583263/csf/resources/On-Farm-Vulnerabilites-32.png"
 ---
 
 [About My Woods](https://www.nefainfo.org/aboutmywoods.html) is a **free** smartphone app, is now available for download.  Woodland owners in Maine, New Hampshire, Vermont and New York now have a new tool to help learn about their woods.

@@ -3,7 +3,7 @@ title: "Report Fosters Ag Industry Climate-Change Tracking"
 date: "2020-08-03"
 author: "Blaine Friedlander"
 category: "Research & Publications"
-image: "/images/news/Screen-Shot-2021-02-09-at-6.04.23-PM.png"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784582831/csf/news/Screen-Shot-2021-02-09-at-6.04.23-PM.png"
 excerpt: "Cornell professor Art DeGaetano co-authored a USDA report identifying 20 climate change indicators to help farmers reduce risk."
 ---
 

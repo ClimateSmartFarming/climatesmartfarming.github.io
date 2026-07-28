@@ -35,11 +35,11 @@ export const CarouselSlides: CarouselSlide[] = [
   },
   {
     id: 'slide-4',
-    title: 'Join Our Network',
-    subtitle: 'Connect with farmers across New York',
+    title: 'Connect with the CSF Network',
+    subtitle: 'Connect with farmers and advisors across the Northeast',
     image: '/carousel-4.jpeg',
     link: '/network',
-    buttonText: 'EXPLORE NETWORK'
+    buttonText: 'Explore the CSF Network'
   },
   {
     id: 'slide-5',

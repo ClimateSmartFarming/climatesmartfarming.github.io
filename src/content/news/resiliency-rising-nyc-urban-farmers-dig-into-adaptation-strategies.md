@@ -3,7 +3,7 @@ title: "Resiliency Rising: NYC Urban Farmers Dig into Adaptation Strategies"
 date: "2025-09-30"
 author: "Dalton Mullins"
 category: "Farmer Stories"
-image: "/images/news/Image-1-Garden-Beds-and-Lowtunnels.jpg"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784582814/csf/news/Image-1-Garden-Beds-and-Lowtunnels.jpg"
 excerpt: "Urban CAMP Fellow Jesse Miller shares adaptation strategies for dealing with wind, heat, and pests at Spring Creek Towers Farm in Brooklyn."
 ---
 

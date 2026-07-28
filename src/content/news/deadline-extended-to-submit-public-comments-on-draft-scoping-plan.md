@@ -3,7 +3,7 @@ title: "NYS Draft Scoping Plan: Agriculture & Forestry"
 date: "2022-03-28"
 author: "Allison Chatrchyan"
 category: "Policy & Legislation"
-image: "/images/news/NYS-CAC.jpeg"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784582825/csf/news/NYS-CAC.jpg"
 excerpt: "The NYS Climate Action Council released a Draft Scoping Plan including a comprehensive chapter on Agriculture and Forestry for public comment."
 ---
 

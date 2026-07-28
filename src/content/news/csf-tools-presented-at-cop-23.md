@@ -3,7 +3,7 @@ title: "CSF Tools Presented at COP 23"
 date: "2017-11-09"
 author: "Allison Chatrchyan"
 category: "Events & Conferences"
-image: "/images/news/COP23_IMG_3331.jpeg"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784582805/csf/news/COP23_IMG_3331.jpg"
 excerpt: "Cornell researchers presented the Climate Smart Farming Program and decision support tools at an official press conference at COP 23 in Bonn, Germany."
 ---
 

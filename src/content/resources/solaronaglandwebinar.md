@@ -3,8 +3,7 @@ title: "Solar on Farmland Webinar"
 description: "**Implications of Large Solar Installations and Leasing on Farmland Zoom Webinar: ****Friday, February 12, 2021 **  Utility-scale solar projects have been expanding in NY recently due to the need for"
 category: "Workshop Presentations"
 externalLink: "https://vod.video.cornell.edu/media/Implications+of+Large+Solar+Installations+and+Leasing+on+Farmland/1_lv3i0ygv"
-image: "/images/resources/pexels-tom-fisk-9893729-scaled.jpg"
-tags: ["Renewable Energy", "Solar", "Solar", "Workshop Presentations"]
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784583304/csf/resources/pexels-tom-fisk-9893729-scaled.jpg"
 ---
 
 **Implications of Large Solar Installations and Leasing on Farmland

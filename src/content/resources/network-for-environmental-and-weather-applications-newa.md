@@ -3,8 +3,7 @@ title: "Network for Environment and Weather Applications (NEWA)"
 description: "NEWA, [http://newa.cornell.edu](http://newa.cornell.edu), gives end users free access to 40 IPM, crop management, and degree day tools driven by weather data from weather stations primarily located on..."
 category: "Field Crops"
 externalLink: "http://newa.cornell.edu/"
-image: "/images/resources/Screenshot-2024-01-24-131851.png"
-tags: ["Decision Support Tool", "Drought", "Field Crops", "Flooding", "Frost Risk"]
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784583410/csf/resources/Screenshot-2024-01-24-131851.png"
 ---
 
 NEWA, [http://newa.cornell.edu](http://newa.cornell.edu), gives end users free access to 40 IPM, crop management, and degree day tools driven by weather data from weather stations primarily located on farms. Find them on the main menu under Weather Data, Pest Forecasts, and Crop Management. Created in 1995, NEWA has over 400 weather stations in 11 partner states with individual growers connecting in from five other states in the Northeast, mid-Atlantic, Southeast, and North Central regions of the US.

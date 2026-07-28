@@ -3,7 +3,7 @@ title: "Climate Smart Farming Event: NYS Farmers in Their Own Words"
 date: "2016-04-27"
 author: "Allison Chatrchyan"
 category: "Events & Conferences"
-image: "/images/news/CICCA-Exhibit_May-5th-Event.png"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784582803/csf/news/CICCA-Exhibit_May-5th-Event.png"
 excerpt: "A multimedia exhibit at Mann Library showcased New York farmers' experiences with extreme weather and climate change."
 ---
 

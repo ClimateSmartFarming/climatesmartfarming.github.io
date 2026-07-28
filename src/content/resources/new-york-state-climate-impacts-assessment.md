@@ -3,8 +3,7 @@ title: "New York State Climate Impacts Assessment"
 description: "The New York State Climate Impacts Assessment is a scientific investigation into how climate change affects communities, ecosystems, and infrastructure in New York State. The NYSCIA was developed in c..."
 category: "General"
 externalLink: "https://nysclimateimpacts.org/"
-image: "/images/resources/F1-6RRyWYAUL9-s-240x135.jpg"
-tags: []
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784676774/csf/resources/F1-6RRyWYAUL9-s-240x135.jpg"
 ---
 
 The New York State Climate Impacts Assessment is a scientific investigation into how climate change affects communities, ecosystems, and infrastructure in New York State. The NYSCIA was developed in collaboration with academic institutions, science organizations, and community leaders to assess the current and future impacts climate change will have on New York State. The nYSCIA was conducted as part of New York’s climate law, the Climate Leadership and Community Protection Act, which includes mandates to reduce greenhouse gas emissions by 40% by 2030 and 85% by 2050 from 1990 levels. The act also mandates a zero-emission power sector by 2040, including 70% renewable energy generation by 2030.

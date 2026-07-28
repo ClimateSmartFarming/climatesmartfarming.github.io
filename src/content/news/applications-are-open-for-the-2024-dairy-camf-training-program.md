@@ -3,7 +3,7 @@ title: "Applications Open for the 2024 Dairy CAMF Training Program"
 date: "2023-11-17"
 author: "Allison Chatrchyan"
 category: "Education & Training"
-image: "/images/news/cow-cornell-image.jpeg"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784582809/csf/news/cow-cornell-image.jpg"
 excerpt: "The Dairy Climate Adaptation Fellowship program offered cohort-based learning for farmers and agricultural advisors in the Northeast."
 ---
 

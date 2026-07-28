@@ -2,7 +2,7 @@
 title: Cornell Cover Crop Tool for Vegetable Growers
 description: This is an online tool to help you quickly narrow the choices of cover crop for your situation.
 category: Crop Planning
-image: /images/tools/Screen-Shot-2016-04-19-at-3.03.20-PM.png
+image: https://res.cloudinary.com/evqzzm9k/image/upload/v1784583536/csf/tools/Screen-Shot-2016-04-19-at-3.03.20-PM.png
 externalLink: https://covercrop.org/cover_crops/
 repoUrl: https://covercrop.org/
 hasIframe: false
@@ -10,7 +10,7 @@ toolType: external
 season: all
 ---
 
-[![Cornell Cover Crop Tool for Vegetable Growers](/images/tools/Screen-Shot-2016-04-19-at-3.03.20-PM.png)](https://covercrop.org/cover_crops/)
+[![Cornell Cover Crop Tool for Vegetable Growers](https://res.cloudinary.com/evqzzm9k/image/upload/v1784583536/csf/tools/Screen-Shot-2016-04-19-at-3.03.20-PM.png)](https://covercrop.org/cover_crops/)
 
 This is an online tool to help you quickly narrow the choices of cover crop for your situation. In a few seconds, you will have growing instructions for the cover crop that will do the job you need. This tool is based on:
 

@@ -3,8 +3,7 @@ title: "Cornell Comprehensive Assessment of Soil Health"
 description: "Improved soil health can lead to increased productivity, reduce the need for external inputs, and increase farm resilience to severe weather events. The Cornell Comprehensive Assessment of Soil Health..."
 category: "Field Crops"
 externalLink: "http://soilhealth.cals.cornell.edu/"
-image: "/images/resources/Screenshot-2024-01-24-133540.png"
-tags: ["Field Crops", "Grapes", "Greenhouse, Nursery, and Sod", "Multiple Vulnerabilities", "Reports and Studies"]
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784583412/csf/resources/Screenshot-2024-01-24-133540.png"
 ---
 
 Improved soil health can lead to increased productivity, reduce the need for external inputs, and increase farm resilience to severe weather events. The Cornell Comprehensive Assessment of Soil Health was created to help farmers develop appropriate management solutions to build and maintain healthy soils. The Soil Health Team offers information, extension support, and testing services to farmers throughout New York. 

@@ -3,7 +3,7 @@ title: "Climate Change Focus of 2016 NYS Ag Society Forum"
 date: "2016-01-06"
 author: "Allison Chatrchyan"
 category: "Events & Conferences"
-image: "/images/news/NYSAgSociety2016.jpeg"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784582828/csf/news/NYSAgSociety2016.jpg"
 excerpt: "Cornell's Climate Smart Farming Program was featured at the 184th Annual NYS Ag Society Forum in Syracuse."
 ---
 

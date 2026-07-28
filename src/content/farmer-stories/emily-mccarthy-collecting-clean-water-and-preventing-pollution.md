@@ -6,7 +6,7 @@ status: "publish"
 type: "farmerstories"
 author: ""
 original_url: "https://climatesmartfarming.org/news/emily-mccarthy-collecting-clean-water-and-preventing-pollution/"
-image: "/images/farmerstories/Emily-McCarthy-headshot-1.jpg"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784582785/csf/farmerstories/Emily-McCarthy-headshot-1.jpg"
 imageAlt: "Emily McCarthy"
 ---
 

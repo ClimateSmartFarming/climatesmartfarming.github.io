@@ -5,6 +5,7 @@ region: "Cornell University"
 subregion: "Campus Lead"
 organization: "Cornell University — School of Integrative Plant Science, Soil and Crop Sciences"
 email: "cl273@cornell.edu"
+website: "https://cals.cornell.edu/people/johannes-lehmann"
 image: /images/network/johannes-lehmann.jpg
 order: 13
 ---

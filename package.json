@@ -12,6 +12,7 @@
     "start": "npm run preview"
   },
   "dependencies": {
+    "cloudinary": "^2.10.0",
     "gray-matter": "^4.0.3",
     "html-to-text": "^9.0.5",
     "leaflet": "^1.9.4",

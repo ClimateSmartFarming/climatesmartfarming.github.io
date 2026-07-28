@@ -3,7 +3,7 @@ title: "CSF at the Largest Sustainable Ag Conference in the East"
 date: "2016-02-04"
 author: "Allison Chatrchyan"
 category: "Events & Conferences"
-image: "/images/news/PASA.png"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784582828/csf/news/PASA.png"
 excerpt: "The Climate Smart Farming team presented at PASA's 25th Annual Farming for the Future Conference in State College, PA."
 ---
 

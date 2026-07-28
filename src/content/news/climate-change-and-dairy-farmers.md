@@ -3,7 +3,7 @@ title: "Climate Change and Dairy Farmers"
 date: "2019-07-13"
 author: "Allison Chatrchyan"
 category: "Research & Publications"
-image: "/images/news/cows.jpg"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784582809/csf/news/cows.jpg"
 excerpt: "New research explores how dairy farmers in New York and Wisconsin are interpreting and responding to climate impacts, risks, and opportunities."
 ---
 

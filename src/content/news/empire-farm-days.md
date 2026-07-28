@@ -3,7 +3,7 @@ title: "Empire Farm Days"
 date: "2016-08-15"
 author: "Allison Chatrchyan"
 category: "Events & Conferences"
-image: "/images/news/EFD.jpg"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784582810/csf/news/EFD.jpg"
 excerpt: "The Climate Smart Farming Team showcased decision support tools at Empire Farm Days in Seneca Falls, NY."
 ---
 

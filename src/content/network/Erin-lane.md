@@ -2,10 +2,10 @@
 name: "Dr. Erin D. Lane"
 title: "Director, USDA Northeast Climate Hub"
 region: "USDA Northeast Climate Hub"
-subregion: "Federal Partner"
+subregion: "Climate Hub Partner"
 organization: "USDA Northeast Climate Hub"
 email: "erin.d.lane@usda.gov"
-image: /images/network/erin-lane.jpg
+image: 'https://res.cloudinary.com/evqzzm9k/image/upload/v1784582777/csf/network/erin-lane.jpg'
 order: 14
 ---
 

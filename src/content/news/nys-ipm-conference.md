@@ -3,7 +3,7 @@ title: "NYS IPM Conference"
 date: "2016-09-01"
 author: "Allison Chatrchyan"
 category: "Events & Conferences"
-image: "/images/news/IPM.jpg"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784582821/csf/news/IPM.jpg"
 excerpt: "The Climate Smart Farming team presented decision tools at the NYS IPM Climate and Weather Conference in Albany."
 ---
 

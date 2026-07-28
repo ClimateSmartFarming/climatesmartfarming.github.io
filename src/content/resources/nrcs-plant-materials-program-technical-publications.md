@@ -3,8 +3,7 @@ title: "NRCS Plant Materials Program"
 description: "The Plant Materials Program is an extensive listing of technical publications organized by topics such as Climate Change, Cover Crops and Soil Health, Drought Tolerance, Nutrient Management, and other..."
 category: "Field Crops"
 externalLink: "https://www.nrcs.usda.gov/plant-materials"
-image: "/images/resources/Screenshot-2023-12-08-143728.png"
-tags: ["Conservation Tillage", "Drought", "Field Crops", "Flooding", "Frost Risk"]
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784583388/csf/resources/Screenshot-2023-12-08-143728.png"
 ---
 
 The Plant Materials Program is an extensive listing of technical publications organized by topics such as Climate Change, Cover Crops and Soil Health, Drought Tolerance, Nutrient Management, and others.

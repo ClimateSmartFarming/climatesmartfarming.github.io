@@ -3,7 +3,7 @@ title: "Case Study of Cornell's Climate Smart Farming Program"
 date: "2017-07-18"
 author: "Allison Chatrchyan"
 category: "Research & Publications"
-image: "/images/news/Screen-Shot-2017-07-18-at-2.40.35-PM.png"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784582830/csf/news/Screen-Shot-2017-07-18-at-2.40.35-PM.png"
 excerpt: "A case study developed with the Global Alliance for Climate-Smart Agriculture highlights CSF resources, training, and decision support tools."
 ---
 

@@ -5,7 +5,8 @@ region: "Cornell University"
 subregion: "Campus Lead"
 organization: "Cornell University — School of Integrative Plant Sciences"
 email: "amc256@cornell.edu"
-image: /images/network/allison-chatrchyan.jpg
+website: "https://cals.cornell.edu/people/allison-m-chatrchyan"
+image: 'https://res.cloudinary.com/evqzzm9k/image/upload/v1784749556/csf/network/allison-chatrchyan.jpg'
 order: 11
 ---
 

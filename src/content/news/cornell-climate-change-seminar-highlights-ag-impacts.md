@@ -3,7 +3,7 @@ title: "Cornell Climate Change Seminar Highlights Ag Impacts"
 date: "2016-04-08"
 author: "Allison Chatrchyan"
 category: "Webinars & Events"
-image: "/images/news/floodedschohariefarm_2011_4_lg_nrcsny_2.jpg"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784582811/csf/news/floodedschohariefarm_2011_4_lg_nrcsny_2.jpg"
 excerpt: "Cornell's Climate Change Seminar series featured talks on agriculture, terrestrial ecosystems, and the future of food."
 ---
 

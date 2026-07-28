@@ -3,8 +3,7 @@ title: "Farm Energy, Carbon, and Greenhouse Gases"
 description: "The Farm, Energy, Carbon, and Greenhouse Gas Fact Sheet provides useful information on the challenges, opportunities, and best management practices surrounding these topics."
 category: "Heat Stress"
 externalLink: "https://cpb-us-e1.wpmucdn.com/blogs.cornell.edu/dist/8/4308/files/2015/02/CornellClimateChange_Farm_Energy_mitigation_FINAL-262l8bt.pdf"
-image: ""
-tags: ["Decision Support Tool", "Heat Stress"]
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784583350/csf/resources/Screen-Shot-2016-01-20-at-2.10.56-PM.png"
 ---
 
 The [Farm, Energy, Carbon, and Greenhouse Gas Fact Sheet](https://cpb-us-e1.wpmucdn.com/blogs.cornell.edu/dist/8/4308/files/2015/02/CornellClimateChange_Farm_Energy_mitigation_FINAL-262l8bt.pdf) provides useful information on the challenges, opportunities, and best management practices surrounding these topics.

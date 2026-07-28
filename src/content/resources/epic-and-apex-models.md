@@ -3,8 +3,7 @@ title: "EPIC and APEX Models"
 description: "The Environmental Policy Integrated Climate (EPIC) Model is a cropping system model developed to by Texas A&M that simulates roughly 80 different crops. The model predicts how management decisions wil..."
 category: "Field Crops"
 externalLink: "http://epicapex.tamu.edu/"
-image: "/images/resources/Screenshot-2024-01-24-114124.png"
-tags: ["Conservation Tillage", "Decision Support Tool", "Field Crops", "High-Residue Cover Crops", "Irrigation"]
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784583404/csf/resources/Screenshot-2024-01-24-114124.png"
 ---
 
 The Environmental Policy Integrated Climate (EPIC) Model is a cropping system model developed to by Texas A&M that simulates roughly 80 different crops. The model predicts how management decisions will affect soil loss, water quality, and crop yields for areas with homogeneous soils.

@@ -5,7 +5,24 @@
   background: #f7f7f5;
   font-family: Georgia, serif;
 }
-
+/* ── Hero Banner ─────────────────────────────────────────── */
+.hero {
+  position: relative;
+  background: url('https://res.cloudinary.com/evqzzm9k/image/upload/v1784583062/csf/resources/banner.jpg') center/cover no-repeat;
+  padding: 72px 32px 64px;
+  color: #fff;
+  max-width: min(90%, 1800px);
+  margin: 0 auto;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(27, 58, 31, 0.85) 0%, rgba(46, 125, 50, 0.8) 100%);
+  z-index: 0;
+}
+.heroEyebrow { position: relative; z-index: 1; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: #a8d5b0; margin: 0 0 12px; }
+.heroTitle { position: relative; z-index: 1; font-family: Georgia, serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin: 0; color: #fff; }
 /* ── Masthead ─────────────────────────────────────────────── */
 .masthead {
   background: #fff;

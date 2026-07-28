@@ -3,8 +3,7 @@ title: "PRO-DAIRY Program"
 description: "[PRO-DAIRY](http://prodairy.cals.cornell.edu/about-us) links New York’s dairy farmers and agribusiness professionals to critical research and resources, giving them the information they need to build"
 category: "Dairy, Poultry, and Livestock"
 externalLink: "https://prodairy.cals.cornell.edu/environmental-systems-mgt"
-image: "/images/resources/pexels-melle-9663310-scaled.jpg"
-tags: ["Dairy, Poultry, and Livestock", "Fact Sheet", "Online Courses", "Reports and Studies", "Videos"]
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784583296/csf/resources/pexels-melle-9663310-scaled.jpg"
 ---
 
 [PRO-DAIRY](http://prodairy.cals.cornell.edu/about-us) links New York’s dairy farmers and agribusiness professionals to critical research and resources, giving them the information they need to build and manage robust businesses.

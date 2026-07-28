@@ -6,6 +6,8 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import styles from './NetworkPage.module.css';
+import { networkMembers } from '../../data/networkMembers';
+import type { NetworkMember } from '../../data/networkMembers';
 
 // Fix for default marker icons in React-Leaflet
 import icon from 'leaflet/dist/images/marker-icon.png';
@@ -50,184 +52,6 @@ const dairyIcon = createColoredIcon('#1976d2');
 const appleIcon = createColoredIcon('#d32f2f');
 const extensionIcon = createColoredIcon('#2e7d32');
 
-interface NetworkMember {
-  id: string;
-  name: string;
-  type: 'dairy' | 'apple' | 'extension';
-  location: string;
-  coordinates: [number, number];
-  description: string;
-  county: string;
-}
-
-const networkMembers: NetworkMember[] = [
-  // Dairy Farmers
-  {
-    id: 'dairy-1',
-    name: 'Hillside Dairy Farm',
-    type: 'dairy',
-    location: 'Cortland, NY',
-    coordinates: [42.6012, -76.1804],
-    description: 'Family-owned dairy farm focusing on sustainable practices and climate adaptation.',
-    county: 'Cortland County'
-  },
-  {
-    id: 'dairy-2',
-    name: 'Green Valley Dairy',
-    type: 'dairy',
-    location: 'Canton, NY',
-    coordinates: [44.5956, -75.1690],
-    description: 'Third-generation dairy farm implementing cover crops and improved manure management.',
-    county: 'St. Lawrence County'
-  },
-  {
-    id: 'dairy-3',
-    name: 'Sunrise Dairy',
-    type: 'dairy',
-    location: 'Cooperstown, NY',
-    coordinates: [42.7006, -74.9240],
-    description: 'Mid-sized dairy operation working on heat stress mitigation for livestock.',
-    county: 'Otsego County'
-  },
-  {
-    id: 'dairy-4',
-    name: 'Mountain View Dairy',
-    type: 'dairy',
-    location: 'Lowville, NY',
-    coordinates: [43.7867, -75.4921],
-    description: 'Dairy farm utilizing rotational grazing and soil health practices.',
-    county: 'Lewis County'
-  },
-  {
-    id: 'dairy-5',
-    name: 'Lakeshore Dairy',
-    type: 'dairy',
-    location: 'Watertown, NY',
-    coordinates: [43.9748, -75.9107],
-    description: 'Large dairy operation focused on water management and nutrient efficiency.',
-    county: 'Jefferson County'
-  },
-  {
-    id: 'dairy-6',
-    name: 'Rolling Hills Dairy',
-    type: 'dairy',
-    location: 'Bath, NY',
-    coordinates: [42.3370, -77.3177],
-    description: 'Dairy farm implementing tile drainage and flood management strategies.',
-    county: 'Steuben County'
-  },
-  // Apple Farmers
-  {
-    id: 'apple-1',
-    name: 'Hudson Valley Orchards',
-    type: 'apple',
-    location: 'Highland, NY',
-    coordinates: [41.7212, -73.9607],
-    description: 'Apple orchard using frost protection and integrated pest management.',
-    county: 'Ulster County'
-  },
-  {
-    id: 'apple-2',
-    name: 'Finger Lakes Apple Farm',
-    type: 'apple',
-    location: 'Geneva, NY',
-    coordinates: [42.8689, -76.9777],
-    description: 'Research-focused orchard working with Cornell on climate-resilient varieties.',
-    county: 'Ontario County'
-  },
-  {
-    id: 'apple-3',
-    name: 'Lake Ontario Orchards',
-    type: 'apple',
-    location: 'Sodus, NY',
-    coordinates: [43.2348, -77.0622],
-    description: 'Large apple operation utilizing CSF freeze risk tools for frost protection.',
-    county: 'Wayne County'
-  },
-  {
-    id: 'apple-4',
-    name: 'Champlain Valley Apples',
-    type: 'apple',
-    location: 'Peru, NY',
-    coordinates: [44.5784, -73.5268],
-    description: 'Apple farm adapting to changing growing seasons and pest pressures.',
-    county: 'Clinton County'
-  },
-  {
-    id: 'apple-5',
-    name: 'Capital Region Orchards',
-    type: 'apple',
-    location: 'Altamont, NY',
-    coordinates: [42.7009, -74.0335],
-    description: 'Family orchard implementing water deficit monitoring and irrigation.',
-    county: 'Albany County'
-  },
-  // Extension Associates
-  {
-    id: 'ext-1',
-    name: 'Cornell Cooperative Extension - Ithaca',
-    type: 'extension',
-    location: 'Ithaca, NY',
-    coordinates: [42.4440, -76.5019],
-    description: 'Main CSF program hub at Cornell University providing statewide support.',
-    county: 'Tompkins County'
-  },
-  {
-    id: 'ext-2',
-    name: 'CCE Hudson Valley Regional Office',
-    type: 'extension',
-    location: 'Millbrook, NY',
-    coordinates: [41.7851, -73.6940],
-    description: 'Regional extension office supporting farmers in the Hudson Valley region.',
-    county: 'Dutchess County'
-  },
-  {
-    id: 'ext-3',
-    name: 'CCE North Country Regional Office',
-    type: 'extension',
-    location: 'Plattsburgh, NY',
-    coordinates: [44.6995, -73.4529],
-    description: 'Extension office serving dairy and crop farmers in Northern New York.',
-    county: 'Clinton County'
-  },
-  {
-    id: 'ext-4',
-    name: 'CCE Western NY Regional Office',
-    type: 'extension',
-    location: 'Batavia, NY',
-    coordinates: [42.9981, -78.1875],
-    description: 'Regional hub for vegetable, dairy, and field crop climate support.',
-    county: 'Genesee County'
-  },
-  {
-    id: 'ext-5',
-    name: 'CCE Central NY Office',
-    type: 'extension',
-    location: 'Syracuse, NY',
-    coordinates: [43.0481, -76.1474],
-    description: 'Extension office coordinating urban agriculture and regional outreach.',
-    county: 'Onondaga County'
-  },
-  {
-    id: 'ext-6',
-    name: 'CCE Southern Tier Office',
-    type: 'extension',
-    location: 'Binghamton, NY',
-    coordinates: [42.0987, -75.9180],
-    description: 'Extension support for diverse farming operations in the Southern Tier.',
-    county: 'Broome County'
-  },
-  {
-    id: 'ext-7',
-    name: 'Harvest NY - Albany',
-    type: 'extension',
-    location: 'Albany, NY',
-    coordinates: [42.6526, -73.7562],
-    description: 'Harvest NY Ag Climate Resiliency specialists supporting Capital Region farmers.',
-    county: 'Albany County'
-  }
-];
-
 // Component to handle map view changes
 const MapController: React.FC<{ center: [number, number] | null }> = ({ center }) => {
   const map = useMap();
@@ -254,6 +78,7 @@ interface Person {
   organization: string;
   email?: string;
   phone?: string;
+  website?: string;
   image?: string;
   order: number;
   html: string;
@@ -268,8 +93,8 @@ function getInitials(name: string) {
 export default function NetworkPage() {
   const { items } = useMarkdownContent(files);
   const [activeRegion, setActiveRegion] = useState('All');
-  const [expanded, setExpanded] = useState<string | null>(null);
-  const [activeMapFilter, setActiveMapFilter] = useState<'all' | 'dairy' | 'apple' | 'extension'>('all');
+  const [expanded, setExpanded] = useState<Set<string>>(new Set());
+  const [activeMapFilter, setActiveMapFilter] = useState<'all' | 'farmers' | 'advisors' | 'extension'>('all');
   const [mapCenter, setMapCenter] = useState<[number, number] | null>(null);
 
   const people: Person[] = useMemo(() => {
@@ -282,6 +107,7 @@ export default function NetworkPage() {
       organization: item.meta.organization as string || '',
       email: item.meta.email as string | undefined,
       phone: item.meta.phone as string | undefined,
+        website: item.meta.website as string | undefined,
       image: item.meta.image as string | undefined,
       order: item.meta.order as number || 99,
       html: marked(item.body) as string,
@@ -310,8 +136,8 @@ export default function NetworkPage() {
 
   const getMarkerIcon = (type: string) => {
     switch (type) {
-      case 'dairy': return dairyIcon;
-      case 'apple': return appleIcon;
+      case 'farmers': return dairyIcon;
+      case 'advisors': return appleIcon;
       case 'extension': return extensionIcon;
       default: return DefaultIcon;
     }
@@ -319,8 +145,8 @@ export default function NetworkPage() {
 
   const getTypeLabel = (type: string) => {
     switch (type) {
-      case 'dairy': return 'Dairy Farmer';
-      case 'apple': return 'Apple Farmer';
+      case 'farmers': return 'Farmer';
+      case 'advisors': return 'Ag Advisor';
       case 'extension': return 'Extension Associate';
       default: return 'Network Member';
     }
@@ -328,8 +154,8 @@ export default function NetworkPage() {
 
   const getTypeEmoji = (type: string) => {
     switch (type) {
-      case 'dairy': return '🐄';
-      case 'apple': return '🍎';
+      case 'farmers': return '🐄';
+      case 'advisors': return '🍎';
       case 'extension': return '🏛️';
       default: return '📍';
     }
@@ -337,8 +163,8 @@ export default function NetworkPage() {
 
   const getMarkerColor = (type: string) => {
     switch (type) {
-      case 'dairy': return '#1976d2';
-      case 'apple': return '#d32f2f';
+      case 'farmers': return '#1976d2';
+      case 'advisors': return '#d32f2f';
       case 'extension': return '#2e7d32';
       default: return '#666';
     }
@@ -346,8 +172,8 @@ export default function NetworkPage() {
 
   const mapCounts = {
     all: networkMembers.length,
-    dairy: networkMembers.filter(m => m.type === 'dairy').length,
-    apple: networkMembers.filter(m => m.type === 'apple').length,
+    dairy: networkMembers.filter(m => m.type === 'farmers').length,
+    apple: networkMembers.filter(m => m.type === 'advisors').length,
     extension: networkMembers.filter(m => m.type === 'extension').length
   };
 
@@ -366,8 +192,7 @@ export default function NetworkPage() {
           <h1 className={styles.heroTitle}>The Northeast CSF Network</h1>
           <div className={styles.heroDivider} />
           <p className={styles.heroSub}>
-            A trusted network of Extension specialists, ag advisors, climate scientists, and
-            researchers working together to help Northeast farmers build resilience.
+            The Northeast CSF Network is a voluntary, trusted community of farmers, Extension specialists, agricultural advisors, and researchers committed to working together to improve climate-smart agricultural resilience and sustainability on farms.
           </p>
         </div>
         <div className={styles.heroPattern} aria-hidden />
@@ -378,7 +203,7 @@ export default function NetworkPage() {
         <div className={styles.mapInner}>
           <h2 className={styles.mapTitle}>Explore Our Network</h2>
           <p className={styles.mapSubtitle}>
-            Connect with featured farmers and extension associates across New York State
+            Connect with farmers, Extension, and agricultural advisors across the Northeast
           </p>
 
           {/* Filter Buttons */}
@@ -390,16 +215,16 @@ export default function NetworkPage() {
               All ({mapCounts.all})
             </button>
             <button
-              className={`${styles.mapFilterButton} ${styles.dairy} ${activeMapFilter === 'dairy' ? styles.mapFilterActive : ''}`}
-              onClick={() => setActiveMapFilter('dairy')}
+              className={`${styles.mapFilterButton} ${styles.dairy} ${activeMapFilter === 'farmers' ? styles.mapFilterActive : ''}`}
+              onClick={() => setActiveMapFilter('farmers')}
             >
-              🐄 Dairy Farmers ({mapCounts.dairy})
+              🐄 Farmers ({mapCounts.dairy})
             </button>
             <button
-              className={`${styles.mapFilterButton} ${styles.apple} ${activeMapFilter === 'apple' ? styles.mapFilterActive : ''}`}
-              onClick={() => setActiveMapFilter('apple')}
+              className={`${styles.mapFilterButton} ${styles.apple} ${activeMapFilter === 'advisors' ? styles.mapFilterActive : ''}`}
+              onClick={() => setActiveMapFilter('advisors')}
             >
-              🍎 Apple Farmers ({mapCounts.apple})
+              🍎 Ag Advisors ({mapCounts.apple})
             </button>
             <button
               className={`${styles.mapFilterButton} ${styles.extension} ${activeMapFilter === 'extension' ? styles.mapFilterActive : ''}`}
@@ -456,11 +281,11 @@ export default function NetworkPage() {
               <h4>Legend</h4>
               <div className={styles.legendItem}>
                 <span className={`${styles.legendDot} ${styles.dairyDot}`}></span>
-                <span>Dairy Farmer</span>
+                <span>Farmer</span>
               </div>
               <div className={styles.legendItem}>
                 <span className={`${styles.legendDot} ${styles.appleDot}`}></span>
-                <span>Apple Farmer</span>
+                <span>Ag Advisor</span>
               </div>
               <div className={styles.legendItem}>
                 <span className={`${styles.legendDot} ${styles.extensionDot}`}></span>
@@ -470,26 +295,23 @@ export default function NetworkPage() {
           </div>
 
           <p className={styles.mapDescription}>
-            This map highlights featured members of our Climate Smart Farming Network—farmers,
-            researchers, and extension associates who collaborate with us or utilize our tools.
-            These are individuals who have chosen to share their work with the broader community.
-          </p>
+              All information and resources shared by the network are provided without warranty of any kind, and network members assume no liability for any actions taken or not taken based on the information they provide. Any information provided by members of the network is for educational purposes only. No preference is implied for any commercial products or trade names mentioned, no discrimination is intended, and no endorsement by any university or corporation is implied.
+            </p>
 
-          <a href="/network/join" className={styles.joinButton}>
-            Join Our Network →
-          </a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScz0iIGxv-TfuWoQfzn-6sO85D4frzKl5PQB3QXTZosswuxpQ/viewform?usp=header" target="_blank" rel="noopener noreferrer" className={styles.joinButton}>
+              JOIN THE NE CSF NETWORK ?
+            </a>
+            <p className={styles.joinDescription}>
+              Individuals from any state in the Northeastern U.S. (CT, DE, ME, MD, MA, NH, NJ, NY, PA, RI, VT, WV, and the District of Columbia) can apply to be a part of the network. Please let us know your name, location, training or programs you have participated in or completed, certifications, farm adaptation or mitigation plans you have developed, and your interest in sharing your expertise as a peer or advisor. We will review all applications and get back to you. Thanks!
+            </p>
         </div>
       </div>
 
       <div className={styles.body}>
-        <h2 className={styles.specialistsTitle}>Climate Smart Farming Extension Specialists</h2>
+        <h2 className={styles.specialistsTitle}>Climate Smart Farming Program Team</h2>
 
         <p className={styles.specialistsIntro}>
-          The NE Climate Smart Farming Network provides farmers in New York and the Northeast with
-          access to top Extension specialists and ag advisors trained to help producers manage the
-          risks posed by the changing climate, and develop plans for their farms. Working in
-          partnership with climate scientists at Cornell and other Land Grant Universities, the
-          network draws on the latest science to answer producers' questions.
+          The Cornell Climate Smart Farming Program team provides support to the CSF Network and farmers in New York and the Northeast.
         </p>
 
         <div className={styles.filterRow}>
@@ -517,8 +339,8 @@ export default function NetworkPage() {
                   <PersonCard
                     key={p.id}
                     person={p}
-                    expanded={expanded === p.id}
-                    onToggle={() => setExpanded(expanded === p.id ? null : p.id)}
+                    expanded={expanded.has(p.id)}
+                    onToggle={() => setExpanded(prev => { const next = new Set(prev); if (next.has(p.id)) { next.delete(p.id); } else { next.add(p.id); } return next; })}
                   />
                 ))}
               </div>
@@ -530,8 +352,8 @@ export default function NetworkPage() {
                 <PersonCard
                   key={p.id}
                   person={p}
-                  expanded={expanded === p.id}
-                  onToggle={() => setExpanded(expanded === p.id ? null : p.id)}
+                  expanded={expanded.has(p.id)}
+                  onToggle={() => setExpanded(prev => { const next = new Set(prev); if (next.has(p.id)) { next.delete(p.id); } else { next.add(p.id); } return next; })}
                 />
               ))}
             </div>
@@ -539,19 +361,31 @@ export default function NetworkPage() {
         }
 
         <div className={styles.footerNote}>
-          <p>
+            <p>
+              For other agriculture Extension advisors in different regions of <strong>New York</strong>, you can search for the closest{' '}
+              <a href="https://cals.cornell.edu/cornell-cooperative-extension/local-offices" target="_blank" rel="noopener noreferrer">
+                Cooperative Extension office
+              </a>.
+            </p>
+            <p>
+              For other agriculture Extension advisors in other states in the <strong>Northeast</strong>, you can search for the closest{' '}
+              <a href="https://northeastextension.org/extension-near-you/" target="_blank" rel="noopener noreferrer">
+                state Cooperative Extension office
+              </a>.
+            </p>
+            <p>
             For assistance from agriculture and climate Extension specialists in other states in the
-            Northeast Region (including CT, DC, DE, MA, MD, ME, NH, NY, NJ, PA, RI, VT, or WV),
+            Northeast Region (including <strong>CT, DC, DE, MA, MD, ME, NH, NY, NJ, PA, RI, VT, or WV</strong>),
             contact the{' '}
             <a href="https://www.climatehubs.usda.gov/hubs/northeast" target="_blank" rel="noopener noreferrer">
               USDA Northeast Climate Hub
             </a>.
           </p>
           <p>
-            For other agriculture Extension advisors in different regions of New York, reach out to
-            the Statewide Ag Resiliency Specialists:{' '}
+            For other agriculture Extension advisors in different regions of <strong>New York</strong>, you can reach out to
+            the Cornell Climate Change and Ag Program Work Team leads{' '}
             <a href="mailto:kitty.oneil@cornell.edu">Kitty O'Neil</a> or{' '}
-            <a href="mailto:ss2655@cornell.edu">Savanna Shelnutt</a>.
+            <a href="mailto:elb37@cornell.edu">Emily Berkowitz</a>.
           </p>
         </div>
       </div>
@@ -569,8 +403,14 @@ function PersonCard({ person, expanded, onToggle }: {
       <div className={styles.cardTop} onClick={onToggle}>
         <div className={styles.avatarWrap}>
           {person.image ? (
-            <img src={person.image} alt={person.name} className={styles.avatar} />
-          ) : (
+              person.website ? (
+                <a href={person.website} target="_blank" rel="noopener noreferrer">
+                  <img src={person.image} alt={person.name} className={styles.avatar} />
+                </a>
+              ) : (
+                <img src={person.image} alt={person.name} className={styles.avatar} />
+              )
+            ) : (
             <div className={styles.avatarPlaceholder}>
               {getInitials(person.name)}
             </div>
@@ -600,6 +440,11 @@ function PersonCard({ person, expanded, onToggle }: {
             {person.phone && (
               <span className={styles.contactPhone}>📞 {person.phone}</span>
             )}
+              {person.website && (
+                <a href={person.website} target="_blank" rel="noopener noreferrer" className={styles.contactLink}>
+                  Personal Website
+                </a>
+              )}
           </div>
         </div>
       )}

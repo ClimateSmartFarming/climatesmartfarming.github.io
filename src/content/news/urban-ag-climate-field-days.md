@@ -3,7 +3,7 @@ title: "Urban Ag Climate Field Days"
 date: "2024-07-08"
 author: "Sophie Lundberg"
 category: "Events & Conferences"
-image: "/images/news/image003.png"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784582817/csf/news/image003.png"
 excerpt: "Cornell Cooperative Extension hosted field days on climate resilience, adaptation planning, and soil health for urban farmers."
 ---
 

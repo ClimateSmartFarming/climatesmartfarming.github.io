@@ -3,7 +3,7 @@ title: "Climate Smart Farming Featured at COP21"
 date: "2015-12-06"
 author: "Allison Chatrchyan"
 category: "Events & Conferences"
-image: "/images/news/COP21_CornellClimateSmartFarming.jpeg"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784583075/csf/resources/COP21_CornellClimateSmartFarming.jpg"
 excerpt: "Cornell University showcased its Climate Smart Farming Program at the historic Paris climate conference."
 ---
 

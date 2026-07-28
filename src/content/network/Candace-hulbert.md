@@ -5,7 +5,8 @@ region: "Cornell University"
 subregion: "Campus Lead"
 organization: "Cornell University — AI-LEAF Institute"
 email: "crh232@cornell.edu"
-image: /images/network/candace-hulbert.png
+website: "https://blogs.cornell.edu/cornell-ai-climate"
+image: 'https://res.cloudinary.com/evqzzm9k/image/upload/v1784749561/csf/network/candace-hulbert.png'
 order: 12
 ---
 

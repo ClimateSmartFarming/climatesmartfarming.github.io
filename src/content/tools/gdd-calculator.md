@@ -2,7 +2,7 @@
 title: Growing Degree Day Calculator
 description: Track heat accumulation for crops and insects using customizable base temperatures. Monitor GDD accumulation throughout the growing season.
 category: Field Crops
-image: /images/tools/csf-gddtool-v3-thumbnail.png
+image: https://res.cloudinary.com/evqzzm9k/image/upload/v1784583528/csf/tools/csf-gddtool-v3-thumbnail.png
 iframeUrl: https://nrcc-cornell.github.io/csf-gddtool-v4
 externalLink: https://climatesmartfarming.org/tools/csf-growing-degree-day-calculator/
 repoUrl: https://github.com/nrcc-cornell/csf-gddtool-v4

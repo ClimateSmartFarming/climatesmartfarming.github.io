@@ -2,7 +2,7 @@
 title: AI-LEAF Institute
 subtitle: AI for Land, Economy, Agriculture & Forestry
 excerpt: Advancing foundational artificial intelligence by incorporating knowledge from agriculture and forestry sciences to curb weather effects while lifting rural economies.
-image: https://climatesmartfarming.org/wp-content/uploads/2025/06/Screenshot-2025-06-10-at-4.36.15 PM-1-240x135.png
+image: 'https://res.cloudinary.com/evqzzm9k/image/upload/v1784698637/csf/logos/ai-leaf-crop.png'
 link: https://cse.umn.edu/aileaf
 linkLabel: Visit AI-LEAF
 category: Research

@@ -3,7 +3,7 @@ title: "Tips for Managing Too Little Water"
 date: "2022-07-25"
 author: "Elizabeth Buck"
 category: "Best Practices"
-image: "/images/news/Screen-Shot-2022-08-03-at-5.04.56-PM.png"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784582835/csf/news/Screen-Shot-2022-08-03-at-5.04.56-PM.png"
 excerpt: "Practical strategies for vegetable growers to make the most impactful use of limited water resources during drought conditions."
 ---
 

@@ -2,7 +2,7 @@
 title: Cornell NYS Runoff Risk Tool
 description: The New York State Runoff Risk Forecast is a decision support tool designed to help farmers and commercial applicators determine the best time to spread manure.
 category: Water Management
-image: /images/tools/runoff-risk-screenshot-cropped.png
+image: https://res.cloudinary.com/evqzzm9k/image/upload/v1784583535/csf/tools/runoff-risk-screenshot-cropped.png
 externalLink: https://runoff-risk.nrcc.cornell.edu/ny/
 repoUrl: https://github.com/nrcc-cornell/runoff-risk
 hasIframe: false
@@ -10,7 +10,7 @@ toolType: external
 season: spring
 ---
 
-[![Cornell NYS Runoff Risk Tool](/images/tools/runoff-risk-screenshot-cropped.png)](https://runoff-risk.nrcc.cornell.edu/ny/)
+[![Cornell NYS Runoff Risk Tool](https://res.cloudinary.com/evqzzm9k/image/upload/v1784583535/csf/tools/runoff-risk-screenshot-cropped.png)](https://runoff-risk.nrcc.cornell.edu/ny/)
 
 The New York State Runoff Risk Forecast is a decision support tool designed to help farmers and commercial applicators determine the best time to avoid runoff losses from fields.
 

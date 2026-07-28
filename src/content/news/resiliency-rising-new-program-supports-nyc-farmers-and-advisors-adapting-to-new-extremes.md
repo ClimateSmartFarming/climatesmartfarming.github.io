@@ -3,7 +3,7 @@ title: "Resiliency Rising: New Program Supports NYC Farmers and Advisors Adaptin
 date: "2025-09-30"
 author: "Dalton Mullins"
 category: "Programs & Initiatives"
-image: "/images/news/44141990961_fd138ce72a_o-scaled.jpg"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784582796/csf/news/44141990961_fd138ce72a_o-scaled.jpg"
 excerpt: "The Urban Climate Adaptation and Mitigation Program helps New York City farmers build resilience to increasing weather extremes."
 ---
 

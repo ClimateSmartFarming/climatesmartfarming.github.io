@@ -52,13 +52,7 @@ export const teamMembers: TeamMember[] = [
     specialty: 'Dairy & Field Crops',
     email: 'placeholder@cornell.edu'
   },
-  {
-    id: 'savanna-shellnutt',
-    name: 'Savanna Shellnutt',
-    role: 'Ag Climate Resiliency Specialist',
-    specialty: 'Ag Climate Resiliency Specialist',
-    email: 'placeholder@cornell.edu'
-  }
+
 ];
 
 export const getTeamMemberById = (id: string): TeamMember | undefined => {

@@ -3,7 +3,7 @@ title: "Climate Smart Farming Program: Campus County Connections Webinar"
 date: "2015-11-13"
 author: "Allison Chatrchyan"
 category: "Webinars & Events"
-image: "/images/news/Kitty-ONeil.jpeg"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784676773/csf/news/Kitty-ONeil.jpg"
 excerpt: "Learn about Cornell's Climate Smart Farming Program and Extension Team helping New York farmers manage climate risks."
 ---
 

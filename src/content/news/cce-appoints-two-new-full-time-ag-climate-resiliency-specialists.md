@@ -3,7 +3,7 @@ title: "CCE Appoints Two Ag Climate Resiliency Specialists"
 date: "2022-03-09"
 author: "Allison Chatrchyan"
 category: "Team News"
-image: "/images/news/Climate-resilient-farming-hero-scaled.jpeg"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784582805/csf/news/Climate-resilient-farming-hero-scaled.jpg"
 excerpt: "Cornell Cooperative Extension appointed Zach Spangler and Jenna Walczak as full-time Ag Climate Resiliency Specialists to support New York farmers."
 ---
 

@@ -3,7 +3,7 @@ title: "Travel Around the World with Digital FAO and Agro-Informatics: Next Stop
 date: "2025-09-08"
 author: "Dalton Mullins"
 category: "Webinars & Events"
-image: "/images/news/FAO.jpg"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784582811/csf/news/FAO.jpg"
 excerpt: "Cornell experts presented on climate-smart farming, digital agriculture, and AI-LEAF innovations in this FAO virtual workshop series."
 ---
 
