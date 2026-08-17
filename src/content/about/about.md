@@ -25,6 +25,3 @@ Our program follows the three pillars of Climate-Smart Agriculture, as defined b
 - Support local food and climate-smart initiatives in the surrounding community
 - Inform and inspire other farmers to be leaders and innovators through peer-to-peer information exchange and recognition
 
-## Get In Touch
-
-For more information, contact the CSF Program at: [climatesmartsolutions@gmail.com](mailto:climatesmartsolutions@gmail.com)

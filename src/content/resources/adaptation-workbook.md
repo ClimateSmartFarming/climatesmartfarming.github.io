@@ -1,10 +1,9 @@
 ---
-title: "Climate Impacts"
-description: "Learn about the impacts of climate change on Northeast agriculture, including changing temperatures, precipitation patterns, and extreme weather events affecting farms."
-category: "General"
-externalLink: "/climate-impacts"
-image: ""
-tags: ["Climate Change", "Impacts", "Agriculture", "Northeast"]
+title: "Northeast Climate Adaptation Workbook"
+description: "A practical guide to help producers develop an adaptation plan for their farm using a structured approach to assess vulnerabilities and identify strategies."
+category: "Field Crops"
+externalLink: "https://www.climatehubs.usda.gov/sites/default/files/adaptation_resources_workbook_ne_mw.pdf"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1786509188/csf/resources/Adaptation.png"
+tags: ["Adaptation Planning", "Planning Workbook", "Northeast", "USDA Climate Hubs"]
 ---
-
-Explore the impacts of climate change on agriculture in the Northeast region. This resource covers changing growing seasons, temperature trends, precipitation patterns, and extreme weather events that affect farming operations across the region.
+The Northeast Climate Adaptation Workbook provides a structured process for considering the potential effects of climate change and developing practical on-farm adaptation strategies.

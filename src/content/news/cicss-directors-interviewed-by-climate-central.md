@@ -3,7 +3,7 @@ title: "CICSS Directors Interviewed by Climate Central"
 date: "2017-02-08"
 author: "Allison Chatrchyan"
 category: "In The News"
-image: "/images/news/climate-central-interview.png"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1786507824/csf/news/Screen-Shot-2017-02-27-at-12.43.45-PM.png"
 excerpt: "Cornell Institute for Climate Smart Solutions Directors Mike Hoffmann and Allison Chatrchyan shared perspectives on agriculture and climate policy."
 ---
 

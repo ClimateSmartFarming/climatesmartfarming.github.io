@@ -27,6 +27,7 @@ const navigationItems: NavigationItem[] = [
   },
   {
     label: 'Farmer Resources',
+    href: '/resources',
     dropdown: [
       { label: 'Climate Impacts', href: '/climate-impacts' },
       { label: 'Farmer Stories', href: '/farmer-stories' },
@@ -42,9 +43,10 @@ const navigationItems: NavigationItem[] = [
   },
   {
     label: 'About',
+    href: '/about',
     dropdown: [
       { label: 'About Us', href: '/about' },
-      { label: 'Our Network', href: '/network' },
+      { label: 'Network', href: '/network' },
       { label: 'Contact Us', href: '/contact' },
     ]
   },
@@ -141,3 +143,5 @@ const Header: React.FC = () => {
 };
 
 export default Header;
+
+

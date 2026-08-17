@@ -5,6 +5,7 @@ modified: "2017-03-23 11:05:20"
 status: "publish"
 type: "news"
 author: "amchatrchyan"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1786507667/csf/news/Screen-Shot-2017-03-20-at-11.28.12-AM.png"
 original_url: "https://climatesmartfarming.org/news/the-2016-drought-an-in-depth-survey/"
 ---
 

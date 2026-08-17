@@ -47,6 +47,7 @@ const ToolsSummaryPage: React.FC = () => {
         <div className={styles.heroInner}>
           <p className={styles.heroEyebrow}>Cornell Climate Smart Farming</p>
           <h1 className={styles.heroTitle}>Climate Smart Farming Tools</h1>
+          <div className={styles.heroDivider} />
           <p className={styles.heroSubtitle}>
             Free, location-specific climate and weather tools designed to help Northeast farmers
             make informed decisions — developed by the{' '}
@@ -100,7 +101,7 @@ const ToolsSummaryPage: React.FC = () => {
               All tools are free and updated daily with observed climate data.
             </p>
             <a href="https://github.com/nrcc-cornell" target="_blank" rel="noopener noreferrer" className={styles.aboutLink}>
-              View All Repos on GitHub ↗
+              View on GitHub ↗
             </a>
           </div>
         </aside>
@@ -179,3 +180,4 @@ const ToolsSummaryPage: React.FC = () => {
 };
 
 export default ToolsSummaryPage;
+

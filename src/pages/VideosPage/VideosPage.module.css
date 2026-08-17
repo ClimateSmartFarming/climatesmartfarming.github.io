@@ -2,15 +2,56 @@
 
 /* Hero */
 .hero {
+  position: relative;
   background: url('https://res.cloudinary.com/evqzzm9k/image/upload/v1784583062/csf/resources/banner.jpg') center/cover no-repeat;
-  padding: 72px 32px 64px;
-  text-align: center;
-  color: #fff;
+  padding: 4rem 0 3.5rem;
 }
-.heroEyebrow { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: #a8d5b0; margin: 0 0 12px; }
-.heroTitle { font-family: Georgia, serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin: 0 0 16px; color: #fff; }
-.heroDivider { width: 48px; height: 3px; background: #a8d5b0; margin: 0 auto 20px; border-radius: 2px; }
-.heroSub { font-size: 1.05rem; color: rgba(255,255,255,0.8); max-width: 520px; margin: 0 auto; line-height: 1.6; }
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(26, 58, 10, 0.65) 0%, rgba(45, 80, 22, 0.55) 100%);
+}
+
+.heroInner {
+  position: relative;
+  z-index: 1;
+  max-width: min(90%, 1800px);
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 3vw, 3rem);
+}
+.heroEyebrow {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  margin: 0 0 0.75rem;
+  font-family: var(--font-sans, 'Source Sans 3', system-ui, sans-serif);
+}
+.heroTitle {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 1rem;
+  font-family: var(--font-serif, Georgia, serif);
+}
+.heroDivider {
+  width: 48px;
+  height: 3px;
+  background: #a8d5b0;
+  margin: 0 0 1rem;
+  border-radius: 2px;
+}
+.heroSub {
+  font-size: 1.15rem;
+  color: rgba(255,255,255,0.85);
+  max-width: 600px;
+  line-height: 1.6;
+  margin: 0;
+  font-family: var(--font-sans, 'Source Sans 3', system-ui, sans-serif);
+}
 
 /* Filter bar */
 .filterBar { background: #fff; border-bottom: 1px solid #e0e8e0; position: sticky; top: 0; z-index: 10; }
@@ -135,3 +176,4 @@
 .pageBtn:hover:not(:disabled) { background: #f0f5f0; border-color: #2d6a4f; }
 .pageBtn:disabled { opacity: 0.4; cursor: not-allowed; }
 .pageActive { background: #2d6a4f !important; color: #fff !important; border-color: #2d6a4f !important; }
+

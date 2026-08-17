@@ -3,7 +3,7 @@ title: "Second Annual Integrated Pest Management Online Conference"
 date: "2016-11-18"
 author: "Allison Chatrchyan"
 category: "Webinars & Events"
-image: "/images/news/ipm-online-conference.png"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1786507991/csf/news/Screen-Shot-2016-11-23-at-1.28.02-PM.png"
 excerpt: "The Northeast IPM Center hosted its second annual online conference featuring rapid-style presentations on IPM research and education."
 ---
 

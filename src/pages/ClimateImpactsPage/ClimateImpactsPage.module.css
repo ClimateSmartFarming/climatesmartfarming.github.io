@@ -11,7 +11,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(27, 58, 31, 0.9) 0%, rgba(46, 125, 50, 0.85) 100%);
+  background: linear-gradient(135deg, rgba(26, 58, 10, 0.65) 0%, rgba(45, 80, 22, 0.55) 100%);
 }
 
 .heroInner {
@@ -38,6 +38,14 @@
   color: #fff;
   margin: 0 0 1rem;
   font-family: var(--font-serif, Georgia, serif);
+}
+
+.heroDivider {
+  width: 48px;
+  height: 3px;
+  background: #a8d5b0;
+  margin: 0 0 1rem;
+  border-radius: 2px;
 }
 
 .heroSubtitle {
@@ -372,3 +380,5 @@
     font-size: 1.2rem;
   }
 }
+
+

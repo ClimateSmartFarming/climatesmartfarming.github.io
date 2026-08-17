@@ -6,6 +6,7 @@ status: "publish"
 type: "news"
 author: "amchatrchyan"
 original_url: "https://climatesmartfarming.org/news/ag-decision-tools-webinar-csf-and-newa/"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1786507166/csf/news/webPreview.jpg"
 ---
 
 # Ag Decision Tools Webinar: CSF and NEWA

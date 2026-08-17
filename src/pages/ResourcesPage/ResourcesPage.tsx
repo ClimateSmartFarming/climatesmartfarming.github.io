@@ -60,7 +60,7 @@ interface Resource {
   slug: string;
   title: string;
   description: string;
-  category: string;
+  category: string | string[];
   tags: string[];
   externalLink: string;
   image: string;
@@ -107,7 +107,7 @@ export default function ResourcesPage() {
         resource.tags.some(tag =>
           tag.toLowerCase() === filterName.toLowerCase()
         ) ||
-        resource.category.toLowerCase() === filterName.toLowerCase()
+        (Array.isArray(resource.category) ? resource.category.some(c => c.toLowerCase() === filterName.toLowerCase()) : resource.category.toLowerCase() === filterName.toLowerCase())
       );
     }
 
@@ -163,7 +163,9 @@ export default function ResourcesPage() {
       <section className={styles.hero}>
         <div className={styles.heroOverlay}></div>
         <div className={styles.heroContent}>
+          <p className={styles.heroEyebrow}>Cornell Climate Smart Farming</p>
           <h1 className={styles.heroTitle}>Resources</h1>
+          <div className={styles.heroDivider} />
           <p className={styles.heroSubtitle}>
             Fact sheets, reports, tools, and educational materials for climate-smart agriculture
           </p>
@@ -324,6 +326,9 @@ export default function ResourcesPage() {
     </div>
   );
 }
+
+
+
 
 
 

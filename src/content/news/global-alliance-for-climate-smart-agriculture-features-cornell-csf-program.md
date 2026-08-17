@@ -3,7 +3,7 @@ title: "Global Alliance for Climate Smart Agriculture Features Cornell CSF Progr
 date: "2017-02-27"
 author: "Allison Chatrchyan"
 category: "In The News"
-image: "/images/news/Screen Shot 2017-02-27 at 1.54.02 PM.png"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1786507668/csf/news/Screen-Shot-2017-02-27-at-1.54.02-PM.png"
 excerpt: "The Cornell Climate Smart Farming Program was featured in the Global Alliance for Climate Smart Agriculture's newsletter."
 ---
 

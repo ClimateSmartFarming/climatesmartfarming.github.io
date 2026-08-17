@@ -299,7 +299,7 @@ export default function NetworkPage() {
             </p>
 
             <a href="https://docs.google.com/forms/d/e/1FAIpQLScz0iIGxv-TfuWoQfzn-6sO85D4frzKl5PQB3QXTZosswuxpQ/viewform?usp=header" target="_blank" rel="noopener noreferrer" className={styles.joinButton}>
-              JOIN THE NE CSF NETWORK ?
+              JOIN THE NE CSF NETWORK
             </a>
             <p className={styles.joinDescription}>
               Individuals from any state in the Northeastern U.S. (CT, DE, ME, MD, MA, NH, NJ, NY, PA, RI, VT, WV, and the District of Columbia) can apply to be a part of the network. Please let us know your name, location, training or programs you have participated in or completed, certifications, farm adaptation or mitigation plans you have developed, and your interest in sharing your expertise as a peer or advisor. We will review all applications and get back to you. Thanks!
@@ -361,33 +361,28 @@ export default function NetworkPage() {
         }
 
         <div className={styles.footerNote}>
-            <p>
-              For other agriculture Extension advisors in different regions of <strong>New York</strong>, you can search for the closest{' '}
-              <a href="https://cals.cornell.edu/cornell-cooperative-extension/local-offices" target="_blank" rel="noopener noreferrer">
-                Cooperative Extension office
-              </a>.
-            </p>
-            <p>
-              For other agriculture Extension advisors in other states in the <strong>Northeast</strong>, you can search for the closest{' '}
-              <a href="https://northeastextension.org/extension-near-you/" target="_blank" rel="noopener noreferrer">
-                state Cooperative Extension office
-              </a>.
-            </p>
-            <p>
-            For assistance from agriculture and climate Extension specialists in other states in the
-            Northeast Region (including <strong>CT, DC, DE, MA, MD, ME, NH, NY, NJ, PA, RI, VT, or WV</strong>),
-            contact the{' '}
-            <a href="https://www.climatehubs.usda.gov/hubs/northeast" target="_blank" rel="noopener noreferrer">
-              USDA Northeast Climate Hub
-            </a>.
-          </p>
-          <p>
-            For other agriculture Extension advisors in different regions of <strong>New York</strong>, you can reach out to
-            the Cornell Climate Change and Ag Program Work Team leads{' '}
-            <a href="mailto:kitty.oneil@cornell.edu">Kitty O'Neil</a> or{' '}
-            <a href="mailto:elb37@cornell.edu">Emily Berkowitz</a>.
-          </p>
-        </div>
+            <ul>
+              <li>
+                For other agriculture Extension advisors in different regions of <strong>New York</strong>, you can search for the closest{' '}
+                <a href="https://cals.cornell.edu/cornell-cooperative-extension/local-offices" target="_blank" rel="noopener noreferrer">
+                  Cooperative Extension office
+                </a>, or reach out to the Cornell Climate Change and Ag PWT leads,{' '}
+                <a href="mailto:kitty.oneil@cornell.edu">Kitty O'Neil</a> or{' '}
+                <a href="mailto:elb37@cornell.edu">Emily Berkowitz</a>.
+              </li>
+              <li>
+                For assistance from agriculture and climate Extension specialists in other states in the
+                Northeast Region (<strong>CT, DC, DE, MA, MD, ME, NH, NY, NJ, PA, RI, VT, or WV</strong>),
+                contact the{' '}
+                <a href="https://www.climatehubs.usda.gov/hubs/northeast" target="_blank" rel="noopener noreferrer">
+                  USDA Northeast Climate Hub
+                </a>, or search for the closest{' '}
+                <a href="https://northeastextension.org/extension-near-you/" target="_blank" rel="noopener noreferrer">
+                  state Cooperative Extension office
+                </a>.
+              </li>
+            </ul>
+          </div>
       </div>
     </div>
   );
@@ -451,3 +446,5 @@ function PersonCard({ person, expanded, onToggle }: {
     </div>
   );
 }
+
+

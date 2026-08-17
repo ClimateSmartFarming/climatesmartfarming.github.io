@@ -5,6 +5,7 @@ modified: "2017-10-05 15:44:52"
 status: "publish"
 type: "news"
 author: "amchatrchyan"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1786507164/csf/news/Screen-Shot-2017-07-19-at-12.27.29-PM.png"
 original_url: "https://climatesmartfarming.org/news/latest-drought-newsletter-from-the-emergent-climate-risk-lab/"
 categories: ["Decision Support Tool"]
 ---

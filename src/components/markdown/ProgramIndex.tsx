@@ -20,17 +20,19 @@ const ProgramIndex: React.FC<Props> = ({ files }) => {
     <div className={styles.page}>
 
       <div className={styles.hero}>
-        <p className={styles.heroEyebrow}>Cornell Climate Smart Farming</p>
+        <div className={styles.heroInner}>
+          <p className={styles.heroEyebrow}>Cornell Climate Smart Farming</p>
         <h1 className={styles.heroTitle}>Programs & Partners</h1>
         <div className={styles.heroDivider} />
         <p className={styles.heroSub}>
           Collaborating organizations and initiatives working alongside CSF to build climate resilience across the Northeast
         </p>
+        </div>
       </div>
 
       <div className={styles.programList}>
         {sorted.map((item, index) => {
-          const isReversed = index % 2 !== 0;
+          const isReversed = false;
           const link = item.meta.link as string | undefined;
           const linkLabel = (item.meta.linkLabel as string) || 'Learn More';
 
@@ -90,3 +92,4 @@ const ProgramIndex: React.FC<Props> = ({ files }) => {
 };
 
 export default ProgramIndex;
+

@@ -3,7 +3,7 @@ title: "New Northeast Climate Adaptation Workbook Released"
 date: "2026-07-24"
 author: "Cornell Climate Smart Farming Program"
 category: "Reports & Publications"
-image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1785255074/csf/news/workbook.png"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1786509188/csf/news/Adaptation.png"
 excerpt: "The Cornell Climate-Smart Farming Program and USDA Northeast Climate Hub have released a new Northeast Climate Adaptation Workbook, a practical guide to help producers develop an adaptation plan for their farm."
 ---
 

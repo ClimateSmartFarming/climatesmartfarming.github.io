@@ -6,6 +6,7 @@ status: "publish"
 type: "news"
 author: "amchatrchyan"
 original_url: "https://climatesmartfarming.org/news/fresh-market-vegetable-field-day-batavia-ny/"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1786507165/csf/news/IMG_4311.jpg"
 ---
 
 # Fresh Market Vegetable Field Day - Batavia, NY

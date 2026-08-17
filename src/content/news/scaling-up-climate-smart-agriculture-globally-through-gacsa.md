@@ -4,6 +4,7 @@ date: "2021-01-22 16:56:55"
 modified: "2021-02-09 17:01:29"
 status: "publish"
 type: "news"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1786505567/csf/news/CornDroughtAdobeStock_73214053.jpg"
 author: "amchatrchyan"
 original_url: "https://climatesmartfarming.org/news/scaling-up-climate-smart-agriculture-globally-through-gacsa/"
 ---

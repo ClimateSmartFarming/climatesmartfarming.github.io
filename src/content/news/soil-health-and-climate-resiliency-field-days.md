@@ -3,7 +3,7 @@ title: "Soil Health and Climate Resiliency Field Days"
 date: "2024-06-12"
 author: "Sophie Lundberg"
 category: "Events & Conferences"
-image: "/images/news/Screenshot-2024-06-12-at-8.47.47 AM.png"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1786506425/csf/news/Screenshot-2024-06-12-at-8.47.47-AM.png"
 excerpt: "The NY Soil Health team held 11 field days across New York State covering topics from vineyard soil health to biochar and cover crops."
 ---
 

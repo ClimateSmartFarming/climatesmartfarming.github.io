@@ -5,7 +5,7 @@ region: "USDA Northeast Climate Hub"
 subregion: "Climate Hub Partner"
 organization: "USDA Forest Service & USDA Northeast Climate Hub"
 email: "kristin.benson@usda.gov"
-image: /images/network/kristin-benson.jpg
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1786994549/csf/network/Kristin_Benson_HeadShot.jpg"
 order: 15
 ---
 

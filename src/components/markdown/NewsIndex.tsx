@@ -80,8 +80,10 @@ const NewsIndex: React.FC<Props> = ({ files, basePath }) => {
       {/* ── Masthead ──────────────────────────────────────────── */}
       {/* ── Hero Banner ──────────────────────────────────────── */}
         <div className={styles.hero}>
-          <p className={styles.heroEyebrow}>Cornell Climate Smart Farming</p>
+          <div className={styles.heroInner}>
+            <p className={styles.heroEyebrow}>Cornell Climate Smart Farming</p>
           <h1 className={styles.heroTitle}>News & Updates</h1>
+          </div>
         </div>
 
       {/* ── Hero grid ─────────────────────────────────────────── */}
@@ -237,3 +239,4 @@ const NewsIndex: React.FC<Props> = ({ files, basePath }) => {
 };
 
 export default NewsIndex;
+

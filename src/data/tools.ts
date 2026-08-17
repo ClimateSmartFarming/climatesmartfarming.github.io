@@ -121,6 +121,7 @@ export const featuredTools: Tool[] = [
 
 {
     id: 'soil-digital-twin',
+    image: 'https://res.cloudinary.com/evqzzm9k/image/upload/v1786505564/csf/tools/SoilDigitalTwin.svg',
     title: 'Soil Digital Twin Tool',
     description: 'Simulate soil processes in silico to explore how soil properties respond to management and environmental change.',
     detail: `<p>The Soil Digital Twin Tool provides an in-silico environment for simulating soil processes and exploring how soil properties respond to management decisions and environmental conditions.</p>`,

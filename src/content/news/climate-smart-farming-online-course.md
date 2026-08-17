@@ -3,7 +3,7 @@ title: "Climate Smart Farming Online Course"
 date: "2016-11-21"
 author: "Allison Chatrchyan"
 category: "Education & Training"
-image: "/images/news/csf-online-course.jpg"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784582817/csf/news/imagefield30.jpg"
 excerpt: "The CSF Program offered an online course for beginning farmers on climate preparedness and best management practices."
 ---
 

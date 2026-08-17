@@ -379,8 +379,7 @@ const HomePage: React.FC = () => {
             </div>
 
             {/* Seasonal Spotlight Band */}
-            {seasonalTools.length > 0 && spotlightTool && (
-              <div
+            {seasonalTools.length > 0 && spotlightTool && (<><h3 className={styles.featuredToolsTitle}>Seasonal Tools</h3><div
                 className={styles.seasonalBand}
                 onMouseEnter={() => setIsPaused(true)}
                 onMouseLeave={() => setIsPaused(false)}
@@ -388,9 +387,7 @@ const HomePage: React.FC = () => {
                 onBlur={() => setIsPaused(false)}
               >
                 {/* Season Label Pill */}
-                <span className={styles.seasonPill}>
-                  Seasonal Tools: {seasonDisplayName}
-                </span>
+                
 
                 {/* Hero Strip Card */}
                 <Link to={`/tools/${spotlightTool.id}`} className={styles.heroStrip}>
@@ -450,6 +447,7 @@ const HomePage: React.FC = () => {
                   </div>
                 )}
               </div>
+            </>
             )}
 
             {/* Featured Tools Grid */}
@@ -601,7 +599,7 @@ const HomePage: React.FC = () => {
                     ))}
                   </div>
                   <div className={styles.resourceTabFooter}>
-                    <Link to="/farmer-stories" className={styles.resourceBlockLink}>View All Farmer Stories →</Link>
+                    <Link to="/farmer-stories" className={styles.viewAllButton}>View All Farmer Stories →</Link>
                   </div>
                 </div>
               </div>
@@ -629,7 +627,7 @@ const HomePage: React.FC = () => {
                     ))}
                   </div>
                   <div className={styles.resourceTabFooter}>
-                    <Link to="/videos" className={styles.resourceBlockLink}>View All Videos →</Link>
+                    <Link to="/videos" className={styles.viewAllButton}>View All Videos →</Link>
                   </div>
                 </div>
               </div>
@@ -654,7 +652,7 @@ const HomePage: React.FC = () => {
                     ))}
                   </div>
                   <div className={styles.resourceTabFooter}>
-                    <Link to="/resources" className={styles.resourceBlockLink}>View All Fact Sheets →</Link>
+                    <Link to="/resources" className={styles.viewAllButton}>View All Fact Sheets →</Link>
                   </div>
                 </div>
               </div>
@@ -666,14 +664,7 @@ const HomePage: React.FC = () => {
         {recentNews.length > 0 && (
           <section className={styles.newsSection}>
             <Container>
-              <div className={styles.sectionHeaderRow}>
-                <div>
-                  <h2 className={styles.sectionTitle}>Latest News</h2>
-                </div>
-                <Link to="/news" className={styles.viewAllLink}>
-                  All News →
-                </Link>
-              </div>
+              <div className={styles.newsSectionHeader}><h2 className={styles.sectionTitleCentered}>Latest News</h2></div>
 
               <div className={styles.newsGrid}>
                 {/* Featured story (first/most recent) */}
@@ -713,6 +704,11 @@ const HomePage: React.FC = () => {
                     </Link>
                   ))}
                 </div>
+              </div>
+              <div className={styles.viewAllWrapper}>
+                <Link to="/news" className={styles.viewAllButton}>
+                  View All News Articles →
+                </Link>
               </div>
             </Container>
           </section>
@@ -797,9 +793,7 @@ const HomePage: React.FC = () => {
                         </a>
                       ))}
                     </div>
-                    <div className={styles.externalTabFooter}>
-                      <Link to="/resources" className={styles.resourceBlockLink}>View All {category} Resources →</Link>
-                    </div>
+                    
                   </div>
                 )
               ))}
@@ -819,3 +813,32 @@ const HomePage: React.FC = () => {
 };
 
 export default HomePage;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

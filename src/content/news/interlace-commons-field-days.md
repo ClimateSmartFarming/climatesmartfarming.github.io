@@ -3,7 +3,7 @@ title: "Interlace Commons Field Days"
 date: "2024-08-09"
 author: "Sophie Lundberg"
 category: "Events & Conferences"
-image: "/images/news/Screenshot-2024-08-09-at-4.07.01 PM.png"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1786506426/csf/news/Screenshot-2024-08-09-at-4.07.01-PM.png"
 excerpt: "Interlace Commons hosted free field day events promoting agroforestry practices that address climate change and land degradation."
 ---
 

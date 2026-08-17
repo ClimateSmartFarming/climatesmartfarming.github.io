@@ -6,7 +6,7 @@ export interface Resource {
   title: string;
   cardImage: string;
   externalLink: string;
-  category: string;
+  category: string | string[];
   tags: string[];
 }
 
@@ -189,7 +189,7 @@ export const resources: Resource[] = [
 {
   id: 'climate-impacts',
   title: 'Climate Impacts',
-  cardImage: '',
+  cardImage: 'https://res.cloudinary.com/evqzzm9k/image/upload/v1784583062/csf/resources/banner.jpg',
   externalLink: '/climate-impacts',
   category: ['General'],
   tags: [
@@ -1219,7 +1219,8 @@ export const filterCategories: FilterCategories = {
       { name: 'Videos', slug: 'videos' },
       { name: 'Weather Map', slug: 'weather-map' },
       { name: 'Workshop Presentations', slug: 'workshop-presentations' },
-    ],
+        { name: 'Planning Workbook', slug: 'planning-workbook' },
+      ],
   },
   vulnerabilityTypes: {
     title: 'Vulnerability Types',
@@ -1255,3 +1256,6 @@ export const filterCategories: FilterCategories = {
     ],
   },
 };
+
+
+

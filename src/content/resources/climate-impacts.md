@@ -3,7 +3,7 @@ title: "Climate Impacts"
 description: "Learn about the impacts of climate change on Northeast agriculture, including changing temperatures, precipitation patterns, and extreme weather events affecting farms."
 category: "General"
 externalLink: "/climate-impacts"
-image: ""
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1784583062/csf/resources/banner.jpg"
 tags: ["Climate Change", "Impacts", "Agriculture", "Northeast"]
 ---
 

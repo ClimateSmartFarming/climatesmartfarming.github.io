@@ -4,6 +4,7 @@ date: "2022-03-15 20:37:30"
 modified: "2022-03-28 21:30:33"
 status: "publish"
 type: "news"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1786505566/csf/news/winterfarm-ny.jpg"
 author: "amchatrchyan"
 original_url: "https://climatesmartfarming.org/news/cornells-csf-team-winter-training-sessions/"
 ---

@@ -11,6 +11,7 @@ const ClimateImpactsPage: React.FC = () => {
         <div className={styles.heroInner}>
           <p className={styles.heroEyebrow}>Cornell Climate Smart Farming</p>
           <h1 className={styles.heroTitle}>Climate Impacts</h1>
+          <div className={styles.heroDivider} />
           <p className={styles.heroSubtitle}>
             Understanding how climate change affects Northeast agriculture and strategies for adaptation
           </p>

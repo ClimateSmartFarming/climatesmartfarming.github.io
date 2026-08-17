@@ -3,7 +3,7 @@ title: "Field Days: Biochar, Cover Crops, and Urban Agriculture"
 date: "2025-09-05"
 author: "Dalton Mullins"
 category: "Events & Conferences"
-image: "/images/news/Screenshot-2025-09-04-at-4.40.36 PM.png"
+image: "https://res.cloudinary.com/evqzzm9k/image/upload/v1786506425/csf/news/Screenshot-2025-09-04-at-4.40.36-PM.png"
 excerpt: "New York Soil Health Field Days featured presentations on biochar, cover crops, and urban agriculture at Spruce Haven Farm."
 ---
 

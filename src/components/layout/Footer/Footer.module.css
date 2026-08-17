@@ -9,12 +9,13 @@
 /* Collaborators Section - Light Green */
 .partnersSection {
   background: linear-gradient(135deg, #F5F4F0 0%, #EAF0E8 100%);
-  padding: 3rem 0;
+  padding: 1.5rem 0;
   border-bottom: 3px solid #3D5A45;
 }
 
 .partnersTitle {
   text-align: center;
+  width: 100%;
   font-family: var(--font-sans, 'Source Sans 3', system-ui, sans-serif);
   font-size: 1.75rem;
   font-weight: 700;
@@ -23,21 +24,23 @@
 }
 
 .partnersGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   gap: 2rem;
   align-items: center;
-  justify-items: center;
-  max-width: 900px;
+  justify-content: center;
+  max-width: max-content;
   margin: 0 auto;
 }
 
 .partnerCard {
   background: transparent;
-  padding: 1.5rem;
+  padding: 0.5rem 1rem;
   border-radius: 8px;
   display: flex;
   align-items: center;
+  justify-content: center;
   justify-content: center;
   width: 100%;
   height: 120px;
@@ -50,11 +53,9 @@
 }
 
 .partnerLogo {
-  max-width: 100%;
-  height: 100px;
+  height: 65px;
   width: auto;
   object-fit: contain;
-  vertical-align: middle;
   transition: opacity 0.3s ease;
 }
 
@@ -69,6 +70,7 @@
   gap: 60px;
   margin-bottom: 40px;
   padding-top: 40px;
+  align-items: start;
 }
 
 .brandColumn {
@@ -94,7 +96,7 @@
 }
 
 .footerDescription {
-  margin-bottom: 2rem;
+  margin-bottom: 0.75rem;
 }
 
 .footerDescription p {
@@ -109,7 +111,7 @@
 .cornellLogosSection {
   display: flex;
   gap: 3rem;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 
 .cornellLogoItem {
@@ -141,6 +143,8 @@
 .footerColumn {
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
 }
 
 .columnTitle {
@@ -209,7 +213,7 @@
 /* Tablet styles */
 @media (max-width: 1024px) and (min-width: 769px) {
   .partnersGrid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 1.5rem;
   }
 
@@ -246,8 +250,8 @@
   }
 
   .partnerLogo {
-    height: 100px;
-  }
+  height: 65px;
+}
 
   .footerContent {
     grid-template-columns: 1fr;
@@ -313,8 +317,8 @@
   }
 
   .partnerLogo {
-    height: 100px;
-  }
+  height: 65px;
+}
 
   .footerContent {
     gap: 24px;
@@ -335,6 +339,36 @@
     gap: 12px;
   }
 }
+
+
+
+
+
+
+
+/* Social Links */
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.socialLink {
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.2s ease;
+}
+
+.socialLink:hover {
+  color: #fff;
+}
+
+
+
+
+
+
+
+
 
 
 
