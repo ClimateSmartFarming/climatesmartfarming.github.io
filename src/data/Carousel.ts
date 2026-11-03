@@ -21,7 +21,7 @@ export const CarouselSlides: CarouselSlide[] = [
     id: 'slide-2',
     title: 'Decision Support Tools',
     subtitle: 'Make informed choices for your farm',
-    image: '/carousel-2.JPG',
+    image: 'https://res.cloudinary.com/evqzzm9k/image/upload/v1793728890/csf/carousel/oxjmwomjsg8nsmuqtoko.jpg',
     link: '/tools',
     buttonText: 'EXPLORE TOOLS'
   },
