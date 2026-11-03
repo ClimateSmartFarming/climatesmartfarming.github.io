@@ -33,7 +33,8 @@ const NEWS_CATEGORIES = [
 const ITEMS_PER_PAGE = 12;
 
 const NewsIndex: React.FC<Props> = ({ files, basePath }) => {
-  const { items } = useMarkdownContent(files);
+  const { items: allItems } = useMarkdownContent(files);
+  const items = allItems.filter(i => String(i.meta.publishOnSite) !== 'false');
   const [activeCategory, setActiveCategory] = useState('All');
   const [currentPage, setCurrentPage] = useState(1);
 

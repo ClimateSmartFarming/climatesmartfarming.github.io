@@ -33,7 +33,7 @@ export const featuredTools: Tool[] = [
 
   {
     id: 'gdd-calculator',
-    image: '/images/tools/csf-gddtool-v3-thumbnail.png',
+    image: 'https://res.cloudinary.com/evqzzm9k/image/upload/v1793638875/csf/tools/dnz2p7tgjh7bmwlxswlc.png',
     title: 'Growing Degree Day Calculator',
     description: 'Plots Growing Degree Days (GDD) accumulated since a planting date, with 6-day forecasts and historical context to help predict crop development and pest/disease outbreaks.',
     detail: `<p>© Cornell University, 2016. Credits: <strong>Tool Developed by Art DeGaetano, Rick Moore &amp; Ben Eck.</strong></p><p>Please take a few minutes to fill out a <a href="https://cornell.ca1.qualtrics.com/jfe/form/SV_0vc48MwnoVRBq6N" target="_blank" rel="noopener noreferrer">brief questionnaire</a> on the CSF tools, so that we can continue to improve them. The questionnaire is voluntary and confidential.</p><p>View our <a href="https://youtu.be/fBY-3cJuzh0" target="_blank" rel="noopener">video tool tutorial on YouTube</a>.</p><p><strong>Instructions on Using the Tool:</strong></p><p><em>Choosing Your Location</em> — Click the "Change Location" button, which pops up a dialog box with a text field and a map. Create a new location by entering your address, zip code, or county in the text field and clicking "GO," or by clicking on the map at any location in the Northeast.</p><p><em>Selecting Your Date of Interest</em> — Click the small green calendar to display an interactive calendar. To view results from a previous growing season, select a date within the season of interest.</p><p><em>Choosing Your Season View</em> — Buttons below the varieties allow you to view a 30-day window of results, the entire season to date, or climate change projections.</p>`,
@@ -46,7 +46,7 @@ export const featuredTools: Tool[] = [
 
   {
     id: 'cover-crop-planner',
-    image: '/images/tools/covercrop_thumbnail.png',
+    image: 'https://res.cloudinary.com/evqzzm9k/image/upload/v1793640062/csf/tools/x59g36i3gcr02yv7yylf.png',
     title: 'Winter Cover Crop Planting Scheduler',
     description: 'Understand how the chances of growing a successful winter cover crop at your location are affected by planting date selection.',
     detail: `<p>© Cornell University, 2017. Credits: <strong>Tool Developed by Thomas Björkman, Kitty O'Neil &amp; Brian Belcher.</strong></p><p>Please take a few minutes to fill out a <a href="https://cornell.ca1.qualtrics.com/jfe/form/SV_0vc48MwnoVRBq6N" target="_blank" rel="noopener noreferrer">brief questionnaire</a> on the CSF tools so that we can continue to improve them. The questionnaire is voluntary and confidential.</p><p><strong>Why is this tool needed?</strong><br/>It is important to know how late into the growing season cover crops can be planted, and still be confident that these crops can accomplish the goals intended. This tool helps to quantify the chances of success and limits the risk involved.</p><p><strong>Producers can use this tool to:</strong></p><ul><li>Make the best selection of crop varieties and optimize planting times.</li><li>Respond to sudden changes — alter planting plans or crop type if unpredictable weather causes delay.</li><li>Assess confidence in planting date selection, or risk involved with delays.</li><li>Assess how a particular season compares to historical or future seasons given climate change.</li></ul><p>Please note that this tool only covers the Northeastern United States.</p>`,
@@ -109,7 +109,7 @@ export const featuredTools: Tool[] = [
 
   {
     id: 'climate-change',
-    image: '/images/tools/changetool_thumbnail_180_90.png',
+    image: 'https://res.cloudinary.com/evqzzm9k/image/upload/v1793640041/csf/tools/gq64v1yy4oev5fy0qvf5.png',
     title: 'Visualizing Climate Change in the Northeast',
     description: 'Find out how the climate has changed in your county since 1950, and what is projected over the next century under different emissions scenarios.',
     detail: `<p>Credits: <strong>Developed by Art DeGaetano, Brian Belcher and Ben Eck with the <a href="http://climatechange.cornell.edu">CICSS</a> team.</strong> Data requests powered by <a href="http://www.rcc-acis.org">ACIS</a> web services. © Cornell University, 2018.</p><p>This tool was developed to show how the climate has changed in the Northeast United States since 1950, and how it is projected to change over the next century. Maps and charts provide data at the county level.</p><p>Please note that this tool is best viewed on Chrome, Firefox and Safari browsers.</p>`,
@@ -121,7 +121,7 @@ export const featuredTools: Tool[] = [
 
 {
     id: 'soil-digital-twin',
-    image: 'https://res.cloudinary.com/evqzzm9k/image/upload/v1786505564/csf/tools/SoilDigitalTwin.svg',
+    image: 'https://res.cloudinary.com/evqzzm9k/image/upload/v1793638932/csf/tools/fxc127jvcrirklvoevyt.png',
     title: 'Soil Digital Twin Tool',
     description: 'Simulate soil processes in silico to explore how soil properties respond to management and environmental change.',
     detail: `<p>The Soil Digital Twin Tool provides an in-silico environment for simulating soil processes and exploring how soil properties respond to management decisions and environmental conditions.</p>`,

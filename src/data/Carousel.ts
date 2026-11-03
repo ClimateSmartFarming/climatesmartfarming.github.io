@@ -27,11 +27,11 @@ export const CarouselSlides: CarouselSlide[] = [
   },
   {
     id: 'slide-3',
-    title: 'Climate Adaptation Programs',
+    title: 'New Northeast Adaptation Planning Guide',
     subtitle: 'Training and resources for farmers',
     image: '/carousel-3.jpeg',
-    link: '/programs',
-    buttonText: 'VIEW PROGRAMS'
+    link: 'https://www.northeastclimateadaptationguide.com/',
+    buttonText: 'VIEW GUIDE'
   },
   {
     id: 'slide-4',

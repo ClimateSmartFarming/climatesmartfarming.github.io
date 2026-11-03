@@ -2,7 +2,7 @@
 title: Soil Digital Twin Tool
 description: Simulate soil processes in silico to explore how soil properties respond to management and environmental change.
 category: Soil Properties
-image: https://res.cloudinary.com/evqzzm9k/image/upload/v1786505564/csf/tools/SoilDigitalTwin.svg
+image: https://res.cloudinary.com/evqzzm9k/image/upload/v1793638932/csf/tools/fxc127jvcrirklvoevyt.png
 externalLink: https://soiltwin.org/soils-in-silico/
 hasIframe: false
 toolType: integrated

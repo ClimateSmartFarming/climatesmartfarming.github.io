@@ -45,6 +45,10 @@ const Carousel: React.FC<CarouselProps> = ({
 
   const currentSlide = slides[currentIndex];
 
+  // External links (http/https) open in a new tab via a plain anchor;
+  // internal paths use the React Router Link.
+  const isExternal = /^https?:\/\//i.test(currentSlide.link);
+
   // Get image position based on slide index
   const getImagePosition = (index: number) => {
     if (index === 0) return 'center 15%';  // First slide - aligned with header
@@ -82,9 +86,20 @@ const Carousel: React.FC<CarouselProps> = ({
         {currentSlide.subtitle && (
           <p className={styles.subtitle}>{currentSlide.subtitle}</p>
         )}
-        <Link to={currentSlide.link} className={styles.button}>
-          {currentSlide.buttonText || 'LEARN MORE'}
-        </Link>
+        {isExternal ? (
+          <a
+            href={currentSlide.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.button}
+          >
+            {currentSlide.buttonText || 'LEARN MORE'}
+          </a>
+        ) : (
+          <Link to={currentSlide.link} className={styles.button}>
+            {currentSlide.buttonText || 'LEARN MORE'}
+          </Link>
+        )}
       </div>
 
       {/* Navigation Arrows */}

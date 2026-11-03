@@ -1,0 +1,240 @@
+# Decap CMS configuration for Cornell Climate Smart Farming
+# Defines the editing forms your team sees at /admin
+
+backend:
+  name: github
+  repo: ClimateSmartFarming/climatesmartfarming.github.io
+  branch: main
+
+# Editorial workflow: lets editors Save a draft without publishing.
+# Entries move through Draft -> In review -> Ready before going live.
+publish_mode: editorial_workflow
+
+# While testing locally, the line below lets you open /admin without logging in.
+# It is COMMENTED OUT by default. See notes after the file.
+local_backend: true
+
+# Fallback location for any file NOT sent to Cloudinary (rarely used now).
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+# Cloudinary media library: image fields get an "Upload" button that sends
+# straight to the CSF Cloudinary account. Uses the UNSIGNED upload preset
+# "climatesmartfarming" - no API secret is needed or stored here.
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: evqzzm9k
+    api_key: "251528356599793"
+    upload_preset: climatesmartfarming
+    default_transformations:
+      - - fetch_format: auto
+          quality: auto
+
+collections:
+  # ---------------------------------------------------------------
+  - name: "news"
+    label: "News"
+    folder: "src/content/news"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { name: "publishOnSite", label: "Publish on site", widget: "boolean", default: true, hint: "Turn OFF to hide this from the live site while keeping it here (archive). Existing items stay visible." }
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "date", label: "Date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, picker_utc: false }
+      - { name: "author", label: "Author", widget: "string", required: false }
+      - name: "category"
+        label: "Category"
+        widget: "select"
+        options:
+          - "Research & Publications"
+          - "Events & Conferences"
+          - "Reports & Publications"
+          - "Program News"
+          - "Announcements"
+      - { name: "image", label: "Image URL", widget: "string", required: false, hint: "Paste a Cloudinary image URL, or upload below and use the uploaded path." }
+      - { name: "excerpt", label: "Excerpt", widget: "text", hint: "One or two sentence summary shown on the news list." }
+      - { name: "body", label: "Body", widget: "markdown" }
+
+  # ---------------------------------------------------------------
+  - name: "network"
+    label: "Team Members"
+    folder: "src/content/network"
+    create: true
+    slug: "{{fields.name}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { name: "publishOnSite", label: "Publish on site", widget: "boolean", default: true, hint: "Turn OFF to hide this from the live site while keeping it here (archive). Existing items stay visible." }
+      - { name: "name", label: "Full Name", widget: "string" }
+      - { name: "title", label: "Job Title", widget: "string" }
+      - name: "region"
+        label: "Region"
+        widget: "select"
+        options:
+          - "Cornell University"
+          - "New York"
+          - "USDA Northeast Climate Hub"
+      - { name: "subregion", label: "Subregion / Role Label", widget: "string", required: false }
+      - { name: "organization", label: "Organization", widget: "string", required: false }
+      - { name: "email", label: "Email", widget: "string", required: false }
+      - { name: "website", label: "Website", widget: "string", required: false }
+      - { name: "image", label: "Photo URL", widget: "string", required: false, hint: "Cloudinary image URL." }
+      - { name: "order", label: "Sort Order", widget: "number", required: false, value_type: "int", hint: "Lower numbers appear first." }
+      - { name: "body", label: "Bio", widget: "markdown" }
+
+  # ---------------------------------------------------------------
+  - name: "network-map"
+    label: "Network Map Pins"
+    folder: "src/content/network-map"
+    create: true
+    slug: "{{fields.id}}"
+    extension: "md"
+    format: "frontmatter"
+    summary: "{{name}}  —  {{location}}"
+    fields:
+      - { name: "publishOnSite", label: "Publish on site", widget: "boolean", default: true, hint: "Turn OFF to hide this from the live site while keeping it here (archive). Existing items stay visible." }
+      - { name: "id", label: "ID (short slug, no spaces)", widget: "string", hint: "A unique short name, lowercase with dashes, e.g. new-moon-farmstead" }
+      - { name: "name", label: "Name", widget: "string" }
+      - name: "type"
+        label: "Type (controls marker color)"
+        widget: "select"
+        options:
+          - { label: "Farmer (blue)", value: "farmers" }
+          - { label: "Ag Advisor (red)", value: "advisors" }
+          - { label: "Extension Associate (green)", value: "extension" }
+      - { name: "location", label: "Location (City, State)", widget: "string", hint: "e.g. Ithaca, NY" }
+      - { name: "lat", label: "Latitude", widget: "number", value_type: "float", step: 0.0001, hint: "In Google Maps, right-click the spot and click the coordinates to copy. Latitude is the FIRST number." }
+      - { name: "lng", label: "Longitude", widget: "number", value_type: "float", step: 0.0001, hint: "The SECOND number from Google Maps (usually negative in the US)." }
+      - { name: "description", label: "Short Description", widget: "text", required: false, hint: "Shown in the map popup." }
+      - { name: "county", label: "County", widget: "string", required: false }
+      - { name: "website", label: "Website", widget: "string", required: false }
+      - { name: "email", label: "Email", widget: "string", required: false }
+      - { name: "phone", label: "Phone", widget: "string", required: false }
+
+  # ---------------------------------------------------------------
+  - name: "resources"
+    label: "Resources"
+    folder: "src/content/resources"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "description", label: "Description", widget: "text", required: false }
+      - { name: "category", label: "Category", widget: "string", required: false }
+      - { name: "tags", label: "Tags", widget: "list", required: false, hint: "Used for filtering and search." }
+      - { name: "externalLink", label: "External Link", widget: "string", required: false }
+      - { name: "image", label: "Image URL", widget: "string", required: false }
+      - { name: "body", label: "Body", widget: "markdown", required: false }
+
+  # ---------------------------------------------------------------
+  - name: "programs"
+    label: "Programs"
+    folder: "src/content/programs"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { name: "publishOnSite", label: "Publish on site", widget: "boolean", default: true, hint: "Turn OFF to hide this from the live site while keeping it here (archive). Existing items stay visible." }
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "subtitle", label: "Subtitle", widget: "string", required: false }
+      - { name: "excerpt", label: "Excerpt", widget: "text", required: false }
+      - { name: "image", label: "Image URL", widget: "string", required: false }
+      - { name: "link", label: "Link", widget: "string", required: false }
+      - { name: "linkLabel", label: "Link Button Text", widget: "string", required: false }
+      - { name: "category", label: "Category", widget: "string", required: false }
+      - { name: "order", label: "Sort Order", widget: "number", required: false, value_type: "int" }
+      - { name: "body", label: "Body", widget: "markdown", required: false }
+
+  # ---------------------------------------------------------------
+  - name: "tools"
+    label: "Tools"
+    folder: "src/content/tools"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    summary: "{{title}}  —  {{category}}"
+    fields:
+      - { name: "title", label: "Tool Name", widget: "string" }
+      - { name: "description", label: "Short Description", widget: "text", hint: "One or two sentences shown on the tools grid card." }
+      - name: "category"
+        label: "Category"
+        widget: "select"
+        hint: "Pick the filter category this tool appears under."
+        options:
+          - "Temperature"
+          - "Crop Planning"
+          - "Specialty Crops"
+          - "Water Management"
+          - "Drought"
+          - "Soil Health"
+          - "Soil Properties"
+          - "Historical Data"
+          - "Carbon & GHG"
+          - "Climate Trends"
+          - "Climate Zones"
+          - "IPM & Pest Forecasting"
+      - { name: "image", label: "Thumbnail Image URL", widget: "string", hint: "Cloudinary image URL. Shown on the tools grid card and as the tool preview." }
+      - name: "toolType"
+        label: "Tool Type"
+        widget: "select"
+        hint: "How this tool is presented on its page."
+        options:
+          - { label: "Embedded GitHub widget (interactive, shows inside the page)", value: "integrated" }
+          - { label: "Image that links out to the tool's website", value: "external" }
+        default: "external"
+      - name: "hasIframe"
+        label: "Embed the widget?"
+        widget: "boolean"
+        default: false
+        hint: "Turn ON only for an embedded GitHub widget. Must match the Tool Type above."
+      - { name: "iframeUrl", label: "Widget URL (GitHub Pages)", widget: "string", required: false, hint: "Only for embedded widgets, e.g. https://nrcc-cornell.github.io/csf-gddtool-v4" }
+      - { name: "iframeHeight", label: "Widget Height", widget: "string", required: false, default: "850px", hint: "Only for embedded widgets, e.g. 850px" }
+      - { name: "externalLink", label: "Tool Website Link", widget: "string", required: false, hint: "The site visitors go to when they click the tool (and where the image links)." }
+      - { name: "repoUrl", label: "Source Repo URL", widget: "string", required: false, hint: "GitHub repo or project homepage. Optional." }
+      - name: "season"
+        label: "Season"
+        widget: "select"
+        required: false
+        options: ["all", "spring", "summer", "fall", "winter"]
+        default: "all"
+      - { name: "body", label: "Full Description", widget: "markdown", required: false, hint: "The long text shown on the tool's own page. Markdown and images allowed." }
+
+  # ---------------------------------------------------------------
+  - name: "videos"
+    label: "Videos"
+    folder: "src/content/videos"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { name: "publishOnSite", label: "Publish on site", widget: "boolean", default: true, hint: "Turn OFF to hide this from the live site while keeping it here (archive). Existing items stay visible." }
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "date", label: "Date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, picker_utc: false }
+      - { name: "category", label: "Category", widget: "string", required: false }
+      - { name: "excerpt", label: "Excerpt", widget: "text", required: false }
+      - { name: "videoUrl", label: "Video Embed URL", widget: "string", hint: "Must be the YouTube EMBED form: https://www.youtube.com/embed/VIDEO_ID" }
+      - { name: "featured", label: "Featured?", widget: "boolean", required: false, default: false }
+
+  # ---------------------------------------------------------------
+  - name: "collaborators"
+    label: "Collaborators (Footer Logos)"
+    folder: "src/content/collaborators"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    summary: "{{name}}"
+    fields:
+      - { name: "publishOnSite", label: "Publish on site", widget: "boolean", default: true, hint: "Turn OFF to hide this from the live site while keeping it here (archive). Existing items stay visible." }
+      - { name: "name", label: "Name", widget: "string", hint: "Organization name (used as the logo's alt text)." }
+      - { name: "logo", label: "Logo Image", widget: "string", hint: "Cloudinary image URL of the logo (ideally a transparent PNG)." }
+      - { name: "url", label: "Website Link", widget: "string", hint: "Where clicking the logo goes." }
+      - { name: "order", label: "Sort Order", widget: "number", required: false, value_type: "int", hint: "Lower numbers appear first (left to right)." }

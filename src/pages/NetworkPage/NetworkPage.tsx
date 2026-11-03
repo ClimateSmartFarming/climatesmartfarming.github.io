@@ -6,8 +6,6 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import styles from './NetworkPage.module.css';
-import { networkMembers } from '../../data/networkMembers';
-import type { NetworkMember } from '../../data/networkMembers';
 
 // Fix for default marker icons in React-Leaflet
 import icon from 'leaflet/dist/images/marker-icon.png';
@@ -22,29 +20,23 @@ const DefaultIcon = L.icon({
 });
 L.Marker.prototype.options.icon = DefaultIcon;
 
-// Custom colored icons
+// Custom colored dot icons (no emoji)
 const createColoredIcon = (color: string) => {
   return L.divIcon({
     className: 'custom-marker',
     html: `
       <div style="
         background-color: ${color};
-        width: 30px;
-        height: 30px;
+        width: 22px;
+        height: 22px;
         border-radius: 50%;
         border: 3px solid white;
         box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 16px;
-      ">
-        ${color === '#1976d2' ? '🐄' : color === '#d32f2f' ? '🍎' : '🏛️'}
-      </div>
+      "></div>
     `,
-    iconSize: [30, 30],
-    iconAnchor: [15, 15],
-    popupAnchor: [0, -15],
+    iconSize: [22, 22],
+    iconAnchor: [11, 11],
+    popupAnchor: [0, -11],
   });
 };
 
@@ -65,7 +57,13 @@ const MapController: React.FC<{ center: [number, number] | null }> = ({ center }
   return null;
 };
 
+// Team-member cards (bottom of page) — unchanged source
 const files = import.meta.glob('/src/content/network/*.md', {
+  eager: true, query: '?raw', import: 'default',
+}) as Record<string, string>;
+
+// Map markers — now loaded from editable .md files
+const mapFiles = import.meta.glob('/src/content/network-map/*.md', {
   eager: true, query: '?raw', import: 'default',
 }) as Record<string, string>;
 
@@ -84,11 +82,68 @@ interface Person {
   html: string;
 }
 
+interface MapMember {
+  id: string;
+  name: string;
+  type: 'farmers' | 'advisors' | 'extension';
+  location: string;
+  coordinates: [number, number];
+  description: string;
+  county?: string;
+  website?: string;
+  email?: string;
+  phone?: string;
+  publishOnSite?: string;
+}
+
 const REGIONS = ['All', 'New York', 'Cornell University', 'USDA Northeast Climate Hub'];
 
 function getInitials(name: string) {
   return name.replace(/^Dr\.\s*/, '').split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
 }
+
+// Minimal frontmatter parser for the map .md files.
+// Each file is frontmatter-only (no body needed for a marker).
+function parseMapFile(raw: string): Record<string, string> {
+  const meta: Record<string, string> = {};
+  const match = raw.match(/^---\s*\n([\s\S]*?)\n---/);
+  const block = match ? match[1] : raw;
+  for (const line of block.split('\n')) {
+    const idx = line.indexOf(':');
+    if (idx === -1) continue;
+    const key = line.slice(0, idx).trim();
+    let val = line.slice(idx + 1).trim();
+    // strip surrounding quotes
+    val = val.replace(/^["']|["']$/g, '');
+    if (key) meta[key] = val;
+  }
+  return meta;
+}
+
+const mapMembers: MapMember[] = Object.entries(mapFiles)
+  .map(([path, raw]) => {
+    const m = parseMapFile(raw);
+    const slug = path.split('/').pop()!.replace(/\.md$/, '');
+    const lat = parseFloat(m.lat);
+    const lng = parseFloat(m.lng);
+    return {
+      id: m.id || slug,
+      name: m.name || '',
+      type: (m.type as MapMember['type']) || 'farmers',
+      location: m.location || '',
+      coordinates: [lat, lng] as [number, number],
+      description: m.description || '',
+      county: m.county || undefined,
+      website: m.website || undefined,
+      email: m.email || undefined,
+      phone: m.phone || undefined,
+      publishOnSite: m.publishOnSite,
+    };
+  })
+  // drop any entry missing valid coordinates so the map never crashes,
+  // and any entry explicitly hidden from the site (publishOnSite: false)
+  .filter(m => Number.isFinite(m.coordinates[0]) && Number.isFinite(m.coordinates[1]))
+  .filter(m => String(m.publishOnSite) !== 'false');
 
 export default function NetworkPage() {
   const { items } = useMarkdownContent(files);
@@ -98,7 +153,9 @@ export default function NetworkPage() {
   const [mapCenter, setMapCenter] = useState<[number, number] | null>(null);
 
   const people: Person[] = useMemo(() => {
-    return items.map(item => ({
+    return items
+      .filter(item => String(item.meta.publishOnSite) !== 'false')
+      .map(item => ({
       id: item.slug,
       name: item.meta.name as string || '',
       title: item.meta.title as string || '',
@@ -131,8 +188,8 @@ export default function NetworkPage() {
 
   // Map helper functions
   const filteredMapMembers = activeMapFilter === 'all'
-    ? networkMembers
-    : networkMembers.filter(m => m.type === activeMapFilter);
+    ? mapMembers
+    : mapMembers.filter(m => m.type === activeMapFilter);
 
   const getMarkerIcon = (type: string) => {
     switch (type) {
@@ -152,15 +209,6 @@ export default function NetworkPage() {
     }
   };
 
-  const getTypeEmoji = (type: string) => {
-    switch (type) {
-      case 'farmers': return '🐄';
-      case 'advisors': return '🍎';
-      case 'extension': return '🏛️';
-      default: return '📍';
-    }
-  };
-
   const getMarkerColor = (type: string) => {
     switch (type) {
       case 'farmers': return '#1976d2';
@@ -171,10 +219,10 @@ export default function NetworkPage() {
   };
 
   const mapCounts = {
-    all: networkMembers.length,
-    dairy: networkMembers.filter(m => m.type === 'farmers').length,
-    apple: networkMembers.filter(m => m.type === 'advisors').length,
-    extension: networkMembers.filter(m => m.type === 'extension').length
+    all: mapMembers.length,
+    dairy: mapMembers.filter(m => m.type === 'farmers').length,
+    apple: mapMembers.filter(m => m.type === 'advisors').length,
+    extension: mapMembers.filter(m => m.type === 'extension').length
   };
 
   // New York State bounds and center
@@ -218,19 +266,19 @@ export default function NetworkPage() {
               className={`${styles.mapFilterButton} ${styles.dairy} ${activeMapFilter === 'farmers' ? styles.mapFilterActive : ''}`}
               onClick={() => setActiveMapFilter('farmers')}
             >
-              🐄 Farmers ({mapCounts.dairy})
+              Farmers ({mapCounts.dairy})
             </button>
             <button
               className={`${styles.mapFilterButton} ${styles.apple} ${activeMapFilter === 'advisors' ? styles.mapFilterActive : ''}`}
               onClick={() => setActiveMapFilter('advisors')}
             >
-              🍎 Ag Advisors ({mapCounts.apple})
+              Ag Advisors ({mapCounts.apple})
             </button>
             <button
               className={`${styles.mapFilterButton} ${styles.extension} ${activeMapFilter === 'extension' ? styles.mapFilterActive : ''}`}
               onClick={() => setActiveMapFilter('extension')}
             >
-              🏛️ Extension Associates ({mapCounts.extension})
+              Extension Associates ({mapCounts.extension})
             </button>
           </div>
 
@@ -264,7 +312,7 @@ export default function NetworkPage() {
                       <strong>{member.name}</strong>
                       <br />
                       <span style={{ color: getMarkerColor(member.type) }}>
-                        {getTypeEmoji(member.type)} {getTypeLabel(member.type)}
+                        {getTypeLabel(member.type)}
                       </span>
                       <br />
                       <small>{member.location}</small>
@@ -433,7 +481,7 @@ function PersonCard({ person, expanded, onToggle }: {
               </a>
             )}
             {person.phone && (
-              <span className={styles.contactPhone}>📞 {person.phone}</span>
+              <span className={styles.contactPhone}>{person.phone}</span>
             )}
               {person.website && (
                 <a href={person.website} target="_blank" rel="noopener noreferrer" className={styles.contactLink}>
@@ -446,5 +494,3 @@ function PersonCard({ person, expanded, onToggle }: {
     </div>
   );
 }
-
-

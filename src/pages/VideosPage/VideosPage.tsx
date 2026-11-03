@@ -16,7 +16,8 @@ function getYouTubeId(url: string): string | null {
 }
 
 export default function VideosPage() {
-  const { items } = useMarkdownContent(files);
+  const { items: allItems } = useMarkdownContent(files);
+  const items = allItems.filter(i => String(i.meta.publishOnSite) !== 'false');
   const [activeCategory, setActiveCategory] = useState('All');
   const [currentPage, setCurrentPage] = useState(1);
 

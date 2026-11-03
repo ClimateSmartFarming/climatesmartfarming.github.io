@@ -17,36 +17,45 @@ interface Partner {
   name: string;
   logo: string;
   url: string;
+  order: number;
+  publishOnSite: string;
 }
 
-// Collaborators - light green section (use transparent logos)
-const collaborators: Partner[] = [
-  {
-    name: 'Northeast Regional Climate Center',
-    logo: 'https://res.cloudinary.com/evqzzm9k/image/upload/h_60/v1784697147/csf/logos/NRCC-banner.png',
-    url: 'http://www.nrcc.cornell.edu/'
-  },
-  {
-    name: 'Cornell Cooperative Extension',
-    logo: 'https://res.cloudinary.com/evqzzm9k/image/upload/h_60/v1786510232/csf/logos/CCE_Logo_Stacked___WEB_Red_Modern.png',
-    url: 'https://cals.cornell.edu/cornell-cooperative-extension/our-work/agriculture/cce-regional-agriculture-programs'
-  },
-  {
-    name: 'NY Soil Health',
-    logo: 'https://res.cloudinary.com/evqzzm9k/image/upload/h_60/v1784746364/csf/logos/NYSoilHealthLogo.png',
-    url: 'https://www.newyorksoilhealth.org/'
-  },
-  {
-    name: 'AI-LEAF',
-    logo: 'https://res.cloudinary.com/evqzzm9k/image/upload/h_60/v1784686264/csf/logos/ai-leaf-full-logo.png',
-    url: 'https://cse.umn.edu/aileaf'
-  },
-  {
-    name: 'USDA Northeast Climate Hub',
-    logo: 'https://res.cloudinary.com/evqzzm9k/image/upload/h_60/v1784696809/csf/logos/NEclimatehub1.png',
-    url: 'https://www.climatehubs.usda.gov/hubs/northeast'
+// Collaborators are loaded from editable .md files in src/content/collaborators/
+const collaboratorFiles = import.meta.glob('/src/content/collaborators/*.md', {
+  eager: true, query: '?raw', import: 'default',
+}) as Record<string, string>;
+
+// Minimal frontmatter parser (collaborator files are frontmatter-only)
+function parseCollaborator(raw: string): Record<string, string> {
+  const meta: Record<string, string> = {};
+  const match = raw.match(/^---\s*\n([\s\S]*?)\n---/);
+  const block = match ? match[1] : raw;
+  for (const line of block.split('\n')) {
+    const idx = line.indexOf(':');
+    if (idx === -1) continue;
+    const key = line.slice(0, idx).trim();
+    let val = line.slice(idx + 1).trim();
+    val = val.replace(/^["']|["']$/g, '');
+    if (key) meta[key] = val;
   }
-];
+  return meta;
+}
+
+const collaborators: Partner[] = Object.values(collaboratorFiles)
+  .map((raw) => {
+    const m = parseCollaborator(raw);
+    return {
+      name: m.name || '',
+      logo: m.logo || '',
+      url: m.url || '',
+      order: Number(m.order ?? 99),
+      publishOnSite: m.publishOnSite,
+    };
+  })
+  .filter((c) => c.name && c.logo)
+  .filter((c) => String(c.publishOnSite) !== 'false')
+  .sort((a, b) => a.order - b.order);
 
 const footerSections: FooterSection[] = [
   {
@@ -185,14 +194,3 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
-
-
-
-
-
-
-
-
-
-
-

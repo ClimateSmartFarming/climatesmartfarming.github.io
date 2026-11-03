@@ -143,7 +143,12 @@ const ToolsSummaryPage: React.FC = () => {
                     className={`${styles.card} ${!tool.hasIframe ? styles.cardExternal : ''}`}
                   >
                     {tool.image ? (
-                      <div className={styles.cardImage} style={{ backgroundImage: `url(${tool.image})` }} />
+                      <img
+                        src={tool.image}
+                        alt={tool.title}
+                        loading="lazy"
+                        className={styles.cardImage}
+                      />
                     ) : (
                       <div className={styles.cardImagePlaceholder}>
                         <span className={styles.cardIconLarge}>{tool.icon}</span>
@@ -180,4 +185,3 @@ const ToolsSummaryPage: React.FC = () => {
 };
 
 export default ToolsSummaryPage;
-

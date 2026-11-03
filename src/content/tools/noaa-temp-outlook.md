@@ -1,5 +1,5 @@
 ---
-title: NOAA Seasonal Outlook: Temperature
+title: "NOAA Seasonal Outlook: Temperature"
 description: A seasonal forecast is the best available prediction of what our climate will be like in the next few months.
 category: Climate Trends
 image: https://res.cloudinary.com/evqzzm9k/image/upload/v1784583537/csf/tools/Screen-Shot-2016-05-04-at-10.52.40-AM.png

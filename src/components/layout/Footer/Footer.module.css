@@ -53,7 +53,7 @@
 }
 
 .partnerLogo {
-  height: 65px;
+  height: 60px;
   width: auto;
   object-fit: contain;
   transition: opacity 0.3s ease;
@@ -250,7 +250,7 @@
   }
 
   .partnerLogo {
-  height: 65px;
+  height: 60px;
 }
 
   .footerContent {
@@ -317,7 +317,7 @@
   }
 
   .partnerLogo {
-  height: 65px;
+  height: 60px;
 }
 
   .footerContent {

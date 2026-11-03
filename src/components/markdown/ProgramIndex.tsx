@@ -10,11 +10,13 @@ interface Props {
 const ProgramIndex: React.FC<Props> = ({ files }) => {
   const { items } = useMarkdownContent(files);
 
-  const sorted = [...items].sort((a, b) => {
-    const oa = Number(a.meta.order ?? 99);
-    const ob = Number(b.meta.order ?? 99);
-    return oa - ob;
-  });
+  const sorted = [...items]
+    .filter(item => String(item.meta.publishOnSite) !== 'false')
+    .sort((a, b) => {
+      const oa = Number(a.meta.order ?? 99);
+      const ob = Number(b.meta.order ?? 99);
+      return oa - ob;
+    });
 
   return (
     <div className={styles.page}>
@@ -92,4 +94,3 @@ const ProgramIndex: React.FC<Props> = ({ files }) => {
 };
 
 export default ProgramIndex;
-

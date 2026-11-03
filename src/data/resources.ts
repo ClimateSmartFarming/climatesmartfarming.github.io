@@ -12,6 +12,19 @@ export interface Resource {
 
 export const resources: Resource[] = [
   {
+  id: 'adaptation-planning-guide',
+  title: 'New Northeast Adaptation Planning Guide',
+  cardImage: '/carousel-3.jpeg',
+  externalLink: 'https://www.northeastclimateadaptationguide.com/',
+  category: ['Reports and Studies', 'Multiple Vulnerabilities', 'Multiple Adaptation Strategies'],
+  tags: [
+    'northeast', 'climate-adaptation', 'planning-workbook', 'farm-planning',
+    'risk-management', 'resilience', 'multiple-vulnerabilities',
+    'multiple-adaptation-strategies', 'climate-smart-farming', 'drought',
+    'heat-stress', 'extreme-rainfall', 'frost-risk', 'insects'
+  ]
+},
+  {
   id: 'the-impacts-of-climate-change-on-connecticut-agriculture',
   title: '2021 CT Climate Change and Ag Report',
   cardImage: 'https://res.cloudinary.com/evqzzm9k/image/upload/v1784583270/csf/resources/pexels-dariusz-grosa-2332736-scaled.jpg',
@@ -417,7 +430,7 @@ export const resources: Resource[] = [
 {
   id: 'csf-network',
   title: 'CSF Network',
-  cardImage: '',
+  cardImage: '/carousel-4.jpeg',
   externalLink: '/network',
   category: ['General'],
   tags: [
