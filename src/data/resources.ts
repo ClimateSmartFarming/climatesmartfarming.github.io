@@ -12,8 +12,8 @@ export interface Resource {
 
 export const resources: Resource[] = [
   {
-  id: 'adaptation-planning-guide',
-  title: 'New Northeast Adaptation Planning Guide',
+  id: 'adaptation-planning-workbook',
+  title: 'New Northeast Adaptation Planning Workbook',
   cardImage: '/carousel-3.jpeg',
   externalLink: 'https://www.northeastclimateadaptationguide.com/',
   category: ['Reports and Studies', 'Multiple Vulnerabilities', 'Multiple Adaptation Strategies'],

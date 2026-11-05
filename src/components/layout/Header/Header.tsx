@@ -34,7 +34,7 @@ const navigationItems: NavigationItem[] = [
       { label: 'Fact Sheets', href: '/fact-sheets' },
       { label: 'Farmer Network', href: '/network' },
       { label: 'Farmer Stories', href: '/farmer-stories' },
-      { label: 'NE Climate Adaptation Guide', href: '/resources/adaptation-planning-guide' },
+      { label: 'NE Climate Adaptation Workbook', href: '/resources/adaptation-planning-workbook' },
       { label: 'Programs', href: '/programs' },
       { label: 'Videos & Webinars', href: '/videos' },
     ]

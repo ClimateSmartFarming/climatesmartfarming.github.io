@@ -1,0 +1,29 @@
+########## PythonProject6  (4 files, latest 2026-05-17) ##########
+-- files --
+   2026-05-17  MS1.ipynb
+   2026-02-08  maxram_maxfeatures.ipynb
+   2026-02-08  Basic_pos_2.ipynb
+   2026-02-08  Basic_pos.ipynb
+-- imports --
+-- file I/O --
+   " chunk_iter = pd.read_csv(filepath, chunksize=chunk_size, usecols=usecols)\n",
+   " meta = pd.read_csv(METADATA_FILE)\n",
+   " metadata = pd.read_csv(METADATA_FILE)\n",
+   " metadata = pd.read_csv(METADATA_FILE, sep=\"\\t\")\n",
+   " peak_table = pd.read_csv(DATA_FILE, sep=sep, nrows=5)\n",
+   "df.to_csv(output, index=False)\n",
+   "filegroups = pd.read_csv(FILEGROUPS_PATH, index_col=0)\n",
+   "for chunk in tqdm(pd.read_csv(DATA_FILE, chunksize=chunk_size), desc=\"Loading\"):\n",
+   "for chunk in tqdm(pd.read_csv(DATA_FILE, chunksize=chunk_size), desc=\"Scanning\"):\n",
+   "image/png": "iVBORw0KGgoAAAANSUhEUgAABccAAAHqCAYAAADBF/bYAAAAOnRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjEwLjgsIGh0dHBzOi8vbWF0cGxvdGxpYi5vcmcvwVt1zgAAAAlwSF ...
+   "image/png": "iVBORw0KGgoAAAANSUhEUgAABjAAAAJOCAYAAAAZAE5cAAAAOnRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjEwLjgsIGh0dHBzOi8vbWF0cGxvdGxpYi5vcmcvwVt1zgAAAAlwSF ...
+   "image/png": "iVBORw0KGgoAAAANSUhEUgAABkEAAAMWCAYAAABGISHUAAAAOnRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjEwLjgsIGh0dHBzOi8vbWF0cGxvdGxpYi5vcmcvwVt1zgAAAAlwSF ...
+   "image/png": "iVBORw0KGgoAAAANSUhEUgAABv0AAATNCAYAAABvtZgBAAAAOnRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjEwLjgsIGh0dHBzOi8vbWF0cGxvdGxpYi5vcmcvwVt1zgAAAAlwSF ...
+   "image/png": "iVBORw0KGgoAAAANSUhEUgAABv0AAAWZCAYAAABe3dlUAAAAOnRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjEwLjgsIGh0dHBzOi8vbWF0cGxvdGxpYi5vcmcvwVt1zgAAAAlwSF ...
+   "image/png": "iVBORw0KGgoAAAANSUhEUgAABv4AAATNCAYAAACEgiMCAAAAOnRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjEwLjgsIGh0dHBzOi8vbWF0cGxvdGxpYi5vcmcvwVt1zgAAAAlwSF ...
+   "image/png": "iVBORw0KGgoAAAANSUhEUgAABv4AAAWZCAYAAAC16mJXAAAAOnRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjEwLjgsIGh0dHBzOi8vbWF0cGxvdGxpYi5vcmcvwVt1zgAAAAlwSF ...
+   "image/png": "iVBORw0KGgoAAAANSUhEUgAABW0AAASlCAYAAADTW/veAAAAOnRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjEwLjgsIGh0dHBzOi8vbWF0cGxvdGxpYi5vcmcvwVt1zgAAAAlwSF ...
+   "image/png": "iVBORw0KGgoAAAANSUhEUgAABZ8AAAKyCAYAAAC64aBjAAAAOnRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjEwLjgsIGh0dHBzOi8vbWF0cGxvdGxpYi5vcmcvwVt1zgAAAAlwSF ...
+   "metadata = pd.read_csv(metadata_path)\n",
+   "peak_table = pd.read_csv(DATA_FILE, sep=sep)\n",
+
